@@ -5,36 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yousef El-Garf Pro</title>
     <style>
-        body { background: #121212; color: #fff; font-family: sans-serif; margin: 0; padding: 10px; }
-        .header { text-align: center; padding: 20px; border-bottom: 2px solid #e50914; margin-bottom: 20px; }
-        .section-title { color: #e50914; font-size: 1.2rem; margin: 15px 0 10px; border-right: 4px solid #fff; padding-right: 10px; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .card { background: #1f1f1f; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #333; }
-        .card a { color: #fff; text-decoration: none; font-weight: bold; }
+        :root { --primary: #e50914; --bg: #121212; --card: #1f1f1f; --text: #ffffff; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; }
+        
+        /* التصميم الهندسي للهيدر */
+        .header { background: #000; padding: 25px; text-align: center; border-bottom: 4px solid var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        .header h1 { margin: 0; color: var(--primary); letter-spacing: 2px; }
+
+        /* تقسيم الشبكة الهندسي */
+        .container { padding: 15px; }
+        .section { margin-top: 25px; }
+        .section-title { font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; color: #ddd; }
+        .section-title::before { content: "■"; color: var(--primary); margin-left: 10px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+        
+        .card { background: var(--card); padding: 20px; border-radius: 12px; text-align: center; transition: 0.3s; border: 1px solid #333; }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .card a { color: #fff; text-decoration: none; font-weight: 600; display: block; }
+        .icon { font-size: 24px; margin-bottom: 8px; display: block; }
     </style>
 </head>
 <body>
-    <div class="header"><h1>🚀 منصة يوسف الجرف</h1></div>
-    
-    <!-- قسم الرياضة -->
-    <div class="section-title">⚽ البث الرياضي</div>
-    <div class="grid">
-        <div class="card"><a href="https://www.yallakora.com">يلا كورة</a></div>
-        <div class="card"><a href="https://www.yalla-shoot.com">يلا شوت</a></div>
+
+    <div class="header">
+        <h1>شبكة يوسف الجرف</h1>
     </div>
 
-    <!-- قسم التواصل -->
-    <div class="section-title">📱 التواصل الاجتماعي</div>
-    <div class="grid">
-        <div class="card"><a href="https://www.facebook.com">فيسبوك</a></div>
-        <div class="card"><a href="https://www.instagram.com">إنستجرام</a></div>
+    <div class="container">
+        <!-- قسم الرياضة -->
+        <div class="section">
+            <div class="section-title">البث الرياضي</div>
+            <div class="grid">
+                <div class="card"><a href="https://www.yallakora.com"><span class="icon">⚽</span>يلا كورة</a></div>
+                <div class="card"><a href="https://www.yalla-shoot.com"><span class="icon">📺</span>يلا شوت</a></div>
+                <div class="card"><a href="https://www.fifa.com"><span class="icon">🏆</span>فيفا</a></div>
+            </div>
+        </div>
+
+        <!-- قسم السوشيال ميديا -->
+        <div class="section">
+            <div class="section-title">الخدمات الاجتماعية</div>
+            <div class="grid">
+                <div class="card"><a href="https://www.facebook.com"><span class="icon">👥</span>فيسبوك</a></div>
+                <div class="card"><a href="https://www.instagram.com"><span class="icon">📸</span>إنستجرام</a></div>
+                <div class="card"><a href="https://www.tiktok.com"><span class="icon">🎵</span>تيك توك</a></div>
+            </div>
+        </div>
     </div>
 
-    <!-- قسم الترفيه -->
-    <div class="section-title">🎬 أفلام ومسلسلات</div>
-    <div class="grid">
-        <div class="card"><a href="https://www.shahid.mbc.net">شاهد</a></div>
-        <div class="card"><a href="https://www.watchit.com">واتش ات</a></div>
-    </div>
 </body>
 </html>
