@@ -1,60 +1,84 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع يوسف الجرف الرسمي</title>
+    <title>تطبيق مُشاهِد - النسخة المبتكرة</title>
     <style>
-        :root { --red: #b31b1b; --white: #ffffff; --bg: #fdfdfd; }
-        body { background-color: var(--bg); font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; }
-        .header { background-color: var(--red); color: var(--white); padding: 20px; text-align: center; font-size: 22px; font-weight: bold; border-bottom: 5px solid #8b0000; }
-        .container { padding: 15px; }
-        .btn { background-color: var(--white); border: 2px solid var(--red); color: var(--red); padding: 15px; margin: 8px 0; border-radius: 40px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; font-weight: bold; font-size: 15px; transition: 0.3s; }
-        .btn:hover { background-color: var(--red); color: var(--white); }
-        .icon { background-color: var(--red); color: var(--white); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; }
-        .sub-title { color: var(--red); font-weight: bold; margin-top: 20px; border-right: 4px solid var(--red); padding-right: 10px; }
+        :root {
+            --primary: #1a237e; /* أزرق ملكي */
+            --accent: #ffc107;  /* ذهبي */
+            --bg: #f4f7f6;
+        }
+        body { background-color: var(--bg); font-family: 'Cairo', sans-serif; margin: 0; padding: 0; }
+        
+        /* الهيدر بتصميم متدرج */
+        header { 
+            background: linear-gradient(135deg, var(--primary), #303f9f); 
+            color: white; padding: 25px; text-align: center; 
+            font-size: 1.5em; font-weight: bold; border-bottom: 5px solid var(--accent);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .container { padding: 20px; }
+
+        /* الأزرار بتصميم "كروت عصرية" */
+        .btn { 
+            display: flex; justify-content: space-between; align-items: center; 
+            background: white; padding: 18px 25px; margin-bottom: 15px; 
+            border-right: 8px solid var(--accent); /* لمسة ذهبية جانبية */
+            border-radius: 15px; text-decoration: none; color: var(--primary); 
+            font-weight: bold; font-size: 1.1em; cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s;
+        }
+        .btn:hover { background-color: #e8eaf6; transform: translateX(-5px); }
+
+        .icon { width: 50px; height: 50px; border-radius: 12px; background: #e8eaf6; border: 2px solid var(--accent); }
+        .page { display: none; }
+        .active { display: block; }
+        
+        /* زر المحادثة العائم */
+        #chat-btn { position: fixed; bottom: 30px; right: 30px; background: var(--accent); color: var(--primary); width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 28px; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
     </style>
 </head>
 <body>
 
-<div class="header">موقع يوسف الجرف الرسمي</div>
+<header id="header">مُشاهِد - الرئ</header>
 
-<div class="container">
-    <div class="sub-title">📺 سيرفر البث الرئيسي</div>
-    
-    <!-- قسم البث المباشر المحدث بكل القنوات -->
-    <a href="#" class="btn"><span>قنوات الأخبار</span><div class="icon">📰</div></a>
-    <a href="#" class="btn"><span>قنوات الرياضة المصرية</span><div class="icon">🇪🇬</div></a>
-    <a href="#" class="btn"><span>بي ان سبورت ماكس HD H265</span><div class="icon">⭐</div></a>
-    <a href="#" class="btn"><span>بي ان سبورت ماكس SD H265</span><div class="icon">⭐</div></a>
-    <a href="#" class="btn"><span>بي ان سبورت ماكس LOW H265</span><div class="icon">⭐</div></a>
-    <a href="#" class="btn"><span>بي ان سبورت FHD H265</span><div class="icon">⚽</div></a>
-    <a href="#" class="btn"><span>بي ان سبورت HD H265</span><div class="icon">⚽</div></a>
-    <a href="#" class="btn"><span>بي ان سبورت SD H265</span><div class="icon">⚽</div></a>
-    <a href="#" class="btn"><span>بي ان سبورت LOW H265</span><div class="icon">⚽</div></a>
-    <a href="#" class="btn"><span>بي ان سبورت HD</span><div class="icon">⚽</div></a>
-    <a href="#" class="btn"><span>بي ان سبورت SD</span><div class="icon">⚽</div></a>
-    <a href="#" class="btn"><span>ألوان الرياضية</span><div class="icon">🎨</div></a>
-    <a href="#" class="btn"><span>ثمانية الرياضية</span><div class="icon">8️⃣</div></a>
-    <a href="#" class="btn"><span>SHAHID SPORTS</span><div class="icon">💎</div></a>
-    <a href="#" class="btn"><span>ستارز بلاي سبورت</span><div class="icon">🌟</div></a>
-    <a href="#" class="btn"><span>أبو ظبي الرياضية</span><div class="icon">🏆</div></a>
-    <a href="#" class="btn"><span>LIVE FOOTBALL</span><div class="icon">⚽</div></a>
-    <a href="#" class="btn"><span>Falcon Eye HD</span><div class="icon">🦅</div></a>
-    <a href="#" class="btn"><span>STC TV SPORTS</span><div class="icon">📺</div></a>
-    <a href="#" class="btn"><span>STC TV</span><div class="icon">📺</div></a>
-    <a href="#" class="btn"><span>بي ان سبورت تركي</span><div class="icon">🇹🇷</div></a>
-    <a href="#" class="btn"><span>السعودية الرياضية</span><div class="icon">🇸🇦</div></a>
-
-    <div class="sub-title">🎬 قسم الترفيه والمسلسلات</div>
-    <!-- باقي الأقسام كما هي -->
-    <a href="#" class="btn"><span>المسلسلات العربية</span><div class="icon">🎭</div></a>
-    <a href="#" class="btn"><span>المسلسلات التركية</span><div class="icon">🇹🇷</div></a>
-    <a href="#" class="btn"><span>الأفلام الأجنبية</span><div class="icon">🎬</div></a>
-    <a href="#" class="btn"><span>المصارعة الحرة</span><div class="icon">🤼</div></a>
-    <a href="#" class="btn"><span>قنوات الأطفال</span><div class="icon">🧸</div></a>
-    <a href="#" class="btn"><span>محطات الراديو</span><div class="icon">📻</div></a>
+<div id="home" class="page active container">
+    <div class="btn" onclick="openPage('live')"><span>سيرفر البث المباشر</span><div class="icon"></div></div>
+    <div class="btn"><span>مسلسلات رمضان</span><div class="icon"></div></div>
+    <div class="btn"><span>أفلام عالمية</span><div class="icon"></div></div>
+    <div class="btn"><span>قنوات الأطفال</span><div class="icon"></div></div>
 </div>
+
+<div id="live" class="page container">
+    <div class="btn" onclick="openPage('home')" style="background:#e8eaf6;"><span>⬅️ العودة للرئيسية</span></div>
+    <div class="btn"><span>بي ان سبورت ماكس 1</span><div class="icon"></div></div>
+    <div class="btn"><span>بي ان سبورت ماكس 5 (جودة 5)</span><div class="icon"></div></div>
+    <div class="btn"><span>القنوات المصرية</span><div class="icon"></div></div>
+    <div class="btn"><span>القنوات الجزائرية</span><div class="icon"></div></div>
+    <div class="btn"><span>باقة Netflix</span><div class="icon"></div></div>
+    <div class="btn"><span>المصارعة الحرة</span><div class="icon"></div></div>
+</div>
+
+<div id="chat-btn" onclick="startChat()">💬</div>
+
+<script>
+    function openPage(pageId) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(pageId).classList.add('active');
+        document.getElementById('header').innerText = (pageId === 'home') ? 'مُشاهِد - الرئيسية' : 'سيرفر البث المباشر';
+    }
+    
+    // كود Tawk.to (غير الرابط برابطك الخاص)
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script");
+    s1.src='https://embed.tawk.to/YOUR_ID_HERE/default';
+    s1.async=true;
+    document.body.appendChild(s1);
+    })();
+</script>
 
 </body>
 </html>
