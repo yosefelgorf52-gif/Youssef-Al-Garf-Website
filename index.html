@@ -7,15 +7,12 @@
     <style>
         :root { --red: #b31b1b; --white: #ffffff; --bg: #fdfdfd; }
         body { background-color: var(--bg); font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; }
-        
         .header { background-color: var(--red); color: var(--white); padding: 20px; text-align: center; font-size: 22px; font-weight: bold; border-bottom: 5px solid #8b0000; }
         .container { padding: 15px; }
-        
-        /* تصميم الأزرار */
-        .btn { background-color: var(--white); border: 2px solid var(--red); color: var(--red); padding: 18px; margin: 10px 0; border-radius: 40px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; font-weight: bold; font-size: 16px; transition: 0.3s; }
-        .btn:hover { background-color: var(--red); color: var(--white); transform: scale(1.02); }
-        .icon { background-color: var(--red); color: var(--white); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-        .btn:hover .icon { background-color: var(--white); color: var(--red); }
+        .btn { background-color: var(--white); border: 2px solid var(--red); color: var(--red); padding: 15px; margin: 8px 0; border-radius: 40px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; font-weight: bold; font-size: 15px; transition: 0.3s; }
+        .btn:hover { background-color: var(--red); color: var(--white); }
+        .icon { background-color: var(--red); color: var(--white); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+        .sub-title { color: var(--red); font-weight: bold; margin-top: 20px; border-right: 4px solid var(--red); padding-right: 10px; }
     </style>
 </head>
 <body>
@@ -23,26 +20,40 @@
 <div class="header">موقع يوسف الجرف الرسمي</div>
 
 <div class="container">
-    <a href="#" class="btn"><span>سيرفر البث الرئيسي</span><div class="icon">📺</div></a>
-    <a href="#" class="btn"><span>كأس العالم 2026</span><div class="icon">⚽</div></a>
-    <a href="#" class="btn"><span>قنوات الرياضة المصرية</span><div class="icon">🇪🇬</div></a>
-    <a href="#" class="btn"><span>بي ان سبورت ماكس</span><div class="icon">⭐</div></a>
+    <div class="sub-title">📺 سيرفر البث الرئيسي</div>
     
+    <!-- قسم البث المباشر المحدث بكل القنوات -->
+    <a href="#" class="btn"><span>قنوات الأخبار</span><div class="icon">📰</div></a>
+    <a href="#" class="btn"><span>قنوات الرياضة المصرية</span><div class="icon">🇪🇬</div></a>
+    <a href="#" class="btn"><span>بي ان سبورت ماكس HD H265</span><div class="icon">⭐</div></a>
+    <a href="#" class="btn"><span>بي ان سبورت ماكس SD H265</span><div class="icon">⭐</div></a>
+    <a href="#" class="btn"><span>بي ان سبورت ماكس LOW H265</span><div class="icon">⭐</div></a>
+    <a href="#" class="btn"><span>بي ان سبورت FHD H265</span><div class="icon">⚽</div></a>
+    <a href="#" class="btn"><span>بي ان سبورت HD H265</span><div class="icon">⚽</div></a>
+    <a href="#" class="btn"><span>بي ان سبورت SD H265</span><div class="icon">⚽</div></a>
+    <a href="#" class="btn"><span>بي ان سبورت LOW H265</span><div class="icon">⚽</div></a>
+    <a href="#" class="btn"><span>بي ان سبورت HD</span><div class="icon">⚽</div></a>
+    <a href="#" class="btn"><span>بي ان سبورت SD</span><div class="icon">⚽</div></a>
+    <a href="#" class="btn"><span>ألوان الرياضية</span><div class="icon">🎨</div></a>
+    <a href="#" class="btn"><span>ثمانية الرياضية</span><div class="icon">8️⃣</div></a>
+    <a href="#" class="btn"><span>SHAHID SPORTS</span><div class="icon">💎</div></a>
+    <a href="#" class="btn"><span>ستارز بلاي سبورت</span><div class="icon">🌟</div></a>
+    <a href="#" class="btn"><span>أبو ظبي الرياضية</span><div class="icon">🏆</div></a>
+    <a href="#" class="btn"><span>LIVE FOOTBALL</span><div class="icon">⚽</div></a>
+    <a href="#" class="btn"><span>Falcon Eye HD</span><div class="icon">🦅</div></a>
+    <a href="#" class="btn"><span>STC TV SPORTS</span><div class="icon">📺</div></a>
+    <a href="#" class="btn"><span>STC TV</span><div class="icon">📺</div></a>
+    <a href="#" class="btn"><span>بي ان سبورت تركي</span><div class="icon">🇹🇷</div></a>
+    <a href="#" class="btn"><span>السعودية الرياضية</span><div class="icon">🇸🇦</div></a>
+
+    <div class="sub-title">🎬 قسم الترفيه والمسلسلات</div>
+    <!-- باقي الأقسام كما هي -->
     <a href="#" class="btn"><span>المسلسلات العربية</span><div class="icon">🎭</div></a>
-    <a href="#" class="btn"><span>مسلسلات رمضان 2026</span><div class="icon">🌙</div></a>
     <a href="#" class="btn"><span>المسلسلات التركية</span><div class="icon">🇹🇷</div></a>
-    <a href="#" class="btn"><span>المسلسلات الهندية</span><div class="icon">🇮🇳</div></a>
-    <a href="#" class="btn"><span>مسلسلات كورية</span><div class="icon">🇰🇷</div></a>
-
-    <a href="#" class="btn"><span>الأفلام العربية</span><div class="icon">📽️</div></a>
     <a href="#" class="btn"><span>الأفلام الأجنبية</span><div class="icon">🎬</div></a>
-    <a href="#" class="btn"><span>أفلام أنمي</span><div class="icon">🔥</div></a>
-    <a href="#" class="btn"><span>ماجيستك</span><div class="icon">✨</div></a>
-    <a href="#" class="btn"><span>شاهد VIP</span><div class="icon">💎</div></a>
-
     <a href="#" class="btn"><span>المصارعة الحرة</span><div class="icon">🤼</div></a>
-    <a href="#" class="btn"><span>محطات الراديو</span><div class="icon">📻</div></a>
     <a href="#" class="btn"><span>قنوات الأطفال</span><div class="icon">🧸</div></a>
+    <a href="#" class="btn"><span>محطات الراديو</span><div class="icon">📻</div></a>
 </div>
 
 </body>
