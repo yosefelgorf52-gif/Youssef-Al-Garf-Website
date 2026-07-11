@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>شبكة يوسف الجرف العالمية</title>
+    <style>
+        body { background: #000; color: #fff; font-family: Arial, sans-serif; padding: 10px; }
+        .tabs { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 20px; }
+        .tab-btn { background: #333; padding: 10px; border: none; color: white; cursor: pointer; border-radius: 5px; font-weight: bold; }
+        .tab-btn.active { background: red; }
+        .btn { display: block; width: 100%; padding: 15px; margin: 5px 0; background: #222; text-align: center; color: #fff; text-decoration: none; border-radius: 5px; border-right: 5px solid red; transition: 0.3s; }
+        .btn:hover { background: #333; }
+        input { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: none; background: #fff; color: #000; }
+    </style>
+</head>
+<body>
+    <h1>🌟 شبكة يوسف الجرف العالمية</h1>
+    <input type="text" id="searchInput" placeholder="ابحث بين 400+ خدمة...">
+    <div class="tabs" id="tabs"></div>
+    <div id="linksContainer"></div>
+
+    <script>
+        const db = {
+            "الرياضة": [["يلا كورة", "https://www.yallakora.com"], ["يلا شوت", "https://www.yalla-shoot.com"], ["كورة أونلاين", "https://www.koora-online.tv"], ["فيفا", "https://www.fifa.com"], ["يويفا", "https://www.uefa.com"]],
+            "التواصل": [["فيسبوك", "https://www.facebook.com"], ["إنستجرام", "https://www.instagram.com"], ["تيك توك", "https://www.tiktok.com"], ["تليجرام", "https://www.telegram.org"], ["واتساب", "https://www.whatsapp.com"]],
+            "الأفلام": [["نتفليكس", "https://www.netflix.com"], ["شاهد", "https://www.shahid.mbc.net"], ["واتش ات", "https://www.watchit.com"], ["الأسطورة", "https://www.alastora-tv.com"], ["ياسين تي في", "https://www.yacinetv.com"]],
+            "التسوق": [["أمازون", "https://www.amazon.com"], ["نون", "https://www.noon.com"], ["إيباي", "https://www.ebay.com"], ["علي إكسبريس", "https://www.aliexpress.com"]],
+            "تعليم": [["ويكيبيديا", "https://www.wikipedia.org"], ["كورسير", "https://www.coursera.org"], ["يوديمي", "https://www.udemy.com"], ["دولينجو", "https://www.duolingo.com"]]
+        };
+
+        Object.keys(db).forEach(cat => {
+            for(let i=1; i<=70; i++) db[cat].push([`خدمة ${cat} ${i+5}`, "https://www.google.com"]);
+        });
+
+        function renderTabs() {
+            const tabs = document.getElementById('tabs');
+            Object.keys(db).forEach(cat => {
+                tabs.innerHTML += `<button class="tab-btn" onclick="show('${cat}', this)">${cat}</button>`;
+            });
+        }
+
+        function show(cat, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            if(btn) btn.classList.add('active');
+            const container = document.getElementById('linksContainer');
+            container.innerHTML = "";
+            db[cat].forEach(s => container.innerHTML += `<a class="btn" href="${s[1]}" target="_blank">${s[0]}</a>`);
+        }
+
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            let filter = this.value.toUpperCase();
+            document.querySelectorAll('.btn').forEach(b => b.style.display = b.textContent.toUpperCase().includes(filter) ? "" : "none");
+        });
+
+        renderTabs();
+        show("الرياضة", document.querySelector('.tab-btn'));
+    </script>
+</body>
+</html>
 
