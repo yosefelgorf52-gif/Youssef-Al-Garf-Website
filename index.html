@@ -3,56 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yousef El-Garf Pro</title>
+    <title>Yousef El-Garf Network</title>
     <style>
-        :root { --primary: #e50914; --bg: #121212; --card: #1f1f1f; --text: #ffffff; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; }
+        :root { --accent: #e50914; --bg: #121212; --card: #1f1f1f; --text: #fff; }
+        body { background: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; margin: 0; padding: 15px; }
         
-        /* التصميم الهندسي للهيدر */
-        .header { background: #000; padding: 25px; text-align: center; border-bottom: 4px solid var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-        .header h1 { margin: 0; color: var(--primary); letter-spacing: 2px; }
+        /* الهيدر الاحترافي */
+        header { text-align: center; padding: 20px; border-bottom: 3px solid var(--accent); margin-bottom: 20px; }
+        h1 { margin: 0; color: var(--accent); text-transform: uppercase; }
 
-        /* تقسيم الشبكة الهندسي */
-        .container { padding: 15px; }
-        .section { margin-top: 25px; }
-        .section-title { font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; color: #ddd; }
-        .section-title::before { content: "■"; color: var(--primary); margin-left: 10px; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+        /* التقسيم الهندسي */
+        .category { margin-bottom: 30px; }
+        .category-title { color: #aaa; margin-bottom: 15px; border-right: 4px solid var(--accent); padding-right: 10px; font-weight: bold; }
         
-        .card { background: var(--card); padding: 20px; border-radius: 12px; text-align: center; transition: 0.3s; border: 1px solid #333; }
-        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
-        .card a { color: #fff; text-decoration: none; font-weight: 600; display: block; }
-        .icon { font-size: 24px; margin-bottom: 8px; display: block; }
+        .btn-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; }
+        
+        .btn { background: var(--card); padding: 15px; border-radius: 10px; text-align: center; text-decoration: none; color: white; border: 1px solid #333; transition: 0.3s; }
+        .btn:hover { background: var(--accent); border-color: #ff0000; }
+        .btn span { display: block; font-size: 20px; margin-bottom: 5px; }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>شبكة يوسف الجرف</h1>
-    </div>
+<header>
+    <h1>شبكة يوسف الجرف</h1>
+</header>
 
-    <div class="container">
-        <!-- قسم الرياضة -->
-        <div class="section">
-            <div class="section-title">البث الرياضي</div>
-            <div class="grid">
-                <div class="card"><a href="https://www.yallakora.com"><span class="icon">⚽</span>يلا كورة</a></div>
-                <div class="card"><a href="https://www.yalla-shoot.com"><span class="icon">📺</span>يلا شوت</a></div>
-                <div class="card"><a href="https://www.fifa.com"><span class="icon">🏆</span>فيفا</a></div>
-            </div>
-        </div>
-
-        <!-- قسم السوشيال ميديا -->
-        <div class="section">
-            <div class="section-title">الخدمات الاجتماعية</div>
-            <div class="grid">
-                <div class="card"><a href="https://www.facebook.com"><span class="icon">👥</span>فيسبوك</a></div>
-                <div class="card"><a href="https://www.instagram.com"><span class="icon">📸</span>إنستجرام</a></div>
-                <div class="card"><a href="https://www.tiktok.com"><span class="icon">🎵</span>تيك توك</a></div>
-            </div>
-        </div>
+<!-- قسم البث المباشر -->
+<div class="category">
+    <div class="category-title">📺 البث المباشر والرياضة</div>
+    <div class="btn-grid">
+        <a href="https://yalla-shoot.com" class="btn"><span>⚽</span>يلا شوت</a>
+        <a href="https://www.yallakora.com" class="btn"><span>🥅</span>يلا كورة</a>
+        <a href="https://www.koora-live.com" class="btn"><span>🎙️</span>كورة لايف</a>
     </div>
+</div>
+
+<!-- قسم الترفيه -->
+<div class="category">
+    <div class="category-title">🎬 الأفلام والمسلسلات</div>
+    <div class="btn-grid">
+        <a href="https://shahid.mbc.net" class="btn"><span>🎭</span>شاهد</a>
+        <a href="https://watchit.com" class="btn"><span>📺</span>واتش إت</a>
+        <a href="https://cima4u.com" class="btn"><span>🍿</span>سيما فور يو</a>
+    </div>
+</div>
+
+<!-- قسم السوشيال ميديا -->
+<div class="category">
+    <div class="category-title">🌐 السوشيال ميديا</div>
+    <div class="btn-grid">
+        <a href="https://facebook.com" class="btn"><span>📘</span>فيسبوك</a>
+        <a href="https://instagram.com" class="btn"><span>📸</span>إنستجرام</a>
+        <a href="https://tiktok.com" class="btn"><span>🎵</span>تيك توك</a>
+        <a href="https://x.com" class="btn"><span>𝕏</span>تويتر</a>
+    </div>
+</div>
 
 </body>
 </html>
