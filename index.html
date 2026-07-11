@@ -3,61 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yousef El-Garf Network</title>
+    <title>موقع يوسف الجرف الرسمي</title>
     <style>
-        :root { --accent: #e50914; --bg: #121212; --card: #1f1f1f; --text: #fff; }
-        body { background: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; margin: 0; padding: 15px; }
+        :root { --red: #b31b1b; --white: #ffffff; --bg: #fdfdfd; }
+        body { background-color: var(--bg); font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; }
         
-        /* الهيدر الاحترافي */
-        header { text-align: center; padding: 20px; border-bottom: 3px solid var(--accent); margin-bottom: 20px; }
-        h1 { margin: 0; color: var(--accent); text-transform: uppercase; }
-
-        /* التقسيم الهندسي */
-        .category { margin-bottom: 30px; }
-        .category-title { color: #aaa; margin-bottom: 15px; border-right: 4px solid var(--accent); padding-right: 10px; font-weight: bold; }
+        .header { background-color: var(--red); color: var(--white); padding: 20px; text-align: center; font-size: 22px; font-weight: bold; border-bottom: 5px solid #8b0000; }
+        .container { padding: 15px; }
         
-        .btn-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; }
-        
-        .btn { background: var(--card); padding: 15px; border-radius: 10px; text-align: center; text-decoration: none; color: white; border: 1px solid #333; transition: 0.3s; }
-        .btn:hover { background: var(--accent); border-color: #ff0000; }
-        .btn span { display: block; font-size: 20px; margin-bottom: 5px; }
+        /* تصميم الأزرار */
+        .btn { background-color: var(--white); border: 2px solid var(--red); color: var(--red); padding: 18px; margin: 10px 0; border-radius: 40px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; font-weight: bold; font-size: 16px; transition: 0.3s; }
+        .btn:hover { background-color: var(--red); color: var(--white); transform: scale(1.02); }
+        .icon { background-color: var(--red); color: var(--white); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+        .btn:hover .icon { background-color: var(--white); color: var(--red); }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>شبكة يوسف الجرف</h1>
-</header>
+<div class="header">موقع يوسف الجرف الرسمي</div>
 
-<!-- قسم البث المباشر -->
-<div class="category">
-    <div class="category-title">📺 البث المباشر والرياضة</div>
-    <div class="btn-grid">
-        <a href="https://yalla-shoot.com" class="btn"><span>⚽</span>يلا شوت</a>
-        <a href="https://www.yallakora.com" class="btn"><span>🥅</span>يلا كورة</a>
-        <a href="https://www.koora-live.com" class="btn"><span>🎙️</span>كورة لايف</a>
-    </div>
-</div>
+<div class="container">
+    <a href="#" class="btn"><span>سيرفر البث الرئيسي</span><div class="icon">📺</div></a>
+    <a href="#" class="btn"><span>كأس العالم 2026</span><div class="icon">⚽</div></a>
+    <a href="#" class="btn"><span>قنوات الرياضة المصرية</span><div class="icon">🇪🇬</div></a>
+    <a href="#" class="btn"><span>بي ان سبورت ماكس</span><div class="icon">⭐</div></a>
+    
+    <a href="#" class="btn"><span>المسلسلات العربية</span><div class="icon">🎭</div></a>
+    <a href="#" class="btn"><span>مسلسلات رمضان 2026</span><div class="icon">🌙</div></a>
+    <a href="#" class="btn"><span>المسلسلات التركية</span><div class="icon">🇹🇷</div></a>
+    <a href="#" class="btn"><span>المسلسلات الهندية</span><div class="icon">🇮🇳</div></a>
+    <a href="#" class="btn"><span>مسلسلات كورية</span><div class="icon">🇰🇷</div></a>
 
-<!-- قسم الترفيه -->
-<div class="category">
-    <div class="category-title">🎬 الأفلام والمسلسلات</div>
-    <div class="btn-grid">
-        <a href="https://shahid.mbc.net" class="btn"><span>🎭</span>شاهد</a>
-        <a href="https://watchit.com" class="btn"><span>📺</span>واتش إت</a>
-        <a href="https://cima4u.com" class="btn"><span>🍿</span>سيما فور يو</a>
-    </div>
-</div>
+    <a href="#" class="btn"><span>الأفلام العربية</span><div class="icon">📽️</div></a>
+    <a href="#" class="btn"><span>الأفلام الأجنبية</span><div class="icon">🎬</div></a>
+    <a href="#" class="btn"><span>أفلام أنمي</span><div class="icon">🔥</div></a>
+    <a href="#" class="btn"><span>ماجيستك</span><div class="icon">✨</div></a>
+    <a href="#" class="btn"><span>شاهد VIP</span><div class="icon">💎</div></a>
 
-<!-- قسم السوشيال ميديا -->
-<div class="category">
-    <div class="category-title">🌐 السوشيال ميديا</div>
-    <div class="btn-grid">
-        <a href="https://facebook.com" class="btn"><span>📘</span>فيسبوك</a>
-        <a href="https://instagram.com" class="btn"><span>📸</span>إنستجرام</a>
-        <a href="https://tiktok.com" class="btn"><span>🎵</span>تيك توك</a>
-        <a href="https://x.com" class="btn"><span>𝕏</span>تويتر</a>
-    </div>
+    <a href="#" class="btn"><span>المصارعة الحرة</span><div class="icon">🤼</div></a>
+    <a href="#" class="btn"><span>محطات الراديو</span><div class="icon">📻</div></a>
+    <a href="#" class="btn"><span>قنوات الأطفال</span><div class="icon">🧸</div></a>
 </div>
 
 </body>
