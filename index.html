@@ -5,62 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>يوسف الجرف تي في | Yousef Al-Jarf TV</title>
     <style>
-        :root { --main-color: #2c3e50; --accent-color: #e74c3c; --bg-color: #f4f4f9; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg-color); margin: 0; padding: 0; }
+        :root { --main-color: #1a237e; --accent-color: #ffc107; --bg-color: #f4f7f6; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg-color); margin: 0; padding-bottom: 80px; }
         
-        /* الهيدر */
-        header { background-color: var(--main-color); color: white; padding: 20px; text-align: center; font-size: 1.6em; font-weight: bold; border-bottom: 5px solid var(--accent-color); position: sticky; top: 0; z-index: 1000; }
+        /* الهيدر الأنيق */
+        header { background: linear-gradient(135deg, var(--main-color), #3949ab); color: white; padding: 25px; text-align: center; font-size: 1.6em; font-weight: bold; border-bottom: 5px solid var(--accent-color); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
         
         .container { padding: 20px; max-width: 600px; margin: auto; }
         
-        /* الأزرار الدائرية (تصميم الأسطورة) */
-        .item { display: flex; align-items: center; justify-content: space-between; background: white; padding: 12px 20px; margin-bottom: 12px; border-radius: 50px; border: 2px solid var(--main-color); color: var(--main-color); font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .item:hover { background-color: var(--main-color); color: white; }
-        .icon-circle { width: 45px; height: 45px; border-radius: 50%; background: #ddd; border: 2px solid var(--accent-color); }
+        /* الأزرار العصرية */
+        .btn { display: flex; align-items: center; justify-content: space-between; background: white; padding: 18px 25px; margin-bottom: 15px; border-radius: 20px; border-right: 8px solid var(--accent-color); color: var(--main-color); font-weight: bold; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        .btn:hover { background-color: #e8eaf6; transform: translateX(-5px); }
+        .icon { width: 45px; height: 45px; border-radius: 12px; background: #e8eaf6; border: 2px solid var(--accent-color); }
         
         .page { display: none; }
         .active { display: block; }
-        
-        /* زر المحادثة */
-        #chat-float { position: fixed; bottom: 20px; right: 20px; background: var(--accent-color); color: white; padding: 15px 20px; border-radius: 50px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
     </style>
 </head>
 <body>
 
 <header id="header-text">يوسف الجرف تي في</header>
 
+<!-- 1. الصفحة الرئيسية -->
 <div id="home-page" class="page active container">
-    <div class="item" onclick="navigate('live-page', 'سيرفر البث المباشر')">سيرفر البث المباشر<div class="icon-circle"></div></div>
-    <div class="item">مباريات اليوم<div class="icon-circle"></div></div>
-    <div class="item">مسلسلات رمضان<div class="icon-circle"></div></div>
-    <div class="item">الأفلام العربية<div class="icon-circle"></div></div>
-    <div class="item">الأفلام الأجنبية<div class="icon-circle"></div></div>
-    <div class="item">الأسطورة VIP<div class="icon-circle"></div></div>
-    <div class="item">المسلسلات التركية<div class="icon-circle"></div></div>
-    <div class="item">قنوات الأطفال<div class="icon-circle"></div></div>
+    <div class="btn" onclick="navigate('live-page', 'سيرفر البث المباشر')"><span>سيرفر البث المباشر</span><div class="icon"></div></div>
+    <div class="btn"><span>مباريات اليوم</span><div class="icon"></div></div>
+    <div class="btn"><span>مسلسلات رمضان</span><div class="icon"></div></div>
+    <div class="btn"><span>أفلام عالمية</span><div class="icon"></div></div>
+    <div class="btn"><span>المصارعة الحرة</span><div class="icon"></div></div>
+    <div class="btn"><span>باقة Netflix</span><div class="icon"></div></div>
+    <div class="btn"><span>قنوات الأطفال</span><div class="icon"></div></div>
 </div>
 
+<!-- 2. صفحة البث المباشر -->
 <div id="live-page" class="page container">
-    <div class="item" style="background:#ddd" onclick="navigate('home-page', 'يوسف الجرف تي في')">⬅️ العودة للرئيسية</div>
-    <div class="item">بي ان سبورت ماكس 1<div class="icon-circle"></div></div>
-    <div class="item">بي ان سبورت ماكس 2<div class="icon-circle"></div></div>
-    <div class="item">بي ان سبورت ماكس 3<div class="icon-circle"></div></div>
-    <div class="item">بي ان سبورت ماكس 4<div class="icon-circle"></div></div>
-    <div class="item">بي ان سبورت ماكس 5 (جودة عالية)<div class="icon-circle"></div></div>
-    <div class="item">القنوات المصرية المباشرة<div class="icon-circle"></div></div>
-    <div class="item">القنوات المغربية الرياضية<div class="icon-circle"></div></div>
-    <div class="item">القنوات الجزائرية<div class="icon-circle"></div></div>
-    <div class="item">باقة OSN الكاملة<div class="icon-circle"></div></div>
-    <div class="item">باقة Netflix (مباشر)<div class="icon-circle"></div></div>
-    <div class="item">قنوات شاهد VIP<div class="icon-circle"></div></div>
-    <div class="item">كأس العالم 2026<div class="icon-circle"></div></div>
-    <div class="item">مسرح مصر<div class="icon-circle"></div></div>
-    <div class="item">المصارعة الحرة<div class="icon-circle"></div></div>
-    <div class="item">محطات الراديو<div class="icon-circle"></div></div>
-    <div class="item">سبيستون والكرتون<div class="icon-circle"></div></div>
+    <div class="btn" style="background:#e8eaf6" onclick="navigate('home-page', 'يوسف الجرف تي في')"><span>⬅️ العودة للرئيسية</span></div>
+    <div class="btn"><span>بي ان سبورت ماكس 1</span><div class="icon"></div></div>
+    <div class="btn"><span>بي ان سبورت ماكس 2</span><div class="icon"></div></div>
+    <div class="btn"><span>بي ان سبورت ماكس 3</span><div class="icon"></div></div>
+    <div class="btn"><span>القنوات المصرية</span><div class="icon"></div></div>
+    <div class="btn"><span>القنوات المغربية</span><div class="icon"></div></div>
+    <div class="btn"><span>القنوات الجزائرية</span><div class="icon"></div></div>
+    <div class="btn"><span>باقة شاهد VIP</span><div class="icon"></div></div>
+    <div class="btn"><span>OSN سينما</span><div class="icon"></div></div>
+    <div class="btn"><span>قنوات الفجر</span><div class="icon"></div></div>
+    <div class="btn"><span>كأس العالم 2026</span><div class="icon"></div></div>
+    <div class="btn"><span>المسلسلات التركية</span><div class="icon"></div></div>
 </div>
-
-<div id="chat-float" onclick="alert('تواصل مع يوسف الجرف مباشرة عبر لوحة التحكم الخاصة بك!')">راسلنا الآن 💬</div>
 
 <script>
     function navigate(pageId, title) {
@@ -70,14 +61,16 @@
     }
 </script>
 
+<!-- كود Smartsupp للمراسلة المدمج -->
 <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script");
-    s1.src='https://embed.tawk.to/YOUR_ID_HERE/default';
-    s1.async=true;
-    document.body.appendChild(s1);
-    })();
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '886a99bd64c481440a2170020a04cebf7506ad97';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
 </script>
 
 </body>
