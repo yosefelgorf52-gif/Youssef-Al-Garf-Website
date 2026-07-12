@@ -1,135 +1,89 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>يوسف الجرف TV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>GORF CHAT</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chat.css">
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- شاشة البداية -->
-  <div id="splash">
-      <h1>YG TV</h1>
-      <p>يوسف الجرف TV</p>
-  </div>
+<div class="app">
 
-  <!-- الهيدر -->
-  <header>
+    <aside class="sidebar">
 
-      <div class="logo">
-          <span>YG TV</span>
-      </div>
+        <div class="logo">
 
-      <div class="search">
+            <div class="logo-circle">
+                G
+            </div>
 
-          <input type="text" placeholder="ابحث عن فيلم أو مسلسل...">
+            <h2>GORF CHAT</h2>
 
-      </div>
+        </div>
 
-      <div class="profile">
+        <button class="new-chat">
+            + New Chat
+        </button>
 
-          👤
+        <div class="history">
 
-      </div>
+        </div>
 
-  </header>
+        <div class="bottom">
 
-  <!-- البانر -->
+            <button>Settings</button>
 
-  <section class="banner">
+            <button>Profile</button>
 
-      <div class="overlay">
+        </div>
 
-          <h2>مرحبًا بك في يوسف الجرف TV</h2>
+    </aside>
 
-          <p>منصة مشاهدة حديثة بتصميم احترافي.</p>
 
-          <button>ابدأ المشاهدة</button>
+    <main class="chat">
 
-      </div>
+        <div class="welcome">
 
-  </section>
+            <h1>Welcome to GORF CHAT</h1>
 
-  <!-- الأقسام -->
+            <p>
+                Your intelligent AI assistant.
+            </p>
 
-  <section class="categories">
+        </div>
 
-      <h2>الأقسام</h2>
+        <div class="messages">
 
-      <div class="grid">
+        </div>
 
-          <div class="item">⚽<span>رياضة</span></div>
+        <div class="input-box">
 
-          <div class="item">🎬<span>أفلام</span></div>
+            <input
+                type="text"
+                placeholder="Ask anything...">
 
-          <div class="item">📺<span>مسلسلات</span></div>
+            <button id="send">
+                ➜
+            </button>
 
-          <div class="item">👶<span>أطفال</span></div>
+        </div>
 
-          <div class="item">📻<span>راديو</span></div>
+    </main>
 
-          <div class="item">🎵<span>موسيقى</span></div>
+</div>
 
-          <div class="item">📰<span>أخبار</span></div>
-
-          <div class="item">❤️<span>المفضلة</span></div>
-
-      </div>
-
-  </section>
-
-  <!-- أحدث الإضافات -->
-
-  <section class="latest">
-
-      <div class="title">
-
-          <h2>أضيف حديثًا</h2>
-
-          <a href="#">عرض الكل</a>
-
-      </div>
-
-      <div class="cards">
-
-          <div class="card"></div>
-
-          <div class="card"></div>
-
-          <div class="card"></div>
-
-          <div class="card"></div>
-
-      </div>
-
-  </section>
-
-  <!-- القائمة السفلية -->
-
-  <nav class="bottomNav">
-
-      <a href="#">🏠<span>الرئيسية</span></a>
-
-      <a href="#">🔍<span>بحث</span></a>
-
-      <a href="#">❤️<span>المفضلة</span></a>
-
-      <a href="#">📂<span>المكتبة</span></a>
-
-      <a href="#">👤<span>حسابي</span></a>
-
-  </nav>
-
-  <script src="app.js"></script>
+<script src="js/app.js"></script>
 
 </body>
 
