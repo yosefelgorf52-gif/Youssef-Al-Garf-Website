@@ -1,0 +1,53 @@
+// رسالة ترحيب
+console.log("مرحبًا بك في يوسف الجرف TV");
+
+// البحث
+const searchInput = document.querySelector(".hero input");
+
+searchInput.addEventListener("keyup", function () {
+    let value = this.value.toLowerCase();
+
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        let title = card.querySelector("h3").innerText.toLowerCase();
+
+        if (title.includes(value)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
+
+// تشغيل تجريبي
+document.querySelectorAll(".card button").forEach(btn => {
+
+    btn.addEventListener("click", function(){
+
+        alert("سيتم تشغيل المحتوى بعد إضافة رابط الفيديو.");
+
+    });
+
+});
+
+// الوضع الليلي
+let dark = true;
+
+function changeMode(){
+
+    if(dark){
+
+        document.body.style.background="#ffffff";
+        document.body.style.color="#000000";
+
+    }else{
+
+        document.body.style.background="#111111";
+        document.body.style.color="#ffffff";
+
+    }
+
+    dark=!dark;
+
+}
