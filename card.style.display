@@ -1,53 +1,112 @@
-// رسالة ترحيب
-console.log("مرحبًا بك في يوسف الجرف TV");
+/* ===========================
+   يوسف الجرف TV
+   app.js
+=========================== */
+
+// شاشة البداية
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        const splash = document.getElementById("splash");
+
+        splash.style.opacity = "0";
+        splash.style.transition = "0.8s";
+
+        setTimeout(() => {
+
+            splash.style.display = "none";
+
+        },800);
+
+    },2000);
+
+});
 
 // البحث
-const searchInput = document.querySelector(".hero input");
 
-searchInput.addEventListener("keyup", function () {
+const search = document.querySelector(".search input");
+
+search.addEventListener("keyup", function(){
+
     let value = this.value.toLowerCase();
 
     let cards = document.querySelectorAll(".card");
 
-    cards.forEach(card => {
-        let title = card.querySelector("h3").innerText.toLowerCase();
+    cards.forEach(card=>{
 
-        if (title.includes(value)) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
+        let title = card.innerText.toLowerCase();
+
+        if(title.includes(value)){
+
+            card.style.display="block";
+
+        }else{
+
+            card.style.display="none";
+
         }
-    });
-});
-
-// تشغيل تجريبي
-document.querySelectorAll(".card button").forEach(btn => {
-
-    btn.addEventListener("click", function(){
-
-        alert("سيتم تشغيل المحتوى بعد إضافة رابط الفيديو.");
 
     });
 
 });
 
-// الوضع الليلي
-let dark = true;
+// حركة الأقسام
 
-function changeMode(){
+const items=document.querySelectorAll(".item");
 
-    if(dark){
+items.forEach(item=>{
 
-        document.body.style.background="#ffffff";
-        document.body.style.color="#000000";
+item.addEventListener("click",()=>{
 
-    }else{
+item.style.transform="scale(.95)";
 
-        document.body.style.background="#111111";
-        document.body.style.color="#ffffff";
+setTimeout(()=>{
 
-    }
+item.style.transform="scale(1)";
 
-    dark=!dark;
+},150);
 
-}
+});
+
+});
+
+// حركة البطاقات
+
+const cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+card.addEventListener("mouseenter",()=>{
+
+card.style.transform="scale(1.05)";
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform="scale(1)";
+
+});
+
+});
+
+// زر البداية
+
+const startButton=document.querySelector(".overlay button");
+
+startButton.addEventListener("click",()=>{
+
+window.scrollTo({
+
+top:500,
+
+behavior:"smooth"
+
+});
+
+});
+
+// رسالة ترحيب
+
+console.log("مرحباً بك في يوسف الجرف TV");
