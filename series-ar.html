@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المسلسلات العربية</title>
+    <style>
+        body { background-color: #b71c1c; font-family: sans-serif; margin: 0; padding: 0; }
+        header { background-color: #b71c1c; padding: 15px; text-align: center; color: white; border-bottom: 2px solid #a31a1a; position: sticky; top: 0; z-index: 1000; }
+        .search-container { padding: 10px; background: #b71c1c; position: sticky; top: 55px; z-index: 999; }
+        #searchInput { width: 100%; padding: 12px; border-radius: 8px; border: none; box-sizing: border-box; text-align: right; }
+        .container { padding: 10px; }
+        .btn { display: block; background: #fff; color: #b71c1c; padding: 15px; margin-bottom: 8px; 
+               border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid #b71c1c; text-align: center; }
+        .back-btn { background: #a31a1a; color: white; text-align: center; padding: 10px; margin-bottom: 20px; border-radius: 8px; text-decoration: none; display: block; }
+    </style>
+</head>
+<body>
+
+<header>المسلسلات العربية</header>
+
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="ابحث عن مسلسل..." onkeyup="filterFunction()">
+</div>
+
+<div class="container" id="seriesList">
+    <a href="series1.html" class="btn">الورشة</a>
+    <a href="series2.html" class="btn">بنات الثانوي م 2</a>
+    <a href="series3.html" class="btn">العميل</a>
+    <a href="series4.html" class="btn">البحث عن علا 2</a>
+    <a href="series5.html" class="btn">ديبو</a>
+    <a href="series6.html" class="btn">اكس فاكتور</a>
+    <a href="series7.html" class="btn">انترفيو</a>
+    <a href="series8.html" class="btn">تيتا زوزو</a>
+    <a href="series9.html" class="btn">برغم القانون</a>
+    <a href="series10.html" class="btn">مفترق طرق</a>
+    <a href="series11.html" class="btn">نقطة سودة</a>
+    <a href="series12.html" class="btn">القدر</a>
+    <a href="series13.html" class="btn">لعبة الحبار 2</a>
+    <a href="series14.html" class="btn">Arabs got talent</a>
+    <a href="series15.html" class="btn">موعد مع الماضي</a>
+    <a href="series16.html" class="btn">رقم سري</a>
+    <a href="series17.html" class="btn">باسورد</a>
+    <a href="series18.html" class="btn">6 شهور</a>
+    <a href="series19.html" class="btn">المهرج</a>
+    <a href="series20.html" class="btn">عمر أفندي</a>
+    <a href="series21.html" class="btn">أكثر من خوات</a>
+    <a href="series22.html" class="btn">يا غايب: فضل شاكر</a>
+    <a href="series23.html" class="btn">موضوع عائلي م 3</a>
+    <a href="series24.html" class="btn">مطعم الحبايب</a>
+    <a href="series25.html" class="btn">فقرة الساحر</a>
+    <a href="series26.html" class="btn">صفحة بيضا</a>
+    <a href="series27.html" class="btn">إقامة جبرية</a>
+    <a href="series28.html" class="btn">ونحب تاني ليه</a>
+    <a href="series29.html" class="btn">سراب</a>
+    <a href="series30.html" class="btn">روح جدو</a>
+    <a href="series31.html" class="btn">ساعته وتاريخه</a>
+    <a href="series32.html" class="btn">برستيج</a>
+    <a href="series33.html" class="btn">عهد أنيس</a>
+    <a href="series34.html" class="btn">الصحبة الحلوة</a>
+    <a href="series35.html" class="btn">صلاح الدين م 2</a>
+    <a href="series36.html" class="btn">المؤسس عثمان م 6</a>
+    <a href="series37.html" class="btn">الكبير</a>
+    <a href="series38.html" class="btn">الرجل العناب</a>
+    <a href="series39.html" class="btn">هروج</a>
+    <a href="series40.html" class="btn">أمي</a>
+    <a href="series41.html" class="btn">حرب الجبالي</a>
+    <a href="series42.html" class="btn">خارج عن المألوف</a>
+    <a href="series43.html" class="btn">مملكة الحرير</a>
+    <a href="series44.html" class="btn">فات الميعاد</a>
+    <a href="series45.html" class="btn">عايشين معانا</a>
+    <a href="series46.html" class="btn">حمود وأبوه</a>
+    <a href="series47.html" class="btn">سيوف العرب</a>
+    <a href="series48.html" class="btn">آسر</a>
+    <a href="series49.html" class="btn">أزمة ثقة</a>
+    <a href="series50.html" class="btn">المدينة البعيدة مدبلج</a>
+    <a href="series51.html" class="btn">حريم الجراح</a>
+    <a href="series52.html" class="btn">سفاح التاكسي</a>
+    <a href="series53.html" class="btn">فبراير الأسود</a>
+    <a href="series54.html" class="btn">أفراح إبليس م 3</a>
+    <a href="series55.html" class="btn">كتالوج</a>
+    <a href="series56.html" class="btn">220 يوم</a>
+    <a href="series57.html" class="btn">كان إنسان</a>
+    <a href="series58.html" class="btn">سلمى</a>
+    <a href="series59.html" class="btn">ولد بنت شايب</a>
+    <a href="series60.html" class="btn">ابن النادي</a>
+    <a href="series61.html" class="btn">المرسى</a>
+    <a href="series62.html" class="btn">الضارية</a>
+    <a href="series63.html" class="btn">حالات نادرة</a>
+    <a href="series64.html" class="btn">ما تراه ليس كما يبدو</a>
+    <a href="series65.html" class="btn">أيام</a>
+    <a href="series66.html" class="btn">بنات البومب</a>
+    <a href="series67.html" class="btn">المحامية</a>
+    <a href="series68.html" class="btn">كاراته</a>
+    <a href="series69.html" class="btn">كواليس</a>
+    <a href="series70.html" class="btn">لا ترد ولا تستبدل</a>
+    <a href="series71.html" class="btn">2 قهوة</a>
+    <a href="series72.html" class="btn">سنجل ماذر فاذر</a>
+    <a href="series73.html" class="btn">كارثة طبيعية</a>
+    <a href="series74.html" class="btn">وينك من زمان</a>
+    <a href="series75.html" class="btn">أثر بارد</a>
+    <a href="series76.html" class="btn">لايف معاك مع أبلة فاهيتا</a>
+    <a href="series77.html" class="btn">مش مهم الاسم</a>
+    <a href="series78.html" class="btn">ورد وشوكولاتة</a>
+    <a href="series79.html" class="btn">وتر حساس</a>
+    <a href="series80.html" class="btn">لينك</a>
+    <a href="series81.html" class="btn">أحلى صوت م 6</a>
+    <a href="series82.html" class="btn">اللعبة</a>
+    <a href="series83.html" class="btn">The Voice Kids</a>
+    <a href="series84.html" class="btn">ستر فخرية</a>
+    <a href="series85.html" class="btn">قسمة العدل</a>
+    <a href="series86.html" class="btn">بطل العالم</a>
+    <a href="series87.html" class="btn">الفرنساوي</a>
+    <a href="series88.html" class="btn">ميدتيرم</a>
+    <a href="series89.html" class="btn">لعبة وقلبت بجد</a>
+    <a href="series90.html" class="btn">بيت بابا</a>
+    <a href="series91.html" class="btn">حب ع ورق</a>
+    <a href="series92.html" class="btn">للعدالة وجه آخر</a>
+    <a href="series93.html" class="btn">تحت السن</a>
+    <a href="series94.html" class="btn">ممكن</a>
+    <a href="series95.html" class="btn">ورد وياسمين</a>
+    <a href="series96.html" class="btn">حين لا يرانا أحد</a>
+    <a href="series97.html" class="btn">حفرة جهنم</a>
+    <a href="series98.html" class="btn">ليل</a>
+    <a href="series99.html" class="btn">فرسان قريح م 2</a>
+</div>
+
+<script>
+    function filterFunction() {
+        let input = document.getElementById("searchInput");
+        let filter = input.value.toUpperCase();
+        let list = document.getElementById("seriesList");
+        let links = list.getElementsByTagName("a");
+        for (let i = 0; i < links.length; i++) {
+            let txtValue = links[i].textContent || links[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                links[i].style.display = "";
+            } else {
+                links[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+      </html>
+  
