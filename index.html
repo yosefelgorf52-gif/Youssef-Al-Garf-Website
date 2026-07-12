@@ -2,71 +2,87 @@
 <html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>يوسف أشرف الجرف TV</title>
+    <title>Yousef Ashraf Al-Jarf TV - النظام المتكامل</title>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
-        :root { --red: #b71c1c; --white: #ffffff; }
-        body { background: #f0f0f0; font-family: sans-serif; margin: 0; }
-        header { background: var(--red); color: white; padding: 20px; text-align: center; font-size: 1.5em; font-weight: bold; border-bottom: 4px solid #8e0000; }
-        .container { padding: 15px; }
-        .btn { display: flex; align-items: center; justify-content: space-between; background: white; padding: 10px 20px; margin-bottom: 10px; border: 2px solid var(--red); border-radius: 50px; cursor: pointer; color: var(--red); font-weight: bold; }
-        .icon { width: 45px; height: 45px; border-radius: 50%; border: 1px solid var(--red); object-fit: cover; }
-        #player-box { display: none; text-align: center; background: black; padding: 20px; }
-        video { width: 100%; max-width: 600px; }
+        :root { --red: #b71c1c; --gold: #ffd700; --bg: #121212; --card: #1e1e1e; --text: #ffffff; }
+        body { background: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; margin: 0; }
+        
+        /* الهيدر الاحترافي */
+        header { background: linear-gradient(to bottom, var(--red), #8e0000); padding: 30px; text-align: center; border-bottom: 5px solid var(--gold); box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        header h1 { margin: 0; font-size: 2em; letter-spacing: 2px; }
+        
+        /* القائمة */
+        .container { padding: 20px; max-width: 800px; margin: auto; }
+        .section-title { color: var(--gold); margin: 20px 0 10px; border-right: 4px solid var(--red); padding-right: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; }
+        
+        /* الأزرار المطورة */
+        .btn { background: var(--card); padding: 15px; border-radius: 15px; text-align: center; cursor: pointer; transition: 0.3s; border: 1px solid #333; }
+        .btn:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .btn img { width: 60px; height: 60px; border-radius: 50%; margin-bottom: 10px; border: 2px solid var(--red); }
+        
+        /* المشغل */
+        #player-layer { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:black; z-index:9999; }
+        .close-btn { background: var(--red); color: white; padding: 15px 30px; border-radius: 30px; margin: 20px; cursor: pointer; display: inline-block; }
     </style>
 </head>
 <body>
 
-<header>Yousef Ashraf Al-Jarf TV</header>
+<header>
+    <h1>Yousef Ashraf Al-Jarf TV</h1>
+</header>
 
-<div id="menu" class="container">
-    <div class="btn" onclick="playLive('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8', 'بي ان سبورت ماكس 1')">
-        <span>بي ان سبورت ماكس 1</span>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/BeIN_Sports_logo.png" class="icon">
+<div class="container">
+    <input type="text" id="search" placeholder="🔍 ابحث عن قنواتك..." style="width:100%; padding:15px; border-radius:20px; border:none; background:#333; color:white; margin-bottom:20px;">
+
+    <h2 class="section-title">البث المباشر الرياضي</h2>
+    <div class="grid">
+        <div class="btn" onclick="play('URL', 'بي ان سبورت 1')"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/BeIN_Sports_logo.png"><div>بي ان 1</div></div>
+        <div class="btn" onclick="play('URL', 'بي ان سبورت 2')"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/BeIN_Sports_logo.png"><div>بي ان 2</div></div>
+        <div class="btn" onclick="play('URL', 'كأس العالم')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/FIFA_World_Cup_2026_logo.svg/1200px-FIFA_World_Cup_2026_logo.svg.png"><div>كأس العالم</div></div>
     </div>
-    <div class="btn" onclick="playLive('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8', 'القنوات المصرية')">
-        <span>القنوات المصرية</span>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/1200px-Flag_of_Egypt.svg.png" class="icon">
+
+    <h2 class="section-title">المسلسلات والأفلام</h2>
+    <div class="grid">
+        <div class="btn" onclick="play('URL', 'شاهد VIP')"><img src="https://static.shahid.mbc.net/v2/assets/shahid_logo.png"><div>شاهد</div></div>
+        <div class="btn" onclick="play('URL', 'نتفليكس')"><img src="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico"><div>Netflix</div></div>
+        <div class="btn" onclick="play('URL', 'OSN')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/OSN_logo.svg/1200px-OSN_logo.svg.png"><div>OSN</div></div>
     </div>
-    <div class="btn" onclick="playLive('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8', 'باقة شاهد VIP')">
-        <span>باقة شاهد VIP</span>
-        <img src="https://static.shahid.mbc.net/v2/assets/shahid_logo.png" class="icon">
-    </div>
-    <div class="btn" onclick="playLive('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8', 'باقة Netflix')">
-        <span>باقة Netflix</span>
-        <img src="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico" class="icon">
+
+    <h2 class="section-title">قنوات الأطفال</h2>
+    <div class="grid">
+        <div class="btn" onclick="play('URL', 'سبيستون')"><img src="https://upload.wikimedia.org/wikipedia/ar/thumb/a/a2/Spacetoon_Logo.png/200px-Spacetoon_Logo.png"><div>سبيستون</div></div>
+        <div class="btn" onclick="play('URL', 'CN العربية')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cartoon_Network_Arabic_logo.svg/1200px-Cartoon_Network_Arabic_logo.svg.png"><div>CN</div></div>
     </div>
 </div>
 
-<div id="player-box">
-    <div class="btn" onclick="location.reload()">إغلاق البث والعودة</div>
-    <h2 id="ch-name" style="color:white;"></h2>
-    <video id="video" controls autoplay></video>
+<div id="player-layer">
+    <div class="close-btn" onclick="location.reload()">⬅️ العودة للقائمة</div>
+    <div style="display:flex; justify-content:center; align-items:center; height:80vh;">
+        <video id="video" controls autoplay style="width:90%; max-width:800px; border:2px solid var(--gold);"></video>
+    </div>
 </div>
 
 <script>
-    function playLive(url, name) {
-        document.getElementById('menu').style.display = 'none';
-        document.getElementById('player-box').style.display = 'block';
-        document.getElementById('ch-name').innerText = name;
+    function play(url, name) {
+        document.getElementById('player-layer').style.display = 'block';
         var video = document.getElementById('video');
         var hls = new Hls();
         hls.loadSource(url);
         hls.attachMedia(video);
         video.play();
     }
-</script>
 
-<script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = '886a99bd64c481440a2170020a04cebf7506ad97';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
+    // نظام المراسلة Smartsupp
+    var _smartsupp = _smartsupp || {};
+    _smartsupp.key = '886a99bd64c481440a2170020a04cebf7506ad97';
+    window.smartsupp||(function(d) {
+      var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+      s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+      c.type='text/javascript';c.charset='utf-8';c.async=true;
+      c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+    })(document);
 </script>
-
 </body>
 </html>
