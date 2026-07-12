@@ -1,105 +1,136 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>يوسف الجرف TV</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>يوسف الجرف TV</title>
 
-<link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+  <!-- شاشة البداية -->
+  <div id="splash">
+      <h1>YG TV</h1>
+      <p>يوسف الجرف TV</p>
+  </div>
 
-<div class="logo">
-<h1>يوسف الجرف TV</h1>
-</div>
+  <!-- الهيدر -->
+  <header>
 
-<nav>
+      <div class="logo">
+          <span>YG TV</span>
+      </div>
 
-<a href="#">الرئيسية</a>
+      <div class="search">
 
-<a href="#channels">القنوات</a>
+          <input type="text" placeholder="ابحث عن فيلم أو مسلسل...">
 
-<a href="#movies">الأفلام</a>
+      </div>
 
-<a href="#series">المسلسلات</a>
+      <div class="profile">
 
-<a href="#fav">المفضلة</a>
+          👤
 
-</nav>
+      </div>
 
-</header>
+  </header>
 
-<section class="hero">
+  <!-- البانر -->
 
-<h2>مرحبًا بك في يوسف الجرف TV</h2>
+  <section class="banner">
 
-<p>منصة بث حديثة بتصميم احترافي.</p>
+      <div class="overlay">
 
-<input type="text" placeholder="ابحث هنا...">
+          <h2>مرحبًا بك في يوسف الجرف TV</h2>
 
-</section>
+          <p>منصة مشاهدة حديثة بتصميم احترافي.</p>
 
-<section id="channels">
+          <button>ابدأ المشاهدة</button>
 
-<h2>القنوات</h2>
+      </div>
 
-<div class="cards">
+  </section>
 
-<div class="card">
-<img src="assets/logo.png">
-<h3>قناة تجريبية</h3>
-<button>تشغيل</button>
-</div>
+  <!-- الأقسام -->
 
-</div>
+  <section class="categories">
 
-</section>
+      <h2>الأقسام</h2>
 
-<section id="movies">
+      <div class="grid">
 
-<h2>الأفلام</h2>
+          <div class="item">⚽<span>رياضة</span></div>
 
-<div class="cards">
+          <div class="item">🎬<span>أفلام</span></div>
 
-<div class="card">
-<img src="assets/logo.png">
-<h3>فيلم تجريبي</h3>
-<button>مشاهدة</button>
-</div>
+          <div class="item">📺<span>مسلسلات</span></div>
 
-</div>
+          <div class="item">👶<span>أطفال</span></div>
 
-</section>
+          <div class="item">📻<span>راديو</span></div>
 
-<section id="series">
+          <div class="item">🎵<span>موسيقى</span></div>
 
-<h2>المسلسلات</h2>
+          <div class="item">📰<span>أخبار</span></div>
 
-<div class="cards">
+          <div class="item">❤️<span>المفضلة</span></div>
 
-<div class="card">
-<img src="assets/logo.png">
-<h3>مسلسل تجريبي</h3>
-<button>مشاهدة</button>
-</div>
+      </div>
 
-</div>
+  </section>
 
-</section>
+  <!-- أحدث الإضافات -->
 
-<footer>
+  <section class="latest">
 
-<p>© 2026 يوسف الجرف TV</p>
+      <div class="title">
 
-</footer>
+          <h2>أضيف حديثًا</h2>
 
-<script src="script.js"></script>
+          <a href="#">عرض الكل</a>
+
+      </div>
+
+      <div class="cards">
+
+          <div class="card"></div>
+
+          <div class="card"></div>
+
+          <div class="card"></div>
+
+          <div class="card"></div>
+
+      </div>
+
+  </section>
+
+  <!-- القائمة السفلية -->
+
+  <nav class="bottomNav">
+
+      <a href="#">🏠<span>الرئيسية</span></a>
+
+      <a href="#">🔍<span>بحث</span></a>
+
+      <a href="#">❤️<span>المفضلة</span></a>
+
+      <a href="#">📂<span>المكتبة</span></a>
+
+      <a href="#">👤<span>حسابي</span></a>
+
+  </nav>
+
+  <script src="app.js"></script>
 
 </body>
+
 </html>
