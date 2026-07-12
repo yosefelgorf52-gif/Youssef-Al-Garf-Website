@@ -1,83 +1,105 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>Yousef Ashraf Al-Jarf TV - The Legend System</title>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <style>
-        :root { --main-red: #b71c1c; --gold: #ffd700; --bg: #0d0d0d; --card: #1a1a1a; }
-        body { background: var(--bg); color: #fff; font-family: 'Tajawal', sans-serif; margin: 0; }
-        
-        /* الهيدر */
-        header { background: var(--main-red); padding: 20px; text-align: center; border-bottom: 5px solid var(--gold); }
-        .logo-text { font-size: 1.8em; font-weight: bold; color: var(--gold); }
-        
-        /* نظام القوائم */
-        .category { margin: 20px 10px; }
-        .category-title { color: var(--gold); font-size: 1.3em; margin-bottom: 10px; border-right: 5px solid var(--main-red); padding-right: 10px; }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
-        .card { background: var(--card); border: 1px solid #333; padding: 10px; border-radius: 12px; text-align: center; cursor: pointer; transition: 0.3s; }
-        .card:hover { border-color: var(--gold); background: #2a2a2a; }
-        .card img { width: 50px; height: 50px; border-radius: 8px; margin-bottom: 5px; }
-        
-        /* المشغل */
-        #player-overlay { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:black; z-index:9999; }
-        .close-player { background: var(--main-red); padding: 15px; margin: 20px; border-radius: 20px; display: inline-block; cursor: pointer; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>يوسف الجرف TV</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <header>
-    <div class="logo-text">Yousef Ashraf Al-Jarf TV</div>
+
+<div class="logo">
+<h1>يوسف الجرف TV</h1>
+</div>
+
+<nav>
+
+<a href="#">الرئيسية</a>
+
+<a href="#channels">القنوات</a>
+
+<a href="#movies">الأفلام</a>
+
+<a href="#series">المسلسلات</a>
+
+<a href="#fav">المفضلة</a>
+
+</nav>
+
 </header>
 
-<div id="main-content">
-    
-    <div class="category">
-        <div class="category-title">سيرفرات البث المباشر</div>
-        <div class="grid-container">
-            <div class="card" onclick="play('URL', 'بي ان 1')"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/BeIN_Sports_logo.png"><div>بي ان 1</div></div>
-            <div class="card" onclick="play('URL', 'بي ان 2')"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/BeIN_Sports_logo.png"><div>بي ان 2</div></div>
-            <div class="card" onclick="play('URL', 'القنوات المصرية')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/200px-Flag_of_Egypt.svg.png"><div>المصرية</div></div>
-        </div>
-    </div>
+<section class="hero">
 
-    <div class="category">
-        <div class="category-title">السينما والمسلسلات</div>
-        <div class="grid-container">
-            <div class="card" onclick="play('URL', 'شاهد')"><img src="https://static.shahid.mbc.net/v2/assets/shahid_logo.png"><div>شاهد VIP</div></div>
-            <div class="card" onclick="play('URL', 'Netflix')"><img src="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico"><div>Netflix</div></div>
-        </div>
-    </div>
+<h2>مرحبًا بك في يوسف الجرف TV</h2>
+
+<p>منصة بث حديثة بتصميم احترافي.</p>
+
+<input type="text" placeholder="ابحث هنا...">
+
+</section>
+
+<section id="channels">
+
+<h2>القنوات</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="assets/logo.png">
+<h3>قناة تجريبية</h3>
+<button>تشغيل</button>
 </div>
 
-<div id="player-overlay">
-    <div class="close-player" onclick="location.reload()">⬅️ العودة للرئيسية</div>
-    <div style="display:flex; justify-content:center; align-items:center; height:60vh;">
-        <video id="video-player" controls autoplay style="width:95%; border:2px solid var(--gold);"></video>
-    </div>
 </div>
 
-<script>
-    function play(url, name) {
-        document.getElementById('main-content').style.display = 'none';
-        document.getElementById('player-overlay').style.display = 'block';
-        var video = document.getElementById('video-player');
-        var hls = new Hls();
-        hls.loadSource(url);
-        hls.attachMedia(video);
-        video.play();
-    }
+</section>
 
-    // نظام المراسلة (Smartsupp)
-    var _smartsupp = _smartsupp || {};
-    _smartsupp.key = '886a99bd64c481440a2170020a04cebf7506ad97';
-    window.smartsupp||(function(d) {
-      var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-      s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-      c.type='text/javascript';c.charset='utf-8';c.async=true;
-      c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-    })(document);
-</script>
+<section id="movies">
+
+<h2>الأفلام</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="assets/logo.png">
+<h3>فيلم تجريبي</h3>
+<button>مشاهدة</button>
+</div>
+
+</div>
+
+</section>
+
+<section id="series">
+
+<h2>المسلسلات</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="assets/logo.png">
+<h3>مسلسل تجريبي</h3>
+<button>مشاهدة</button>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 يوسف الجرف TV</p>
+
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
