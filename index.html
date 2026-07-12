@@ -5,47 +5,56 @@
     <title>Youssef El-Gorf Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: white; margin: 0; padding: 20px; }
-        h1 { text-align: center; color: #00d4ff; margin-bottom: 40px; text-shadow: 0 0 10px #00d4ff; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; }
-        .card { background: #1a1a1a; padding: 15px; border-radius: 12px; text-align: center; text-decoration: none; color: white; transition: 0.3s; border: 1px solid #333; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-        .card:hover { background: #00d4ff; color: #000; transform: translateY(-5px); border-color: white; }
-        .card i { font-size: 24px; }
-        span { font-size: 12px; font-weight: bold; }
+        :root { --primary-red: #d32f2f; --dark-bg: #1a1a1a; --text-white: #ffffff; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--dark-bg); color: var(--text-white); margin: 0; padding: 0; }
+        
+        /* الهيدر الثابت */
+        header { background: var(--primary-red); padding: 20px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        header h1 { margin: 0; font-size: 24px; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* الشبكة الثابتة */
+        .container { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; padding: 20px; max-width: 1200px; margin: auto; }
+        
+        .card { background: #262626; padding: 15px; border-radius: 8px; text-align: center; 
+                text-decoration: none; color: #ddd; transition: 0.2s; border-bottom: 3px solid var(--primary-red); }
+        .card:hover { background: var(--primary-red); color: white; transform: translateY(-2px); }
+        .card i { font-size: 22px; margin-bottom: 8px; display: block; }
+        .card span { font-size: 11px; font-weight: bold; }
+
+        /* استجابة الموبايل */
+        @media (max-width: 600px) { .container { grid-template-columns: repeat(3, 1fr); } }
     </style>
 </head>
 <body>
 
-    <h1>Youssef El-Gorf Services</h1>
-    <div class="grid" id="services"></div>
+    <header>
+        <h1>Youssef El-Gorf Services</h1>
+    </header>
+
+    <div class="container" id="services"></div>
 
     <script>
         const services = [
-            {n: "Google", u: "https://google.com", i: "fab fa-google"}, {n: "YouTube", u: "https://youtube.com", i: "fab fa-youtube"}, {n: "Gmail", u: "https://gmail.com", i: "fas fa-envelope"}, {n: "Maps", u: "https://maps.google.com", i: "fas fa-map-marker-alt"},
-            {n: "Drive", u: "https://drive.google.com", i: "fab fa-google-drive"}, {n: "Photos", u: "https://photos.google.com", i: "fas fa-photo-video"}, {n: "Translate", u: "https://translate.google.com", i: "fas fa-language"}, {n: "Meet", u: "https://meet.google.com", i: "fas fa-video"},
-            {n: "Chrome", u: "https://google.com/chrome", i: "fab fa-chrome"}, {n: "Docs", u: "https://docs.google.com", i: "fas fa-file-alt"}, {n: "Facebook", u: "https://facebook.com", i: "fab fa-facebook"}, {n: "Messenger", u: "https://messenger.com", i: "fab fa-facebook-messenger"},
-            {n: "Instagram", u: "https://instagram.com", i: "fab fa-instagram"}, {n: "WhatsApp", u: "https://web.whatsapp.com", i: "fab fa-whatsapp"}, {n: "Threads", u: "https://threads.net", i: "fab fa-threads"}, {n: "X", u: "https://x.com", i: "fab fa-x-twitter"},
-            {n: "TikTok", u: "https://tiktok.com", i: "fab fa-tiktok"}, {n: "Snapchat", u: "https://snapchat.com", i: "fab fa-snapchat"}, {n: "Telegram", u: "https://web.telegram.org", i: "fab fa-telegram"}, {n: "Discord", u: "https://discord.com", i: "fab fa-discord"},
-            {n: "Reddit", u: "https://reddit.com", i: "fab fa-reddit"}, {n: "LinkedIn", u: "https://linkedin.com", i: "fab fa-linkedin"}, {n: "Pinterest", u: "https://pinterest.com", i: "fab fa-pinterest"}, {n: "Tumblr", u: "https://tumblr.com", i: "fab fa-tumblr"},
-            {n: "Quora", u: "https://quora.com", i: "fab fa-quora"}, {n: "Wikipedia", u: "https://wikipedia.org", i: "fab fa-wikipedia-w"}, {n: "ChatGPT", u: "https://chat.openai.com", i: "fas fa-robot"}, {n: "Claude", u: "https://claude.ai", i: "fas fa-brain"},
-            {n: "Gemini", u: "https://gemini.google.com", i: "fas fa-star"}, {n: "Copilot", u: "https://copilot.microsoft.com", i: "fas fa-comments"}, {n: "Microsoft", u: "https://microsoft.com", i: "fab fa-microsoft"}, {n: "Windows", u: "https://windows.com", i: "fab fa-windows"},
-            {n: "Office", u: "https://office.com", i: "fas fa-file-word"}, {n: "OneDrive", u: "https://onedrive.live.com", i: "fas fa-cloud"}, {n: "Outlook", u: "https://outlook.live.com", i: "fas fa-at"}, {n: "Teams", u: "https://teams.microsoft.com", i: "fas fa-users"},
-            {n: "Skype", u: "https://skype.com", i: "fab fa-skype"}, {n: "GitHub", u: "https://github.com", i: "fab fa-github"}, {n: "GitLab", u: "https://gitlab.com", i: "fab fa-gitlab"}, {n: "Bitbucket", u: "https://bitbucket.org", i: "fab fa-bitbucket"},
-            {n: "StackOver", u: "https://stackoverflow.com", i: "fab fa-stack-overflow"}, {n: "Figma", u: "https://figma.com", i: "fab fa-figma"}, {n: "Canva", u: "https://canva.com", i: "fas fa-palette"}, {n: "Photoshop", u: "https://adobe.com", i: "fas fa-pencil-ruler"},
-            {n: "Illustrator", u: "https://adobe.com", i: "fas fa-vector-square"}, {n: "AdobeExp", u: "https://adobe.com", i: "fas fa-magic"}, {n: "Notion", u: "https://notion.so", i: "fas fa-sticky-note"}, {n: "Trello", u: "https://trello.com", i: "fab fa-trello"},
-            {n: "Asana", u: "https://asana.com", i: "fas fa-tasks"}, {n: "Slack", u: "https://slack.com", i: "fab fa-slack"}, {n: "Zoom", u: "https://zoom.us", i: "fas fa-video"}, {n: "Dropbox", u: "https://dropbox.com", i: "fab fa-dropbox"},
-            {n: "Box", u: "https://box.com", i: "fas fa-box"}, {n: "Mega", u: "https://mega.io", i: "fas fa-cloud-download-alt"}, {n: "WeTransfer", u: "https://wetransfer.com", i: "fas fa-share-alt"}, {n: "Amazon", u: "https://amazon.com", i: "fab fa-amazon"},
-            {n: "eBay", u: "https://ebay.com", i: "fab fa-ebay"}, {n: "AliExpress", u: "https://aliexpress.com", i: "fab fa-shopping-bag"}, {n: "Temu", u: "https://temu.com", i: "fas fa-tag"}, {n: "Shein", u: "https://shein.com", i: "fas fa-tshirt"},
-            {n: "Etsy", u: "https://etsy.com", i: "fab fa-etsy"}, {n: "Shopify", u: "https://shopify.com", i: "fab fa-shopify"}, {n: "PayPal", u: "https://paypal.com", i: "fab fa-paypal"}, {n: "Stripe", u: "https://stripe.com", i: "fab fa-stripe"},
-            {n: "Wise", u: "https://wise.com", i: "fas fa-wallet"}, {n: "Revolut", u: "https://revolut.com", i: "fas fa-credit-card"}, {n: "Binance", u: "https://binance.com", i: "fas fa-bitcoin"}, {n: "Coinbase", u: "https://coinbase.com", i: "fas fa-coins"},
-            {n: "Netflix", u: "https://netflix.com", i: "fab fa-netflix"}, {n: "Disney+", u: "https://disneyplus.com", i: "fas fa-tv"}, {n: "PrimeVideo", u: "https://primevideo.com", i: "fas fa-film"}, {n: "Spotify", u: "https://spotify.com", i: "fab fa-spotify"},
-            {n: "AppleMusic", u: "https://music.apple.com", i: "fab fa-apple"}, {n: "SoundCloud", u: "https://soundcloud.com", i: "fab fa-soundcloud"}, {n: "Deezer", u: "https://deezer.com", i: "fab fa-deezer"}, {n: "Twitch", u: "https://twitch.tv", i: "fab fa-twitch"},
-            {n: "Steam", u: "https://store.steampowered.com", i: "fab fa-steam"}, {n: "EpicGames", u: "https://epicgames.com", i: "fas fa-gamepad"}, {n: "PSN", u: "https://playstation.com", i: "fab fa-playstation"}, {n: "Xbox", u: "https://xbox.com", i: "fab fa-xbox"},
-            {n: "Roblox", u: "https://roblox.com", i: "fas fa-cube"}, {n: "Minecraft", u: "https://minecraft.net", i: "fas fa-dice-d6"}, {n: "Fortnite", u: "https://fortnite.com", i: "fas fa-fire"}, {n: "Uber", u: "https://uber.com", i: "fas fa-car"},
-            {n: "UberEats", u: "https://ubereats.com", i: "fas fa-utensils"}, {n: "Airbnb", u: "https://airbnb.com", i: "fab fa-airbnb"}, {n: "Booking", u: "https://booking.com", i: "fas fa-hotel"}, {n: "Expedia", u: "https://expedia.com", i: "fas fa-plane"},
-            {n: "Agoda", u: "https://agoda.com", i: "fas fa-bed"}, {n: "Duolingo", u: "https://duolingo.com", i: "fas fa-language"}, {n: "KhanAcad", u: "https://khanacademy.org", i: "fas fa-graduation-cap"}, {n: "Coursera", u: "https://coursera.org", i: "fas fa-certificate"},
-            {n: "Udemy", u: "https://udemy.com", i: "fas fa-book-reader"}, {n: "edX", u: "https://edx.org", i: "fas fa-university"}, {n: "IMDb", u: "https://imdb.com", i: "fab fa-imdb"}, {n: "Yahoo", u: "https://yahoo.com", i: "fab fa-yahoo"},
-            {n: "Bing", u: "https://bing.com", i: "fab fa-microsoft"}, {n: "DuckDuckGo", u: "https://duckduckgo.com", i: "fas fa-search"}, {n: "Opera", u: "https://opera.com", i: "fab fa-opera"}, {n: "Firefox", u: "https://mozilla.org", i: "fab fa-firefox"}
+            {n: "Google", u: "https://google.com", i: "fab fa-google"}, {n: "YouTube", u: "https://youtube.com", i: "fab fa-youtube"}, {n: "Gmail", u: "https://gmail.com", i: "fas fa-envelope"}, {n: "Maps", u: "https://maps.google.com", i: "fas fa-map-marker-alt"}, {n: "Drive", u: "https://drive.google.com", i: "fab fa-google-drive"},
+            {n: "Photos", u: "https://photos.google.com", i: "fas fa-photo-video"}, {n: "Translate", u: "https://translate.google.com", i: "fas fa-language"}, {n: "Meet", u: "https://meet.google.com", i: "fas fa-video"}, {n: "Chrome", u: "https://google.com/chrome", i: "fab fa-chrome"}, {n: "Docs", u: "https://docs.google.com", i: "fas fa-file-alt"},
+            {n: "Facebook", u: "https://facebook.com", i: "fab fa-facebook"}, {n: "Messenger", u: "https://messenger.com", i: "fab fa-facebook-messenger"}, {n: "Instagram", u: "https://instagram.com", i: "fab fa-instagram"}, {n: "WhatsApp", u: "https://web.whatsapp.com", i: "fab fa-whatsapp"}, {n: "Threads", u: "https://threads.net", i: "fab fa-threads"},
+            {n: "X", u: "https://x.com", i: "fab fa-x-twitter"}, {n: "TikTok", u: "https://tiktok.com", i: "fab fa-tiktok"}, {n: "Snapchat", u: "https://snapchat.com", i: "fab fa-snapchat"}, {n: "Telegram", u: "https://web.telegram.org", i: "fab fa-telegram"}, {n: "Discord", u: "https://discord.com", i: "fab fa-discord"},
+            {n: "Reddit", u: "https://reddit.com", i: "fab fa-reddit"}, {n: "LinkedIn", u: "https://linkedin.com", i: "fab fa-linkedin"}, {n: "Pinterest", u: "https://pinterest.com", i: "fab fa-pinterest"}, {n: "Tumblr", u: "https://tumblr.com", i: "fab fa-tumblr"}, {n: "Quora", u: "https://quora.com", i: "fab fa-quora"},
+            {n: "Wikipedia", u: "https://wikipedia.org", i: "fab fa-wikipedia-w"}, {n: "ChatGPT", u: "https://chat.openai.com", i: "fas fa-robot"}, {n: "Claude", u: "https://claude.ai", i: "fas fa-brain"}, {n: "Gemini", u: "https://gemini.google.com", i: "fas fa-star"}, {n: "Copilot", u: "https://copilot.microsoft.com", i: "fas fa-comments"},
+            {n: "Microsoft", u: "https://microsoft.com", i: "fab fa-microsoft"}, {n: "Windows", u: "https://windows.com", i: "fab fa-windows"}, {n: "Office", u: "https://office.com", i: "fas fa-file-word"}, {n: "OneDrive", u: "https://onedrive.live.com", i: "fas fa-cloud"}, {n: "Outlook", u: "https://outlook.live.com", i: "fas fa-at"},
+            {n: "Teams", u: "https://teams.microsoft.com", i: "fas fa-users"}, {n: "Skype", u: "https://skype.com", i: "fab fa-skype"}, {n: "GitHub", u: "https://github.com", i: "fab fa-github"}, {n: "GitLab", u: "https://gitlab.com", i: "fab fa-gitlab"}, {n: "Bitbucket", u: "https://bitbucket.org", i: "fab fa-bitbucket"},
+            {n: "StackOver", u: "https://stackoverflow.com", i: "fab fa-stack-overflow"}, {n: "Figma", u: "https://figma.com", i: "fab fa-figma"}, {n: "Canva", u: "https://canva.com", i: "fas fa-palette"}, {n: "Photoshop", u: "https://adobe.com", i: "fas fa-pencil-ruler"}, {n: "Illustrator", u: "https://adobe.com", i: "fas fa-vector-square"},
+            {n: "AdobeExp", u: "https://adobe.com", i: "fas fa-magic"}, {n: "Notion", u: "https://notion.so", i: "fas fa-sticky-note"}, {n: "Trello", u: "https://trello.com", i: "fab fa-trello"}, {n: "Asana", u: "https://asana.com", i: "fas fa-tasks"}, {n: "Slack", u: "https://slack.com", i: "fab fa-slack"},
+            {n: "Zoom", u: "https://zoom.us", i: "fas fa-video"}, {n: "Dropbox", u: "https://dropbox.com", i: "fab fa-dropbox"}, {n: "Box", u: "https://box.com", i: "fas fa-box"}, {n: "Mega", u: "https://mega.io", i: "fas fa-cloud-download-alt"}, {n: "WeTransfer", u: "https://wetransfer.com", i: "fas fa-share-alt"},
+            {n: "Amazon", u: "https://amazon.com", i: "fab fa-amazon"}, {n: "eBay", u: "https://ebay.com", i: "fab fa-ebay"}, {n: "AliExpress", u: "https://aliexpress.com", i: "fab fa-shopping-bag"}, {n: "Temu", u: "https://temu.com", i: "fas fa-tag"}, {n: "Shein", u: "https://shein.com", i: "fas fa-tshirt"},
+            {n: "Etsy", u: "https://etsy.com", i: "fab fa-etsy"}, {n: "Shopify", u: "https://shopify.com", i: "fab fa-shopify"}, {n: "PayPal", u: "https://paypal.com", i: "fab fa-paypal"}, {n: "Stripe", u: "https://stripe.com", i: "fab fa-stripe"}, {n: "Wise", u: "https://wise.com", i: "fas fa-wallet"},
+            {n: "Revolut", u: "https://revolut.com", i: "fas fa-credit-card"}, {n: "Binance", u: "https://binance.com", i: "fas fa-bitcoin"}, {n: "Coinbase", u: "https://coinbase.com", i: "fas fa-coins"}, {n: "Netflix", u: "https://netflix.com", i: "fab fa-netflix"}, {n: "Disney+", u: "https://disneyplus.com", i: "fas fa-tv"},
+            {n: "PrimeVideo", u: "https://primevideo.com", i: "fas fa-film"}, {n: "Spotify", u: "https://spotify.com", i: "fab fa-spotify"}, {n: "AppleMusic", u: "https://music.apple.com", i: "fab fa-apple"}, {n: "SoundCloud", u: "https://soundcloud.com", i: "fab fa-soundcloud"}, {n: "Deezer", u: "https://deezer.com", i: "fab fa-deezer"},
+            {n: "Twitch", u: "https://twitch.tv", i: "fab fa-twitch"}, {n: "Steam", u: "https://store.steampowered.com", i: "fab fa-steam"}, {n: "EpicGames", u: "https://epicgames.com", i: "fas fa-gamepad"}, {n: "PSN", u: "https://playstation.com", i: "fab fa-playstation"}, {n: "Xbox", u: "https://xbox.com", i: "fab fa-xbox"},
+            {n: "Roblox", u: "https://roblox.com", i: "fas fa-cube"}, {n: "Minecraft", u: "https://minecraft.net", i: "fas fa-dice-d6"}, {n: "Fortnite", u: "https://fortnite.com", i: "fas fa-fire"}, {n: "Uber", u: "https://uber.com", i: "fas fa-car"}, {n: "UberEats", u: "https://ubereats.com", i: "fas fa-utensils"},
+            {n: "Airbnb", u: "https://airbnb.com", i: "fab fa-airbnb"}, {n: "Booking", u: "https://booking.com", i: "fas fa-hotel"}, {n: "Expedia", u: "https://expedia.com", i: "fas fa-plane"}, {n: "Agoda", u: "https://agoda.com", i: "fas fa-bed"}, {n: "Duolingo", u: "https://duolingo.com", i: "fas fa-language"},
+            {n: "KhanAcad", u: "https://khanacademy.org", i: "fas fa-graduation-cap"}, {n: "Coursera", u: "https://coursera.org", i: "fas fa-certificate"}, {n: "Udemy", u: "https://udemy.com", i: "fas fa-book-reader"}, {n: "edX", u: "https://edx.org", i: "fas fa-university"}, {n: "IMDb", u: "https://imdb.com", i: "fab fa-imdb"},
+            {n: "Yahoo", u: "https://yahoo.com", i: "fab fa-yahoo"}, {n: "Bing", u: "https://bing.com", i: "fab fa-microsoft"}, {n: "DuckDuckGo", u: "https://duckduckgo.com", i: "fas fa-search"}, {n: "Opera", u: "https://opera.com", i: "fab fa-opera"}, {n: "Firefox", u: "https://mozilla.org", i: "fab fa-firefox"}
         ];
 
         const container = document.getElementById('services');
@@ -59,4 +68,3 @@
     </script>
 </body>
 </html>
-
