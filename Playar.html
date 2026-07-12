@@ -1,86 +1,132 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+// ==============================
+// GORF CHAT
+// app.js
+// ==============================
 
-<head>
+const input = document.querySelector(".input-box input");
+const sendBtn = document.getElementById("send");
+const messages = document.querySelector(".messages");
 
-<meta charset="UTF-8">
+// إنشاء رسالة
+function addMessage(text, sender) {
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    const message = document.createElement("div");
 
-<title>تفاصيل المحتوى | يوسف الجرف TV</title>
+    message.className =
+        sender === "user"
+            ? "user-message"
+            : "ai-message";
 
-<link rel="stylesheet" href="style.css">
+    if (sender === "ai") {
 
-</head>
+        message.innerHTML = `
+            <div class="message-title">
+                GORF CHAT
+            </div>
 
-<body>
+            <div class="message-text">
+                ${text}
+            </div>
 
-<header>
+            <div class="message-actions">
+                <button>📋</button>
+                <button>🔄</button>
+                <button>👍</button>
+                <button>👎</button>
+            </div>
+        `;
 
-<div class="logo">
+    } else {
 
-YG TV
+        message.innerHTML = `
+            <div class="message-text">
+                ${text}
+            </div>
+        `;
 
-</div>
+    }
 
-</header>
+    messages.appendChild(message);
 
-<section class="details">
+    messages.scrollTop = messages.scrollHeight;
+}
 
-<div class="cover">
+// مؤشر الكتابة
+function showTyping() {
 
-<img src="assets/posters/demo.jpg" alt="Poster">
+    const typing = document.createElement("div");
 
-</div>
+    typing.className = "typing";
 
-<div class="info">
+    typing.id = "typing";
 
-<h1>اسم المحتوى</h1>
+    typing.innerHTML = `
+        <span></span>
+        <span></span>
+        <span></span>
+    `;
 
-<p class="type">🎬 فيلم • أكشن • 2026</p>
+    messages.appendChild(typing);
 
-<p class="desc">
+    messages.scrollTop = messages.scrollHeight;
 
-اكتب هنا وصف المحتوى.
+}
 
-</p>
+// إزالة مؤشر الكتابة
+function removeTyping() {
 
-<div class="buttons">
+    const typing = document.getElementById("typing");
 
-<button class="play">
-▶️ تشغيل
-</button>
+    if (typing) typing.remove();
 
-<button class="fav">
-❤️ إضافة للمفضلة
-</button>
+}
 
-</div>
+// إرسال الرسالة
+function sendMessage() {
 
-</div>
+    const text = input.value.trim();
 
-</section>
+    if (text === "") return;
 
-<section class="suggestions">
+    addMessage(text, "user");
 
-<h2>قد يعجبك أيضًا</h2>
+    input.value = "";
 
-<div class="cards">
+    showTyping();
 
-<div class="card"></div>
+    setTimeout(() => {
 
-<div class="card"></div>
+        removeTyping();
 
-<div class="card"></div>
+        addMessage(
+            "أنا GORF CHAT. حالياً دي نسخة تجريبية، ولسه هنربطني بمحرك ذكاء اصطناعي حقيقي.",
+            "ai"
+        );
 
-<div class="card"></div>
+    }, 1200);
 
-</div>
+}
 
-</section>
+// زر الإرسال
+sendBtn.addEventListener("click", sendMessage);
 
-<script src="app.js"></script>
+// زر Enter
+input.addEventListener("keydown", function(e){
 
-</body>
+    if(e.key === "Enter"){
 
-</html>
+        sendMessage();
+
+    }
+
+});
+
+// رسالة ترحيب
+window.onload = function(){
+
+    addMessage(
+        "👋 أهلاً بك في GORF CHAT، أنا جاهز لمساعدتك.",
+        "ai"
+    );
+
+}
