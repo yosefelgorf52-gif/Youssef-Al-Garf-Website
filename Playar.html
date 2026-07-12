@@ -1,49 +1,15 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>يوسف الجرف TV - المشغل</title>
 
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body{
-background:#000;
-margin:0;
-font-family:Cairo,sans-serif;
-color:#fff;
-}
+<title>تفاصيل المحتوى | يوسف الجرف TV</title>
 
-header{
-padding:15px;
-background:#111;
-text-align:center;
-font-size:25px;
-color:red;
-}
-
-video{
-width:100%;
-height:85vh;
-background:#000;
-}
-
-.back{
-padding:15px;
-text-align:center;
-}
-
-button{
-padding:12px 30px;
-background:red;
-color:white;
-border:none;
-border-radius:8px;
-font-size:18px;
-cursor:pointer;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -51,25 +17,69 @@ cursor:pointer;
 
 <header>
 
-يوسف الجرف TV
+<div class="logo">
+
+YG TV
+
+</div>
 
 </header>
 
-<video controls>
+<section class="details">
 
-<source src="sample.mp4" type="video/mp4">
+<div class="cover">
 
-</video>
+<img src="assets/posters/demo.jpg" alt="Poster">
 
-<div class="back">
+</div>
 
-<button onclick="history.back()">
+<div class="info">
 
-رجوع
+<h1>اسم المحتوى</h1>
 
+<p class="type">🎬 فيلم • أكشن • 2026</p>
+
+<p class="desc">
+
+اكتب هنا وصف المحتوى.
+
+</p>
+
+<div class="buttons">
+
+<button class="play">
+▶️ تشغيل
+</button>
+
+<button class="fav">
+❤️ إضافة للمفضلة
 </button>
 
 </div>
+
+</div>
+
+</section>
+
+<section class="suggestions">
+
+<h2>قد يعجبك أيضًا</h2>
+
+<div class="cards">
+
+<div class="card"></div>
+
+<div class="card"></div>
+
+<div class="card"></div>
+
+<div class="card"></div>
+
+</div>
+
+</section>
+
+<script src="app.js"></script>
 
 </body>
 
