@@ -2,66 +2,53 @@
 <html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>يوسف الجرف تي في | Yousef Al-Jarf TV</title>
+    <title>يوسف الجرف TV | تطبيق متكامل</title>
+    <!-- مكتبة مشغل الفيديو -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
-        :root { --main-color: #1a237e; --accent-color: #ffc107; --bg-color: #f4f7f6; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg-color); margin: 0; padding-bottom: 80px; }
-        
-        /* الهيدر الأنيق */
-        header { background: linear-gradient(135deg, var(--main-color), #3949ab); color: white; padding: 25px; text-align: center; font-size: 1.6em; font-weight: bold; border-bottom: 5px solid var(--accent-color); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        
-        .container { padding: 20px; max-width: 600px; margin: auto; }
-        
-        /* الأزرار العصرية */
-        .btn { display: flex; align-items: center; justify-content: space-between; background: white; padding: 18px 25px; margin-bottom: 15px; border-radius: 20px; border-right: 8px solid var(--accent-color); color: var(--main-color); font-weight: bold; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
-        .btn:hover { background-color: #e8eaf6; transform: translateX(-5px); }
-        .icon { width: 45px; height: 45px; border-radius: 12px; background: #e8eaf6; border: 2px solid var(--accent-color); }
-        
-        .page { display: none; }
-        .active { display: block; }
+        :root { --blue: #1a237e; --gold: #ffc107; }
+        body { background: #121212; color: white; font-family: sans-serif; margin: 0; }
+        header { background: var(--blue); padding: 20px; text-align: center; border-bottom: 5px solid var(--gold); font-size: 1.5em; font-weight: bold; }
+        .container { padding: 20px; }
+        .btn { background: #263238; padding: 15px; margin-bottom: 10px; border-radius: 50px; border-right: 5px solid var(--gold); cursor: pointer; text-align: center; font-weight: bold; transition: 0.3s; }
+        .btn:hover { background: #37474f; }
+        #player-area { display: none; text-align: center; }
+        video { width: 100%; max-width: 600px; border-radius: 10px; background: black; }
     </style>
 </head>
 <body>
 
-<header id="header-text">يوسف الجرف تي في</header>
+<header>يوسف الجرف TV</header>
 
-<!-- 1. الصفحة الرئيسية -->
-<div id="home-page" class="page active container">
-    <div class="btn" onclick="navigate('live-page', 'سيرفر البث المباشر')"><span>سيرفر البث المباشر</span><div class="icon"></div></div>
-    <div class="btn"><span>مباريات اليوم</span><div class="icon"></div></div>
-    <div class="btn"><span>مسلسلات رمضان</span><div class="icon"></div></div>
-    <div class="btn"><span>أفلام عالمية</span><div class="icon"></div></div>
-    <div class="btn"><span>المصارعة الحرة</span><div class="icon"></div></div>
-    <div class="btn"><span>باقة Netflix</span><div class="icon"></div></div>
-    <div class="btn"><span>قنوات الأطفال</span><div class="icon"></div></div>
+<!-- القائمة الرئيسية -->
+<div id="menu" class="container">
+    <div class="btn" onclick="playVideo('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8', 'قناة تجريبية 1')">قناة تجريبية 1 (شغالة)</div>
+    <div class="btn" onclick="playVideo('https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8', 'قناة تجريبية 2')">قناة تجريبية 2 (شغالة)</div>
+    <!-- هنا يمكنك إضافة مئات القنوات بنفس الطريقة -->
 </div>
 
-<!-- 2. صفحة البث المباشر -->
-<div id="live-page" class="page container">
-    <div class="btn" style="background:#e8eaf6" onclick="navigate('home-page', 'يوسف الجرف تي في')"><span>⬅️ العودة للرئيسية</span></div>
-    <div class="btn"><span>بي ان سبورت ماكس 1</span><div class="icon"></div></div>
-    <div class="btn"><span>بي ان سبورت ماكس 2</span><div class="icon"></div></div>
-    <div class="btn"><span>بي ان سبورت ماكس 3</span><div class="icon"></div></div>
-    <div class="btn"><span>القنوات المصرية</span><div class="icon"></div></div>
-    <div class="btn"><span>القنوات المغربية</span><div class="icon"></div></div>
-    <div class="btn"><span>القنوات الجزائرية</span><div class="icon"></div></div>
-    <div class="btn"><span>باقة شاهد VIP</span><div class="icon"></div></div>
-    <div class="btn"><span>OSN سينما</span><div class="icon"></div></div>
-    <div class="btn"><span>قنوات الفجر</span><div class="icon"></div></div>
-    <div class="btn"><span>كأس العالم 2026</span><div class="icon"></div></div>
-    <div class="btn"><span>المسلسلات التركية</span><div class="icon"></div></div>
+<!-- منطقة المشغل -->
+<div id="player-area" class="container">
+    <div class="btn" style="background:#b71c1c;" onclick="location.reload()">إغلاق الفيديو والعودة</div>
+    <h2 id="channel-title"></h2>
+    <video id="video" controls autoplay></video>
 </div>
 
 <script>
-    function navigate(pageId, title) {
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        document.getElementById(pageId).classList.add('active');
-        document.getElementById('header-text').innerText = title;
+    function playVideo(url, title) {
+        document.getElementById('menu').style.display = 'none';
+        document.getElementById('player-area').style.display = 'block';
+        document.getElementById('channel-title').innerText = title;
+        
+        var video = document.getElementById('video');
+        var hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(video);
+        video.play();
     }
 </script>
 
-<!-- كود Smartsupp للمراسلة المدمج -->
+<!-- كود المراسلة الخاص بك -->
 <script type="text/javascript">
 var _smartsupp = _smartsupp || {};
 _smartsupp.key = '886a99bd64c481440a2170020a04cebf7506ad97';
