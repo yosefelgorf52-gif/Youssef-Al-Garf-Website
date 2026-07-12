@@ -2,15 +2,56 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سيرفر البث الرئيسي</title>
     <style>
-        body { background-color: #b71c1c; font-family: sans-serif; margin: 0; padding: 0; }
-        header { background-color: #b71c1c; padding: 15px; text-align: center; color: white; border-bottom: 2px solid #a31a1a; position: sticky; top: 0; }
-        .container { padding: 10px; }
-        .btn { display: flex; align-items: center; justify-content: space-between; background: #fff; 
-               color: #b71c1c; padding: 15px; margin-bottom: 8px; border-radius: 8px; 
-               text-decoration: none; font-weight: bold; border: 2px solid #b71c1c; }
-        .back-btn { background: #a31a1a; color: white; text-align: center; padding: 10px; margin-bottom: 20px; border-radius: 8px; text-decoration: none; display: block; }
+        body { 
+            background-color: #b71c1c; 
+            font-family: sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column;
+        }
+        header { 
+            background-color: #b71c1c; 
+            padding: 15px; 
+            text-align: center; 
+            color: white; 
+            border-bottom: 2px solid #a31a1a; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+        }
+        .container { 
+            padding: 10px; 
+            flex: 1; 
+            overflow-y: auto; /* ده اللي بيخلي الصفحة ثابتة والمحتوى بس هو اللي بيتحرك */
+        }
+        .btn { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            background: #fff; 
+            color: #b71c1c; 
+            padding: 15px; 
+            margin-bottom: 8px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border: 2px solid #b71c1c; 
+        }
+        .back-btn { 
+            background: #a31a1a; 
+            color: white; 
+            text-align: center; 
+            padding: 10px; 
+            margin-bottom: 20px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            display: block; 
+        }
     </style>
 </head>
 <body>
@@ -20,6 +61,7 @@
 <div class="container">
     <a href="index.html" class="back-btn">← العودة للرئيسية</a>
 
+    <!-- قائمة القنوات الثابتة -->
     <a href="ch1.html" class="btn">قنوات الأخبار 📰</a>
     <a href="ch2.html" class="btn">قنوات الرياضة المصرية ⚽</a>
     <a href="ch3.html" class="btn">بي ان سبورت ماكس HD H265 📺</a>
@@ -79,5 +121,4 @@
 </div>
 
 </body>
-      </html>
-
+</html>
