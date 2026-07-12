@@ -2,79 +2,74 @@
 <html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>Yousef Ashraf Al-Jarf TV - النظام المتكامل</title>
+    <title>Yousef Ashraf Al-Jarf TV - The Legend System</title>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
-        :root { --red: #b71c1c; --gold: #ffd700; --bg: #121212; --card: #1e1e1e; --text: #ffffff; }
-        body { background: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; margin: 0; }
+        :root { --main-red: #b71c1c; --gold: #ffd700; --bg: #0d0d0d; --card: #1a1a1a; }
+        body { background: var(--bg); color: #fff; font-family: 'Tajawal', sans-serif; margin: 0; }
         
-        /* الهيدر الاحترافي */
-        header { background: linear-gradient(to bottom, var(--red), #8e0000); padding: 30px; text-align: center; border-bottom: 5px solid var(--gold); box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        header h1 { margin: 0; font-size: 2em; letter-spacing: 2px; }
+        /* الهيدر */
+        header { background: var(--main-red); padding: 20px; text-align: center; border-bottom: 5px solid var(--gold); }
+        .logo-text { font-size: 1.8em; font-weight: bold; color: var(--gold); }
         
-        /* القائمة */
-        .container { padding: 20px; max-width: 800px; margin: auto; }
-        .section-title { color: var(--gold); margin: 20px 0 10px; border-right: 4px solid var(--red); padding-right: 10px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; }
-        
-        /* الأزرار المطورة */
-        .btn { background: var(--card); padding: 15px; border-radius: 15px; text-align: center; cursor: pointer; transition: 0.3s; border: 1px solid #333; }
-        .btn:hover { border-color: var(--gold); transform: translateY(-5px); }
-        .btn img { width: 60px; height: 60px; border-radius: 50%; margin-bottom: 10px; border: 2px solid var(--red); }
+        /* نظام القوائم */
+        .category { margin: 20px 10px; }
+        .category-title { color: var(--gold); font-size: 1.3em; margin-bottom: 10px; border-right: 5px solid var(--main-red); padding-right: 10px; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+        .card { background: var(--card); border: 1px solid #333; padding: 10px; border-radius: 12px; text-align: center; cursor: pointer; transition: 0.3s; }
+        .card:hover { border-color: var(--gold); background: #2a2a2a; }
+        .card img { width: 50px; height: 50px; border-radius: 8px; margin-bottom: 5px; }
         
         /* المشغل */
-        #player-layer { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:black; z-index:9999; }
-        .close-btn { background: var(--red); color: white; padding: 15px 30px; border-radius: 30px; margin: 20px; cursor: pointer; display: inline-block; }
+        #player-overlay { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:black; z-index:9999; }
+        .close-player { background: var(--main-red); padding: 15px; margin: 20px; border-radius: 20px; display: inline-block; cursor: pointer; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Yousef Ashraf Al-Jarf TV</h1>
+    <div class="logo-text">Yousef Ashraf Al-Jarf TV</div>
 </header>
 
-<div class="container">
-    <input type="text" id="search" placeholder="🔍 ابحث عن قنواتك..." style="width:100%; padding:15px; border-radius:20px; border:none; background:#333; color:white; margin-bottom:20px;">
-
-    <h2 class="section-title">البث المباشر الرياضي</h2>
-    <div class="grid">
-        <div class="btn" onclick="play('URL', 'بي ان سبورت 1')"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/BeIN_Sports_logo.png"><div>بي ان 1</div></div>
-        <div class="btn" onclick="play('URL', 'بي ان سبورت 2')"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/BeIN_Sports_logo.png"><div>بي ان 2</div></div>
-        <div class="btn" onclick="play('URL', 'كأس العالم')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/FIFA_World_Cup_2026_logo.svg/1200px-FIFA_World_Cup_2026_logo.svg.png"><div>كأس العالم</div></div>
+<div id="main-content">
+    
+    <div class="category">
+        <div class="category-title">سيرفرات البث المباشر</div>
+        <div class="grid-container">
+            <div class="card" onclick="play('URL', 'بي ان 1')"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/BeIN_Sports_logo.png"><div>بي ان 1</div></div>
+            <div class="card" onclick="play('URL', 'بي ان 2')"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/BeIN_Sports_logo.png"><div>بي ان 2</div></div>
+            <div class="card" onclick="play('URL', 'القنوات المصرية')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/200px-Flag_of_Egypt.svg.png"><div>المصرية</div></div>
+        </div>
     </div>
 
-    <h2 class="section-title">المسلسلات والأفلام</h2>
-    <div class="grid">
-        <div class="btn" onclick="play('URL', 'شاهد VIP')"><img src="https://static.shahid.mbc.net/v2/assets/shahid_logo.png"><div>شاهد</div></div>
-        <div class="btn" onclick="play('URL', 'نتفليكس')"><img src="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico"><div>Netflix</div></div>
-        <div class="btn" onclick="play('URL', 'OSN')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/OSN_logo.svg/1200px-OSN_logo.svg.png"><div>OSN</div></div>
-    </div>
-
-    <h2 class="section-title">قنوات الأطفال</h2>
-    <div class="grid">
-        <div class="btn" onclick="play('URL', 'سبيستون')"><img src="https://upload.wikimedia.org/wikipedia/ar/thumb/a/a2/Spacetoon_Logo.png/200px-Spacetoon_Logo.png"><div>سبيستون</div></div>
-        <div class="btn" onclick="play('URL', 'CN العربية')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cartoon_Network_Arabic_logo.svg/1200px-Cartoon_Network_Arabic_logo.svg.png"><div>CN</div></div>
+    <div class="category">
+        <div class="category-title">السينما والمسلسلات</div>
+        <div class="grid-container">
+            <div class="card" onclick="play('URL', 'شاهد')"><img src="https://static.shahid.mbc.net/v2/assets/shahid_logo.png"><div>شاهد VIP</div></div>
+            <div class="card" onclick="play('URL', 'Netflix')"><img src="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico"><div>Netflix</div></div>
+        </div>
     </div>
 </div>
 
-<div id="player-layer">
-    <div class="close-btn" onclick="location.reload()">⬅️ العودة للقائمة</div>
-    <div style="display:flex; justify-content:center; align-items:center; height:80vh;">
-        <video id="video" controls autoplay style="width:90%; max-width:800px; border:2px solid var(--gold);"></video>
+<div id="player-overlay">
+    <div class="close-player" onclick="location.reload()">⬅️ العودة للرئيسية</div>
+    <div style="display:flex; justify-content:center; align-items:center; height:60vh;">
+        <video id="video-player" controls autoplay style="width:95%; border:2px solid var(--gold);"></video>
     </div>
 </div>
 
 <script>
     function play(url, name) {
-        document.getElementById('player-layer').style.display = 'block';
-        var video = document.getElementById('video');
+        document.getElementById('main-content').style.display = 'none';
+        document.getElementById('player-overlay').style.display = 'block';
+        var video = document.getElementById('video-player');
         var hls = new Hls();
         hls.loadSource(url);
         hls.attachMedia(video);
         video.play();
     }
 
-    // نظام المراسلة Smartsupp
+    // نظام المراسلة (Smartsupp)
     var _smartsupp = _smartsupp || {};
     _smartsupp.key = '886a99bd64c481440a2170020a04cebf7506ad97';
     window.smartsupp||(function(d) {
