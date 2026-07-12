@@ -1,395 +1,181 @@
 /* ===========================
-   يوسف الجرف TV
-   style.css
-=========================== */
+   GORF CHAT - STYLE.CSS
+   =========================== */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Cairo',sans-serif;
-}
-
-:root{
-
---bg:#0b0b0b;
---card:#181818;
---red:#E50914;
---text:#ffffff;
---gray:#9b9b9b;
-
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
 }
 
 body{
-
-background:var(--bg);
-color:var(--text);
-padding-bottom:90px;
-   .details{
-
-display:flex;
-
-flex-wrap:wrap;
-
-gap:30px;
-
-padding:100px 20px 30px;
-
+    background:#0B1020;
+    color:#ffffff;
+    height:100vh;
+    overflow:hidden;
 }
 
-.cover img{
-
-width:260px;
-
-border-radius:20px;
-
+.app{
+    display:flex;
+    width:100%;
+    height:100vh;
 }
 
-.info{
+/* ===========================
+   Sidebar
+   =========================== */
 
-flex:1;
-
-}
-
-.info h1{
-
-font-size:36px;
-
-margin-bottom:15px;
-
-}
-
-.type{
-
-color:#bbb;
-
-margin-bottom:20px;
-
-}
-
-.desc{
-
-line-height:1.8;
-
-margin-bottom:25px;
-
-}
-
-.buttons{
-
-display:flex;
-
-gap:15px;
-
-flex-wrap:wrap;
-
-}
-
-.play{
-
-background:#E50914;
-
-color:white;
-
-border:none;
-
-padding:15px 30px;
-
-border-radius:30px;
-
-font-size:18px;
-
-cursor:pointer;
-
-}
-
-.fav{
-
-background:#222;
-
-color:white;
-
-border:none;
-
-padding:15px 30px;
-
-border-radius:30px;
-
-cursor:pointer;
-
-}
-
-}
-
-/* Header */
-
-header{
-
-height:70px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:15px 20px;
-position:fixed;
-top:0;
-left:0;
-right:0;
-background:rgba(10,10,10,.95);
-backdrop-filter:blur(12px);
-z-index:999;
-
+.sidebar{
+    width:280px;
+    background:#131A2D;
+    border-right:1px solid #232B45;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:25px;
 }
 
 .logo{
-
-font-size:24px;
-font-weight:bold;
-color:var(--red);
-
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
-.search{
-
-flex:1;
-margin:0 20px;
-
+.logo-circle{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#4F8CFF,#1D4ED8);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    font-weight:700;
 }
 
-.search input{
-
-width:100%;
-height:45px;
-border:none;
-outline:none;
-border-radius:25px;
-padding:0 20px;
-background:#222;
-color:white;
-font-size:15px;
-
+.logo h2{
+    font-size:20px;
+    font-weight:700;
 }
 
-.profile{
-
-font-size:28px;
-
+.new-chat{
+    margin-top:30px;
+    height:48px;
+    border:none;
+    border-radius:14px;
+    background:#4F8CFF;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
 }
 
-/* Banner */
-
-.banner{
-
-margin-top:90px;
-height:230px;
-margin-left:15px;
-margin-right:15px;
-border-radius:25px;
-background:linear-gradient(135deg,#e50914,#420000);
-display:flex;
-align-items:flex-end;
-overflow:hidden;
-
+.new-chat:hover{
+    background:#3779ff;
 }
 
-.overlay{
-
-padding:25px;
-
+.history{
+    flex:1;
+    margin-top:30px;
 }
 
-.overlay h2{
-
-font-size:30px;
-margin-bottom:10px;
-
+.bottom{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
 }
 
-.overlay p{
-
-color:#ddd;
-margin-bottom:15px;
-
+.bottom button{
+    height:45px;
+    background:#1A2238;
+    border:none;
+    color:white;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.overlay button{
-
-border:none;
-padding:12px 28px;
-background:white;
-color:#E50914;
-border-radius:30px;
-font-weight:bold;
-cursor:pointer;
-
+.bottom button:hover{
+    background:#24314f;
 }
 
-/* Categories */
+/* ===========================
+   Chat Area
+   =========================== */
 
-.categories{
-
-padding:25px 15px;
-
+.chat{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:40px;
 }
 
-.categories h2{
-
-margin-bottom:20px;
-
+.welcome{
+    text-align:center;
+    margin-top:80px;
 }
 
-.grid{
-
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-
+.welcome h1{
+    font-size:42px;
+    margin-bottom:15px;
 }
 
-.item{
-
-background:var(--card);
-border-radius:20px;
-height:95px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-font-size:28px;
-transition:.3s;
-
+.welcome p{
+    color:#A1A1AA;
+    font-size:18px;
 }
 
-.item span{
+/* ===========================
+   Messages
+   =========================== */
 
-font-size:13px;
-margin-top:8px;
-
+.messages{
+    flex:1;
+    margin-top:40px;
+    overflow-y:auto;
 }
 
-.item:hover{
+/* ===========================
+   Input
+   =========================== */
 
-background:var(--red);
-transform:translateY(-5px);
-
+.input-box{
+    display:flex;
+    align-items:center;
+    background:#161F35;
+    border:1px solid #283452;
+    border-radius:20px;
+    padding:12px;
 }
 
-/* Latest */
-
-.latest{
-
-padding:0 15px;
-
+.input-box input{
+    flex:1;
+    background:transparent;
+    border:none;
+    color:white;
+    font-size:17px;
+    outline:none;
 }
 
-.title{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:20px;
-
+.input-box input::placeholder{
+    color:#888;
 }
 
-.title a{
-
-color:var(--red);
-text-decoration:none;
-
+#send{
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#4F8CFF;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.cards{
-
-display:flex;
-gap:15px;
-overflow-x:auto;
-padding-bottom:10px;
-
-}
-
-.cards::-webkit-scrollbar{
-
-display:none;
-
-}
-
-.card{
-
-min-width:160px;
-height:240px;
-background:#202020;
-border-radius:18px;
-
-}
-
-/* Bottom Navigation */
-
-.bottomNav{
-
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-height:70px;
-background:#121212;
-display:flex;
-justify-content:space-around;
-align-items:center;
-border-top:1px solid #333;
-
-}
-
-.bottomNav a{
-
-color:white;
-text-decoration:none;
-display:flex;
-flex-direction:column;
-align-items:center;
-font-size:22px;
-
-}
-
-.bottomNav span{
-
-font-size:12px;
-margin-top:3px;
-
-}
-
-.bottomNav a:hover{
-
-color:var(--red);
-
-}
-
-/* Splash */
-
-#splash{
-
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#000;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-z-index:9999;
-
-}
-
-#splash h1{
-
-font-size:55px;
-color:#E50914;
-
-}
-
-#splash p{
-
-font-size:22px;
-margin-top:10px;
-
+#send:hover{
+    transform:scale(1.08);
+    background:#3779ff;
 }
