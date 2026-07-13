@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المسرحيات</title>
+    <style>
+        body { background-color: #b71c1c; font-family: sans-serif; margin: 0; padding: 0; }
+        header { background-color: #b71c1c; padding: 15px; text-align: center; color: white; border-bottom: 2px solid #a31a1a; position: sticky; top: 0; z-index: 1000; }
+        .search-container { padding: 10px; background: #b71c1c; position: sticky; top: 55px; z-index: 999; border-bottom: 2px solid #a31a1a; }
+        #searchInput { width: 100%; padding: 12px; border-radius: 8px; border: none; box-sizing: border-box; text-align: right; }
+        .container { padding: 10px; }
+        .btn { display: block; background: #fff; color: #b71c1c; padding: 15px; margin-bottom: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid #b71c1c; text-align: center; }
+    </style>
+    <script>
+        function filterFunction() {
+            var input = document.getElementById("searchInput").value.toLowerCase();
+            var list = document.getElementById("playList");
+            var items = list.getElementsByTagName("a");
+            for (var i = 0; i < items.length; i++) {
+                items[i].style.display = (items[i].innerText.toLowerCase().indexOf(input) > -1) ? "" : "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<header>قائمة المسرحيات</header>
+
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="ابحث عن مسرحية..." onkeyup="filterFunction()">
+</div>
+
+<div class="container" id="playList">
+    <!-- قائمة المسرحيات -->
+    <a href="play_1.html" class="btn">مدرسة المشاغبين</a>
+    <a href="play_2.html" class="btn">شاهد ما شفش حاجة</a>
+    <a href="play_3.html" class="btn">ريا وسكينة</a>
+    <a href="play_4.html" class="btn">المتزوجون</a>
+    <a href="play_5.html" class="btn">سك على بناتك</a>
+    <a href="play_6.html" class="btn">الواد سيد الشغال</a>
+    <a href="play_7.html" class="btn">الزعيم</a>
+    <a href="play_8.html" class="btn">بودي جارد</a>
+    <a href="play_9.html" class="btn">دستور يا أسيادنا</a>
+    <a href="play_10.html" class="btn">كده أوكيه</a>
+    <a href="play_11.html" class="btn">عفروتو</a>
+    <a href="play_12.html" class="btn">تخاريف</a>
+    <a href="play_13.html" class="btn">حزمني يا</a>
+    <a href="play_14.html" class="btn">إنها حقاً عائلة محترمة</a>
+    <a href="play_15.html" class="btn">العيال كبرت</a>
+    <a href="play_16.html" class="btn">هالة حبيبتي</a>
+    <a href="play_17.html" class="btn">شارع محمد علي</a>
+    <a href="play_18.html" class="btn">بهلول في إسطنبول</a>
+    <a href="play_19.html" class="btn">فارس وبني خيبان</a>
+    <a href="play_20.html" class="btn">عش المجانين</a>
+    <a href="play_21.html" class="btn">علشان خاطر عيونك</a>
+    <a href="play_22.html" class="btn">أنا وهو وهي</a>
+    <a href="play_23.html" class="btn">الدلوعة</a>
+    <a href="play_24.html" class="btn">أصل وصورة</a>
+    <a href="play_25.html" class="btn">حارة العوالم</a>
+    <a href="play_26.html" class="btn">كارمن</a>
+    <a href="play_27.html" class="btn">البرنسيسة</a>
+    <a href="play_28.html" class="btn">الملك هو الملك</a>
+    <a href="play_29.html" class="btn">سكة السلامة</a>
+    <a href="play_30.html" class="btn">يا طالع الشجرة</a>
+    <a href="play_31.html" class="btn">الفرافير</a>
+    <a href="play_32.html" class="btn">ياسين وبهية</a>
+    <a href="play_33.html" class="btn">ليلى والمجنون</a>
+    <a href="play_34.html" class="btn">الوزير العاشق</a>
+    <a href="play_35.html" class="btn">السلطان الحائر</a>
+    <a href="play_36.html" class="btn">النار والزيتون</a>
+    <a href="play_37.html" class="btn">الناس اللي في الثالث</a>
+    <a href="play_38.html" class="btn">القاهرة في ألف عام</a>
+    <a href="play_39.html" class="btn">يا بهية وخبريني</a>
+    <a href="play_40.html" class="btn">حفلة على الخازوق</a>
+    <a href="play_41.html" class="btn">البغبغان</a>
+    <a href="play_42.html" class="btn">راقصة قطاع عام</a>
+    <a href="play_43.html" class="btn">الجوكر</a>
+    <a href="play_44.html" class="btn">حب في التخشيبة</a>
+    <a href="play_45.html" class="btn">الوهم</a>
+    <a href="play_46.html" class="btn">انقلاب</a>
+    <a href="play_47.html" class="btn">قهوة سادة</a>
+    <a href="play_48.html" class="btn">إضحك لما تموت</a>
+    <a href="play_49.html" class="btn">سيدتي الجميلة</a>
+    <a href="play_50.html" class="btn">أنا فين وإنت فين</a>
+    <a href="play_51.html" class="btn">شيء في صدري</a>
+    <a href="play_52.html" class="btn">لوكاندة الفردوس</a>
+    <a href="play_53.html" class="btn">حسن ومرقص وكوهين</a>
+    <a href="play_54.html" class="btn">إلا خمسة</a>
+    <a href="play_55.html" class="btn">دو ري مي فاصوليا</a>
+    <a href="play_56.html" class="btn">المحظوظ</a>
+    <a href="play_57.html" class="btn">الفهلوي</a>
+    <a href="play_58.html" class="btn">كوميديا أوديب</a>
+    <a href="play_59.html" class="btn">باب الفتوح</a>
+    <a href="play_60.html" class="btn">بهلول</a>
+    <a href="play_61.html" class="btn">الزوبعة</a>
+    <a href="play_62.html" class="btn">سكة اللي يروح</a>
+    <a href="play_63.html" class="btn">عالم كورة كورة</a>
+    <a href="play_64.html" class="btn">مراتي زعيمة عصابة</a>
+    <a href="play_65.html" class="btn">الباشا تلميذ (المسرحية)</a>
+    <a href="play_66.html" class="btn">اعقل يا دكتور</a>
+    <a href="play_67.html" class="btn">الدخان</a>
+    <a href="play_68.html" class="btn">الناس اللي تحت</a>
+    <a href="play_69.html" class="btn">تمر حنة</a>
+    <a href="play_70.html" class="btn">أم رتيبة</a>
+    <a href="play_71.html" class="btn">شهرزاد</a>
+    <a href="play_72.html" class="btn">ليلة من ألف ليلة</a>
+    <a href="play_73.html" class="btn">سكرتيرها الخاص</a>
+    <a href="play_74.html" class="btn">شجرة الدر</a>
+    <a href="play_75.html" class="btn">راسبوتين</a>
+    <a href="play_76.html" class="btn">عفريت مراتي</a>
+    <a href="play_77.html" class="btn">العباسة</a>
+    <a href="play_78.html" class="btn">زليخا</a>
+    <a href="play_79.html" class="btn">سميراميس</a>
+    <a href="play_80.html" class="btn">توتو</a>
+    <a href="play_81.html" class="btn">الجامحة</a>
+    <a href="play_82.html" class="btn">الزوجة العذراء</a>
+    <a href="play_83.html" class="btn">غريزة المرأة</a>
+    <a href="play_84.html" class="btn">العاصفة</a>
+    <a href="play_85.html" class="btn">فجر</a>
+    <a href="play_86.html" class="btn">عطيل</a>
+    <a href="play_87.html" class="btn">تكية البرامكة</a>
+    <a href="play_88.html" class="btn">بشير أغا</a>
+    <a href="play_89.html" class="btn">عنتر</a>
+    <a href="play_90.html" class="btn">شجرة الدر (تكرار)</a>
+    <a href="play_91.html" class="btn">امرأة لها ماضي</a>
+    <a href="play_92.html" class="btn">الجحيم</a>
+    <a href="play_93.html" class="btn">القضية المشهورة</a>
+    <a href="play_94.html" class="btn">ملك الحديد</a>
+    <a href="play_95.html" class="btn">الولدان الشريدان</a>
+    <a href="play_96.html" class="btn">الناس اللي فوق</a>
+    <a href="play_97.html" class="btn">الدنيا لما تضحك</a>
+    <a href="play_98.html" class="btn">العسل عسل والبصل بصل</a>
+    <a href="play_99.html" class="btn">العشرة الطيبة</a>
+    <a href="play_100.html" class="btn">سلاح التلميذ</a>
+    <a href="play_101.html" class="btn">عش البلابل</a>
+    <a href="play_102.html" class="btn">رجل في القلعة</a>
+    <a href="play_103.html" class="btn">مطلوب للتجنيد</a>
+    <a href="play_104.html" class="btn">حب ورمان</a>
+    <a href="play_105.html" class="btn">كلام خواجات</a>
+    <a href="play_106.html" class="btn">البهلوان</a>
+    <a href="play_107.html" class="btn">المحروسة</a>
+    <a href="play_108.html" class="btn">السلطان الحائر (تكرار)</a>
+    <a href="play_109.html" class="btn">دائرة الطباشير القوقازية</a>
+    <a href="play_110.html" class="btn">الخديوي</a>
+    <a href="play_111.html" class="btn">باب الفتوح (تكرار)</a>
+    <a href="play_112.html" class="btn">ياما في الجراب يا حاوي</a>
+    <a href="play_113.html" class="btn">حلاق بغداد</a>
+    <a href="play_114.html" class="btn">سليمان الحلبي</a>
+    <a href="play_115.html" class="btn">الوطن الأكبر</a>
+    <a href="play_116.html" class="btn">الغريب</a>
+    <a href="play_117.html" class="btn">زيارة السيدة العجوز</a>
+    <a href="play_118.html" class="btn">الملك لير</a>
+    <a href="play_119.html" class="btn">أهل الكهف</a>
+    <a href="play_120.html" class="btn">شهرزاد (تكرار)</a>
+    <a href="play_121.html" class="btn">علي جناح التبريزي وتابعه قفة</a>
+    <a href="play_122.html" class="btn">الوزير العاشق (تكرار)</a>
+    <a href="play_123.html" class="btn">بعد أن يموت الملك</a>
+    <a href="play_124.html" class="btn">المهرج</a>
+    <a href="play_125.html" class="btn">الدخان (تكرار)</a>
+    <a href="play_126.html" class="btn">الفتى مهران</a>
+    <a href="play_127.html" class="btn">الزير سالم</a>
+    <a href="play_128.html" class="btn">مأساة الحلاج</a>
+    <a href="play_129.html" class="btn">ثأر الله</a>
+    <a href="play_130.html" class="btn">النار والزيتون (تكرار)</a>
+    <a href="play_131.html" class="btn">العودة</a>
+    <a href="play_132.html" class="btn">الفارس والأسيرة</a>
+    <a href="play_133.html" class="btn">القضية</a>
+    <a href="play_134.html" class="btn">السجين</a>
+    <a href="play_135.html" class="btn">السبنسة</a>
+    <a href="play_136.html" class="btn">القطط</a>
+    <a href="play_137.html" class="btn">كلام في سري</a>
+    <a href="play_138.html" class="btn">قهوة سادة (تكرار)</a>
+    <a href="play_139.html" class="btn">وجوه</a>
+    <a href="play_140.html" class="btn">لما بابا ينام</a>
+    <a href="play_141.html" class="btn">ولاد اللذينة</a>
+    <a href="play_142.html" class="btn">زقاق المدق</a>
+    <a href="play_143.html" class="btn">البؤساء</a>
+    <a href="play_144.html" class="btn">كاسك يا وطن</a>
+    <a href="play_145.html" class="btn">رجل القلعة</a>
+    <a href="play_146.html" class="btn">لعبة الست</a>
+    <a href="play_147.html" class="btn">حوش بديعة</a>
+    <a href="play_148.html" class="btn">بهية</a>
+    <a href="play_149.html" class="btn">الفارس</a>
+    <a href="play_150.html" class="btn">الليلة الكبيرة</a>
+    <a href="play_151.html" class="btn">رحلة حنظلة</a>
+    <a href="play_152.html" class="btn">السندباد</a>
+    <a href="play_153.html" class="btn">الشاطر حسن</a>
+    <a href="play_154.html" class="btn">أبو زيد الهلالي</a>
+    <a href="play_155.html" class="btn">حسن ونعيمة</a>
+    <a href="play_156.html" class="btn">أدهم الشرقاوي</a>
+    <a href="play_157.html" class="btn">أيوب</a>
+    <a href="play_158.html" class="btn">الملك النمرود</a>
+    <a href="play_159.html" class="btn">الطوق والأسورة</a>
+    <a href="play_160.html" class="btn">ليلة القبض على فاطمة</a>
+    <a href="play_161.html" class="btn">لن تسقط القدس</a>
+    <a href="play_162.html" class="btn">عاشقين ترابك</a>
+    <a href="play_163.html" class="btn">حكاية من وادي الملح</a>
+    <a href="play_164.html" class="btn">بحر الهوى</a>
+    <a href="play_165.html" class="btn">رجل لكل العصور</a>
+    <a href="play_166.html" class="btn">بيت الدمية</a>
+    <a href="play_167.html" class="btn">هاملت</a>
+    <a href="play_168.html" class="btn">تاجر البندقية</a>
+    <a href="play_169.html" class="btn">روميو وجولييت</a>
+    <a href="play_170.html" class="btn">يوليوس قيصر</a>
+    <a href="play_171.html" class="btn">مكبث</a>
+    <a href="play_172.html" class="btn">البخيل</a>
+    <a href="play_173.html" class="btn">طرطوف</a>
+    <a href="play_174.html" class="btn">مدرسة الأزواج</a>
+    <a href="play_175.html" class="btn">مريض بالوهم</a>
+    <a href="play_176.html" class="btn">البخيلة</a>
+    <a href="play_177.html" class="btn">الأرملة الطروب</a>
+    <a href="play_178.html" class="btn">أوبرا الثلاث قروش</a>
+    <a href="play_179.html" class="btn">زيارة</a>
+    <a href="play_180.html" class="btn">بيت برناردا ألبا</a>
+    <a href="play_181.html" class="btn">الأم شجاعة</a>
+    <a href="play_182.html" class="btn">المفتش العام</a>
+    <a href="play_183.html" class="btn">الإنسان الطيب</a>
+    <a href="play_184.html" class="btn">نهاية اللعبة</a>
+    <a href="play_185.html" class="btn">في انتظار جودو</a>
+    <a href="play_186.html" class="btn">الأرامل</a>
+    <a href="play_187.html" class="btn">الغرباء لا يشربون القهوة</a>
+    <a href="play_188.html" class="btn">بيت الأشباح</a>
+    <a href="play_189.html" class="btn">المحاكمة</a>
+    <a href="play_190.html" class="btn">اللص الشريف</a>
+    <a href="play_191.html" class="btn">حفلة المجانين</a>
+    <a href="play_192.html" class="btn">الدنيا مقلوبة</a>
+    <a href="play_193.html" class="btn">جوز ولوز</a>
+    <a href="play_194.html" class="btn">المجنون</a>
+    <a href="play_195.html" class="btn">حارة السقايين</a>
+    <a href="play_196.html" class="btn">ليلة سقوط بغداد</a>
+    <a href="play_197.html" class="btn">رجل من زمن العولمة</a>
+    <a href="play_198.html" class="btn">حريم النار</a>
+    <a href="play_199.html" class="btn">ناس كده وكده</a>
+    <a href="play_200.html" class="btn">عاشور قلب الأسد</a>
+    <a href="play_201.html" class="btn">شارع 18</a>
+    <a href="play_202.html" class="btn">خالتي صفية والدير</a>
+    <a href="play_203.html" class="btn">حريم السلطان</a>
+    <a href="play_204.html" class="btn">حلم ليلة صيف</a>
+    <a href="play_205.html" class="btn">الإمبراطور جونز</a>
+    <a href="play_206.html" class="btn">كاليجولا</a>
+    <a href="play_207.html" class="btn">الأميرة تنتظر</a>
+    <a href="play_208.html" class="btn">الزوبعة (تكرار)</a>
+    <a href="play_209.html" class="btn">القرد كثيف الشعر</a>
+    <a href="play_210.html" class="btn">عودة الغائب</a>
+    <a href="play_211.html" class="btn">السلطان والوزير</a>
+    <a href="play_212.html" class="btn">بيت من لحم</a>
+    <a href="play_213.html" class="btn">ست الحسن</a>
+    <a href="play_214.html" class="btn">ست البنات</a>
+    <a href="play_215.html" class="btn">النداهة</a>
+    <a href="play_216.html" class="btn">سكة السلامة (تكرار)</a>
+    <a href="play_217.html" class="btn">ع الرصيف</a>
+    <a href="play_218.html" class="btn">ولاد البلد</a>
+    <a href="play_219.html" class="btn">الرهائن</a>
+    <a href="play_220.html" class="btn">رجل وامرأتان</a>
+    <a href="play_221.html" class="btn">البنات والصيف</a>
+    <a href="play_222.html" class="btn">جواز على ورقة طلاق</a>
+    <a href="play_223.html" class="btn">حب تحت الحراسة</a>
+    <a href="play_224.html" class="btn">كده تمام</a>
+    <a href="play_225.html" class="btn">ليلة زفاف</a>
+    <a href="play_226.html" class="btn">عريس في مهمة</a>
+    <a href="play_227.html" class="btn">آخر شحاتة</a>
+    <a href="play_228.html" class="btn">حلم جميل</a>
+    <a href="play_229.html" class="btn">سكة العاشقين</a>
+    <a href="play_230.html" class="btn">بهلول والكنز</a>
+    <a href="play_231.html" class="btn">بابا عايز كده</a>
+    <a href="play_232.html" class="btn">دوشة</a>
+    <a href="play_233.html" class="btn">عيلة اتعمل لها بلوك</a>
+    <a href="play_234.html" class="btn">اللي اختشوا ماتوا</a>
+    <a href="play_235.html" class="btn">اشتباك</a>
+    <a href="play_236.html" class="btn">حارة السعادة</a>
+    <a href="play_237.html" class="btn">مسرح مصر</a>
+    <a href="play_238.html" class="btn">3 أيام في الساحل</a>
+    <a href="play_239.html" class="btn">اللوكاندة</a>
+    <a href="play_240.html" class="btn">صباحية مباركة</a>
+    <a href="play_241.html" class="btn">الملك لير (تكرار)</a>
+</div>
+
+</body>
+  </html>
+      
