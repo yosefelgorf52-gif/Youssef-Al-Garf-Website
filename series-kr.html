@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>المسلسلات الكورية</title>
+    <style>
+        body { background-color: #b71c1c; font-family: sans-serif; margin: 0; padding: 0; }
+        .sticky-header { position: sticky; top: 0; background-color: #b71c1c; padding: 15px; border-bottom: 2px solid #a31a1a; z-index: 1000; }
+        #search { width: 95%; padding: 12px; border-radius: 8px; border: none; display: block; margin: 0 auto; }
+        .container { padding: 10px; }
+        .btn { display: flex; align-items: center; justify-content: space-between; background: #fff; 
+               color: #b71c1c; padding: 15px; margin-bottom: 8px; border-radius: 8px; 
+               text-decoration: none; font-weight: bold; border: 2px solid #b71c1c; }
+    </style>
+</head>
+<body>
+
+<div class="sticky-header">
+    <input type="text" id="search" placeholder="🔍 ابحث هنا..." onkeyup="filter()">
+</div>
+
+<div class="container" id="container">
+    <a href="movie1.html" class="btn">Squid Game</a>
+    <a href="movie2.html" class="btn">Crash Landing on You</a>
+    <a href="movie3.html" class="btn">Goblin</a>
+    <a href="movie4.html" class="btn">Descendants of the Sun</a>
+    <a href="movie5.html" class="btn">Vincenzo</a>
+    <a href="movie6.html" class="btn">Itaewon Class</a>
+    <a href="movie7.html" class="btn">Extraordinary Attorney Woo</a>
+    <a href="movie8.html" class="btn">Kingdom</a>
+    <a href="movie9.html" class="btn">All of Us Are Dead</a>
+    <a href="movie10.html" class="btn">The Glory</a>
+    <a href="movie11.html" class="btn">Weak Hero Class 1</a>
+    <a href="movie12.html" class="btn">Moving</a>
+    <a href="movie13.html" class="btn">Sweet Home</a>
+    <a href="movie14.html" class="btn">True Beauty</a>
+    <a href="movie15.html" class="btn">Business Proposal</a>
+    <a href="movie16.html" class="btn">What's Wrong with Secretary Kim</a>
+    <a href="movie17.html" class="btn">Hometown Cha-Cha-Cha</a>
+    <a href="movie18.html" class="btn">Twenty-Five Twenty-One</a>
+    <a href="movie19.html" class="btn">Start-Up</a>
+    <a href="movie20.html" class="btn">Hotel Del Luna</a>
+    <a href="movie21.html" class="btn">My Love from the Star</a>
+    <a href="movie22.html" class="btn">The Heirs</a>
+    <a href="movie23.html" class="btn">Boys Over Flowers</a>
+    <a href="movie24.html" class="btn">Reply 1988</a>
+    <a href="movie25.html" class="btn">Reply 1997</a>
+    <a href="movie26.html" class="btn">Prison Playbook</a>
+    <a href="movie27.html" class="btn">Hospital Playlist</a>
+    <a href="movie28.html" class="btn">Signal</a>
+    <a href="movie29.html" class="btn">Stranger</a>
+    <a href="movie30.html" class="btn">Mouse</a>
+    <a href="movie31.html" class="btn">Flower of Evil</a>
+    <a href="movie32.html" class="btn">Beyond Evil</a>
+    <a href="movie33.html" class="btn">Taxi Driver</a>
+    <a href="movie34.html" class="btn">The Uncanny Counter</a>
+    <a href="movie35.html" class="btn">Happiness</a>
+    <a href="movie36.html" class="btn">Big Mouth</a>
+    <a href="movie37.html" class="btn">My Mister</a>
+    <a href="movie38.html" class="btn">Mr. Sunshine</a>
+    <a href="movie39.html" class="btn">Mr. Queen</a>
+    <a href="movie40.html" class="btn">Under the Queen's Umbrella</a>
+    <a href="movie41.html" class="btn">Alchemy of Souls</a>
+    <a href="movie42.html" class="btn">Arthdal Chronicles</a>
+    <a href="movie43.html" class="btn">The King: Eternal Monarch</a>
+    <a href="movie44.html" class="btn">W: Two Worlds</a>
+    <a href="movie45.html" class="btn">While You Were Sleeping</a>
+    <a href="movie46.html" class="btn">Pinocchio</a>
+    <a href="movie47.html" class="btn">Doctor Stranger</a>
+    <a href="movie48.html" class="btn">Healer</a>
+    <a href="movie49.html" class="btn">City Hunter</a>
+    <a href="movie50.html" class="btn">The K2</a>
+</div>
+
+<script>
+    function filter() {
+        let input = document.getElementById("search").value.toUpperCase();
+        let container = document.getElementById("container");
+        let links = container.getElementsByTagName("a");
+        for (let i = 0; i < links.length; i++) {
+            links[i].style.display = links[i].innerText.toUpperCase().indexOf(input) > -1 ? "flex" : "none";
+        }
+    }
+</script>
+</body>
+  </html>
+  
