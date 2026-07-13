@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشغل الفيديو</title>
+    <style>
+        body { margin: 0; padding: 0; background-color: #000; display: flex; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
+        
+        /* جعل المشغل يملأ الشاشة بالكامل */
+        video { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain; /* يضمن ظهور الفيديو كاملاً */
+        }
+    </style>
+</head>
+<body>
+
+    <video id="myVideo" controls autoplay playsinline>
+        <source src="https://drive.google.com/uc?export=download&id=1cIqKbXCFqAo6s_XfzmUeAuo54bygE_Xm" type="video/mp4">
+        متصفحك لا يدعم تشغيل الفيديو.
+    </video>
+
+    <script>
+        // محاولة إجبار المتصفح على بدء التشغيل
+        var video = document.getElementById('myVideo');
+        video.play().catch(function() {
+            console.log("التشغيل التلقائي يحتاج تفاعل المستخدم");
+        });
+    </script>
+</body>
+</html>
