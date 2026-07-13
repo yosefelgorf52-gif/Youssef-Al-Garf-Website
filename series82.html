@@ -2,24 +2,45 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>تشغيل الفيديو</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشغل الفيديو</title>
     <style>
-        body { background: #b71c1c; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; color: white; font-family: sans-serif; }
-        .btn { background: white; color: #b71c1c; padding: 20px 40px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 20px; border: 2px solid white; }
+        body { 
+            background-color: #b71c1c; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            color: white; 
+            font-family: sans-serif; 
+            text-align: center;
+        }
+        .message { margin-bottom: 20px; font-size: 18px; }
+        .btn { 
+            background: white; 
+            color: #b71c1c; 
+            padding: 15px 30px; 
+            border-radius: 10px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border: 2px solid white; 
+        }
     </style>
 </head>
 <body>
 
-    <h2>جاري تحويلك للمشغل الخارجي...</h2>
-    <p>إذا لم يبدأ الفيديو تلقائياً، اضغط على الزر أدناه:</p>
+    <div class="message">جاري فتح الفيديو في المشغل الخارجي...</div>
     
-    <a href="intent://1cIqKbXCFqAo6s_XfzmUeAuo54bygE_Xm#Intent;scheme=http;type=video/mp4;end" class="btn">
-        تشغيل الفيديو بمشغل خارجي 📺
+    <a href="intent:https://archive.org/download/yousef_202607/yousef_202607.mp4#Intent;scheme=http;type=video/mp4;end" class="btn">
+        اضغط هنا إذا لم يفتح المشغل تلقائياً 📺
     </a>
 
     <script>
-        // هذا الكود يحاول فتح المشغل تلقائياً عند الدخول
-        window.location.href = "intent://1cIqKbXCFqAo6s_XfzmUeAuo54bygE_Xm#Intent;scheme=http;type=video/mp4;end";
+        // هذا الكود هو المسؤول عن إجبار المتصفح على فتح المشغل الخارجي فوراً
+        var videoUrl = "https://archive.org/download/yousef_202607/yousef_202607.mp4";
+        window.location.href = "intent:" + videoUrl + "#Intent;scheme=http;type=video/mp4;end";
     </script>
+
 </body>
 </html>
