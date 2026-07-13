@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أشهر مباريات المصارعة</title>
+    <style>
+        body { background-color: #b71c1c; font-family: sans-serif; margin: 0; padding: 0; }
+        header { background-color: #b71c1c; padding: 15px; text-align: center; color: white; border-bottom: 2px solid #a31a1a; position: sticky; top: 0; z-index: 1000; }
+        .search-container { padding: 10px; background: #b71c1c; position: sticky; top: 55px; z-index: 999; border-bottom: 2px solid #a31a1a; }
+        #searchInput { width: 100%; padding: 12px; border-radius: 8px; border: none; box-sizing: border-box; text-align: right; }
+        .container { padding: 10px; }
+        .btn { display: block; background: #fff; color: #b71c1c; padding: 15px; margin-bottom: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid #b71c1c; text-align: center; }
+    </style>
+    <script>
+        function filterFunction() {
+            var input = document.getElementById("searchInput").value.toLowerCase();
+            var list = document.getElementById("wweList");
+            var items = list.getElementsByTagName("a");
+            for (var i = 0; i < items.length; i++) {
+                items[i].style.display = (items[i].innerText.toLowerCase().indexOf(input) > -1) ? "" : "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<header>أشهر مباريات المصارعة</header>
+
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="ابحث عن مباراة..." onkeyup="filterFunction()">
+</div>
+
+<div class="container" id="wweList">
+    <!-- قائمة مباريات المصارعة -->
+    <a href="wwe_1.html" class="btn">The Rock vs Stone Cold Steve Austin</a>
+    <a href="wwe_2.html" class="btn">The Undertaker vs Shawn Michaels</a>
+    <a href="wwe_3.html" class="btn">Bret Hart vs Steve Austin</a>
+    <a href="wwe_4.html" class="btn">Hulk Hogan vs The Rock</a>
+    <a href="wwe_5.html" class="btn">Triple H vs Cactus Jack</a>
+    <a href="wwe_6.html" class="btn">John Cena vs CM Punk</a>
+    <a href="wwe_7.html" class="btn">CM Punk vs Brock Lesnar</a>
+    <a href="wwe_8.html" class="btn">Kurt Angle vs Shawn Michaels</a>
+    <a href="wwe_9.html" class="btn">Randy Savage vs Ricky Steamboat</a>
+    <a href="wwe_10.html" class="btn">The Rock vs John Cena</a>
+    <a href="wwe_11.html" class="btn">Roman Reigns vs Cody Rhodes</a>
+    <a href="wwe_12.html" class="btn">Cody Rhodes vs Seth Rollins</a>
+    <a href="wwe_13.html" class="btn">AJ Styles vs John Cena</a>
+    <a href="wwe_14.html" class="btn">John Cena vs Daniel Bryan</a>
+    <a href="wwe_15.html" class="btn">Daniel Bryan vs Randy Orton</a>
+    <a href="wwe_16.html" class="btn">Daniel Bryan vs Batista</a>
+    <a href="wwe_17.html" class="btn">Edge vs Mick Foley</a>
+    <a href="wwe_18.html" class="btn">Triple H vs Shawn Michaels</a>
+    <a href="wwe_19.html" class="btn">Triple H vs Chris Benoit</a>
+    <a href="wwe_20.html" class="btn">Brock Lesnar vs Kurt Angle</a>
+    <a href="wwe_21.html" class="btn">Brock Lesnar vs Eddie Guerrero</a>
+    <a href="wwe_22.html" class="btn">Eddie Guerrero vs Rey Mysterio</a>
+    <a href="wwe_23.html" class="btn">Rey Mysterio vs Kurt Angle</a>
+    <a href="wwe_24.html" class="btn">Batista vs The Undertaker</a>
+    <a href="wwe_25.html" class="btn">Triple H vs The Undertaker</a>
+    <a href="wwe_26.html" class="btn">Seth Rollins vs John Cena</a>
+    <a href="wwe_27.html" class="btn">Roman Reigns vs Brock Lesnar</a>
+    <a href="wwe_28.html" class="btn">Brock Lesnar vs John Cena</a>
+    <a href="wwe_29.html" class="btn">AJ Styles vs Roman Reigns</a>
+    <a href="wwe_30.html" class="btn">AJ Styles vs Finn Bálor</a>
+    <a href="wwe_31.html" class="btn">Kevin Owens vs Sami Zayn</a>
+    <a href="wwe_32.html" class="btn">Sami Zayn vs Shinsuke Nakamura</a>
+    <a href="wwe_33.html" class="btn">Johnny Gargano vs Tommaso Ciampa</a>
+    <a href="wwe_34.html" class="btn">Johnny Gargano vs Adam Cole</a>
+    <a href="wwe_35.html" class="btn">Adam Cole vs Tommaso Ciampa</a>
+    <a href="wwe_36.html" class="btn">Gunther vs Sheamus</a>
+    <a href="wwe_37.html" class="btn">Drew McIntyre vs Roman Reigns</a>
+    <a href="wwe_38.html" class="btn">Roman Reigns vs Jey Uso</a>
+    <a href="wwe_39.html" class="btn">Roman Reigns vs Edge</a>
+    <a href="wwe_40.html" class="btn">Edge vs Seth Rollins</a>
+    <a href="wwe_41.html" class="btn">Charlotte Flair vs Rhea Ripley</a>
+    <a href="wwe_42.html" class="btn">Becky Lynch vs Charlotte Flair</a>
+    <a href="wwe_43.html" class="btn">Sasha Banks vs Bayley</a>
+    <a href="wwe_44.html" class="btn">Bianca Belair vs Sasha Banks</a>
+    <a href="wwe_45.html" class="btn">Asuka vs Becky Lynch</a>
+    <a href="wwe_46.html" class="btn">Iyo Sky vs Bianca Belair</a>
+    <a href="wwe_47.html" class="btn">Trish Stratus vs Lita</a>
+    <a href="wwe_48.html" class="btn">Edge vs John Cena</a>
+    <a href="wwe_49.html" class="btn">Randy Orton vs Cactus Jack</a>
+    <a href="wwe_50.html" class="btn">Randy Orton vs Christian</a>
+    <a href="wwe_51.html" class="btn">Christian vs Randy Orton</a>
+    <a href="wwe_52.html" class="btn">Jeff Hardy vs The Undertaker</a>
+    <a href="wwe_53.html" class="btn">Jeff Hardy vs CM Punk</a>
+    <a href="wwe_54.html" class="btn">Jeff Hardy vs Triple H</a>
+    <a href="wwe_55.html" class="btn">Hardy Boyz vs Dudley Boyz</a>
+    <a href="wwe_56.html" class="btn">Edge & Christian vs Hardy Boyz</a>
+    <a href="wwe_57.html" class="btn">Kane vs The Undertaker</a>
+    <a href="wwe_58.html" class="btn">Kane vs Shane McMahon</a>
+    <a href="wwe_59.html" class="btn">Shane McMahon vs Kurt Angle</a>
+    <a href="wwe_60.html" class="btn">Shawn Michaels vs Razor Ramon</a>
+    <a href="wwe_61.html" class="btn">Bret Hart vs Owen Hart</a>
+    <a href="wwe_62.html" class="btn">Diesel vs Bret Hart</a>
+    <a href="wwe_63.html" class="btn">Yokozuna vs Bret Hart</a>
+    <a href="wwe_64.html" class="btn">Steve Austin vs The Rock</a>
+    <a href="wwe_65.html" class="btn">The Rock vs Kurt Angle</a>
+    <a href="wwe_66.html" class="btn">Kurt Angle vs Chris Benoit</a>
+    <a href="wwe_67.html" class="btn">Chris Benoit vs Chris Jericho</a>
+    <a href="wwe_68.html" class="btn">Chris Jericho vs Shawn Michaels</a>
+    <a href="wwe_69.html" class="btn">Shawn Michaels vs Ric Flair</a>
+    <a href="wwe_70.html" class="btn">Ric Flair vs Ricky Steamboat</a>
+    <a href="wwe_71.html" class="btn">Ric Flair vs Terry Funk</a>
+    <a href="wwe_72.html" class="btn">Sting vs Ric Flair</a>
+    <a href="wwe_73.html" class="btn">Goldberg vs Diamond Dallas Page</a>
+    <a href="wwe_74.html" class="btn">Goldberg vs Hulk Hogan</a>
+    <a href="wwe_75.html" class="btn">Sting vs Hulk Hogan</a>
+    <a href="wwe_76.html" class="btn">Sting vs Vader</a>
+    <a href="wwe_77.html" class="btn">Vader vs Cactus Jack</a>
+    <a href="wwe_78.html" class="btn">Cactus Jack vs Randy Orton</a>
+    <a href="wwe_79.html" class="btn">Rob Van Dam vs Jerry Lynn</a>
+    <a href="wwe_80.html" class="btn">Rob Van Dam vs Jeff Hardy</a>
+    <a href="wwe_81.html" class="btn">Rob Van Dam vs John Cena</a>
+    <a href="wwe_82.html" class="btn">Rob Van Dam vs CM Punk</a>
+    <a href="wwe_83.html" class="btn">Chris Jericho vs Kevin Owens</a>
+    <a href="wwe_84.html" class="btn">Kevin Owens vs Roman Reigns</a>
+    <a href="wwe_85.html" class="btn">Kevin Owens vs John Cena</a>
+    <a href="wwe_86.html" class="btn">Sami Zayn vs Kevin Owens</a>
+    <a href="wwe_87.html" class="btn">Sami Zayn vs Roman Reigns</a>
+    <a href="wwe_88.html" class="btn">Sami Zayn vs Johnny Knoxville</a>
+    <a href="wwe_89.html" class="btn">LA Knight vs Roman Reigns</a>
+    <a href="wwe_90.html" class="btn">Logan Paul vs Roman Reigns</a>
+    <a href="wwe_91.html" class="btn">Logan Paul vs Seth Rollins</a>
+    <a href="wwe_92.html" class="btn">Logan Paul vs Ricochet</a>
+    <a href="wwe_93.html" class="btn">Ricochet vs Will Ospreay</a>
+    <a href="wwe_94.html" class="btn">Will Ospreay vs Kenny Omega</a>
+    <a href="wwe_95.html" class="btn">Kenny Omega vs Kazuchika Okada</a>
+    <a href="wwe_96.html" class="btn">Kazuchika Okada vs Tetsuya Naito</a>
+    <a href="wwe_97.html" class="btn">Tetsuya Naito vs Hiroshi Tanahashi</a>
+    <a href="wwe_98.html" class="btn">Hiroshi Tanahashi vs Kota Ibushi</a>
+    <a href="wwe_99.html" class="btn">Kota Ibushi vs Kenny Omega</a>
+    <a href="wwe_100.html" class="btn">Kenny Omega vs Bryan Danielson</a>
+    <a href="wwe_101.html" class="btn">Bryan Danielson vs Zack Sabre Jr.</a>
+    <a href="wwe_102.html" class="btn">Zack Sabre Jr. vs Will Ospreay</a>
+    <a href="wwe_103.html" class="btn">MJF vs Bryan Danielson</a>
+    <a href="wwe_104.html" class="btn">MJF vs CM Punk</a>
+    <a href="wwe_105.html" class="btn">CM Punk vs Samoa Joe</a>
+    <a href="wwe_106.html" class="btn">Samoa Joe vs AJ Styles</a>
+    <a href="wwe_107.html" class="btn">AJ Styles vs Samoa Joe</a>
+    <a href="wwe_108.html" class="btn">AJ Styles vs Christopher Daniels</a>
+    <a href="wwe_109.html" class="btn">Christopher Daniels vs Samoa Joe</a>
+    <a href="wwe_110.html" class="btn">Nigel McGuinness vs Bryan Danielson</a>
+    <a href="wwe_111.html" class="btn">Claudio Castagnoli vs Bryan Danielson</a>
+    <a href="wwe_112.html" class="btn">Jon Moxley vs Kenny Omega</a>
+    <a href="wwe_113.html" class="btn">Jon Moxley vs CM Punk</a>
+    <a href="wwe_114.html" class="btn">Jon Moxley vs Bryan Danielson</a>
+    <a href="wwe_115.html" class="btn">Orange Cassidy vs PAC</a>
+    <a href="wwe_116.html" class="btn">PAC vs Kenny Omega</a>
+    <a href="wwe_117.html" class="btn">Darby Allin vs MJF</a>
+    <a href="wwe_118.html" class="btn">Darby Allin vs Cody Rhodes</a>
+    <a href="wwe_119.html" class="btn">Cody Rhodes vs Dustin Rhodes</a>
+    <a href="wwe_120.html" class="btn">Sting vs Darby Allin</a>
+    <a href="wwe_121.html" class="btn">FTR vs Young Bucks</a>
+    <a href="wwe_122.html" class="btn">Young Bucks vs Lucha Bros</a>
+    <a href="wwe_123.html" class="btn">Lucha Bros vs FTR</a>
+    <a href="wwe_124.html" class="btn">Young Bucks vs Kenny Omega</a>
+    <a href="wwe_125.html" class="btn">Kenny Omega vs Hangman Page</a>
+    <a href="wwe_126.html" class="btn">Hangman Page vs Bryan Danielson</a>
+    <a href="wwe_127.html" class="btn">Hangman Page vs Jon Moxley</a>
+    <a href="wwe_128.html" class="btn">Chris Jericho vs Kenny Omega</a>
+    <a href="wwe_129.html" class="btn">Chris Jericho vs MJF</a>
+    <a href="wwe_130.html" class="btn">Chris Jericho vs Jon Moxley</a>
+    <a href="wwe_131.html" class="btn">Christian Cage vs Adam Copeland</a>
+    <a href="wwe_132.html" class="btn">Adam Copeland vs Randy Orton</a>
+    <a href="wwe_133.html" class="btn">Adam Copeland vs Seth Rollins</a>
+    <a href="wwe_134.html" class="btn">Adam Copeland vs Finn Bálor</a>
+    <a href="wwe_135.html" class="btn">Finn Bálor vs Damian Priest</a>
+    <a href="wwe_136.html" class="btn">Damian Priest vs Drew McIntyre</a>
+    <a href="wwe_137.html" class="btn">Drew McIntyre vs Seth Rollins</a>
+    <a href="wwe_138.html" class="btn">Seth Rollins vs Finn Bálor</a>
+    <a href="wwe_139.html" class="btn">Seth Rollins vs AJ Styles</a>
+    <a href="wwe_140.html" class="btn">AJ Styles vs Shinsuke Nakamura</a>
+    <a href="wwe_141.html" class="btn">Shinsuke Nakamura vs Kota Ibushi</a>
+    <a href="wwe_142.html" class="btn">Kota Ibushi vs Tetsuya Naito</a>
+    <a href="wwe_143.html" class="btn">Tetsuya Naito vs Will Ospreay</a>
+    <a href="wwe_144.html" class="btn">Will Ospreay vs Zack Sabre Jr.</a>
+</div>
+
+</body>
+  </html>
+      
