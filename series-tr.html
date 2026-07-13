@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المسلسلات التركية</title>
+    <style>
+        body { background-color: #b71c1c; font-family: sans-serif; margin: 0; padding: 0; }
+        
+        /* الهيدر والبحث ثابتين */
+        header { background-color: #b71c1c; padding: 15px; text-align: center; color: white; border-bottom: 2px solid #a31a1a; position: sticky; top: 0; z-index: 1000; }
+        .search-container { padding: 10px; background: #b71c1c; position: sticky; top: 55px; z-index: 999; border-bottom: 2px solid #a31a1a; }
+        
+        #searchInput { width: 100%; padding: 12px; border-radius: 8px; border: none; box-sizing: border-box; text-align: right; }
+        
+        .container { padding: 10px; }
+        
+        /* شكل الزرار */
+        .btn { display: block; background: #fff; color: #b71c1c; padding: 15px; margin-bottom: 8px; 
+               border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid #b71c1c; text-align: center; }
+    </style>
+</head>
+<body>
+
+<header>المسلسلات التركية</header>
+
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="ابحث عن مسلسل..." onkeyup="filterFunction()">
+</div>
+
+<div class="container" id="seriesList">
+    <!-- قائمة المسلسلات التركية الكاملة -->
+    <a href="ser_tr_1.html" class="btn">Aşk Yeniden</a>
+    <a href="ser_tr_2.html" class="btn">Benim Tatlı Yalanım</a>
+    <a href="ser_tr_3.html" class="btn">Her Yerde Sen</a>
+    <a href="ser_tr_4.html" class="btn">Sevgili Geçmiş</a>
+    <a href="ser_tr_5.html" class="btn">Zemheri</a>
+    <a href="ser_tr_6.html" class="btn">Maria ile Mustafa</a>
+    <a href="ser_tr_7.html" class="btn">Akıncı</a>
+    <a href="ser_tr_8.html" class="btn">Uyanış Büyük Selçuklu</a>
+    <a href="ser_tr_9.html" class="btn">Cam Tavanlar</a>
+    <a href="ser_tr_10.html" class="btn">Baht Oyunu</a>
+    <a href="ser_tr_11.html" class="btn">Kazara Aşk</a>
+    <a href="ser_tr_12.html" class="btn">Kalp Atışı</a>
+    <a href="ser_tr_13.html" class="btn">Hayat Sevince Güzel</a>
+    <a href="ser_tr_14.html" class="btn">Bodrum Masalı</a>
+    <a href="ser_tr_15.html" class="btn">Seviyor Sevmiyor</a>
+    <a href="ser_tr_16.html" class="btn">Rüzgarın Kalbi</a>
+    <a href="ser_tr_17.html" class="btn">Aşk ve Mavi</a>
+    <a href="ser_tr_18.html" class="btn">Hangimiz Sevmedik</a>
+    <a href="ser_tr_19.html" class="btn">Familya</a>
+    <a href="ser_tr_20.html" class="btn">Yüksek Sosyete</a>
+    <a href="ser_tr_21.html" class="btn">İçimdeki Fırtına</a>
+    <a href="ser_tr_22.html" class="btn">Bu Şehir Arkandan Gelecek</a>
+    <a href="ser_tr_23.html" class="btn">Kalbimdeki Deniz</a>
+    <a href="ser_tr_24.html" class="btn">Kırlangıç Fırtınası</a>
+    <a href="ser_tr_25.html" class="btn">Kalbim Yangın Yeri</a>
+    <a href="ser_tr_26.html" class="btn">Bana Sevmeyi Anlat</a>
+    <a href="ser_tr_27.html" class="btn">Hayat Bazen Tatlıdır</a>
+    <a href="ser_tr_28.html" class="btn">Lise Devriyesi</a>
+    <a href="ser_tr_29.html" class="btn">Hayat Sırları</a>
+    <a href="ser_tr_30.html" class="btn">Kanatsız Kuşlar</a>
+    <a href="ser_tr_31.html" class="btn">Siyah İnci</a>
+    <a href="ser_tr_32.html" class="btn">Fazilet Hanım ve Kızları</a>
+    <a href="ser_tr_33.html" class="btn">Bizim Hikaye</a>
+    <a href="ser_tr_34.html" class="btn">Gülizar</a>
+    <a href="ser_tr_35.html" class="btn">8. Gün</a>
+    <a href="ser_tr_36.html" class="btn">İnsanlık Suçu</a>
+    <a href="ser_tr_37.html" class="btn">Darısı Başımıza</a>
+    <a href="ser_tr_38.html" class="btn">Ağlama Anne</a>
+    <a href="ser_tr_39.html" class="btn">Elimi Bırakma</a>
+    <a href="ser_tr_40.html" class="btn">Bir Deli Rüzgar</a>
+    <a href="ser_tr_41.html" class="btn">Çarpışma</a>
+    <a href="ser_tr_42.html" class="btn">Tek Yürek</a>
+    <a href="ser_tr_43.html" class="btn">Halka</a>
+    <a href="ser_tr_44.html" class="btn">Vuslat</a>
+    <a href="ser_tr_45.html" class="btn">Kuzgun</a>
+    <a href="ser_tr_46.html" class="btn">Ferhat ile Şirin</a>
+    <a href="ser_tr_47.html" class="btn">Azize</a>
+    <a href="ser_tr_48.html" class="btn">Zemheri</a>
+    <a href="ser_tr_49.html" class="btn">Öğretmen</a>
+    <a href="ser_tr_50.html" class="btn">Kırmızı Oda</a>
+    <a href="ser_tr_51.html" class="btn">Akrep</a>
+    <a href="ser_tr_52.html" class="btn">Akıncı</a>
+    <a href="ser_tr_53.html" class="btn">Kağıt Ev</a>
+    <a href="ser_tr_54.html" class="btn">Baş Belası</a>
+    <a href="ser_tr_55.html" class="btn">İkimizin Sırrı</a>
+    <a href="ser_tr_56.html" class="btn">Kalp Yarası</a>
+    <a href="ser_tr_57.html" class="btn">Dünya Hali</a>
+    <a href="ser_tr_58.html" class="btn">Elkızı</a>
+    <a href="ser_tr_59.html" class="btn">Yalancılar ve Mumları</a>
+    <a href="ser_tr_60.html" class="btn">Evlilik Hakkında Her Şey</a>
+    <a href="ser_tr_61.html" class="btn">Son Nefesime Kadar</a>
+    <a href="ser_tr_62.html" class="btn">Oğlum</a>
+    <a href="ser_tr_63.html" class="btn">Gizli Saklı</a>
+    <a href="ser_tr_64.html" class="btn">Ah Nerede</a>
+    <a href="ser_tr_65.html" class="btn">Seversin</a>
+    <a href="ser_tr_66.html" class="btn">Duy Beni</a>
+    <a href="ser_tr_67.html" class="btn">İçimizdeki Ateş</a>
+    <a href="ser_tr_68.html" class="btn">Gülümse Kaderine</a>
+    <a href="ser_tr_69.html" class="btn">Sevmek Zamanı</a>
+    <a href="ser_tr_70.html" class="btn">Balkan Ninnisi</a>
+    <a href="ser_tr_71.html" class="btn">Kusursuz Kiracı</a>
+    <a href="ser_tr_72.html" class="btn">Yalı Çapkını</a>
+    <a href="ser_tr_73.html" class="btn">Ateş Kuşları</a>
+    <a href="ser_tr_74.html" class="btn">Ben Bu Cihana Sığmazam</a>
+    <a href="ser_tr_75.html" class="btn">Aile</a>
+    <a href="ser_tr_76.html" class="btn">Ömer</a>
+    <a href="ser_tr_77.html" class="btn">Adım Farah</a>
+    <a href="ser_tr_78.html" class="btn">Kraliçe</a>
+    <a href="ser_tr_79.html" class="btn">Ya Çok Seversen</a>
+    <a href="ser_tr_80.html" class="btn">Kendi Düşen Ağlamaz</a>
+    <a href="ser_tr_81.html" class="btn">Ne Gemiler Yaktım</a>
+    <a href="ser_tr_82.html" class="btn">Safir</a>
+    <a href="ser_tr_83.html" class="btn">Kirli Sepeti</a>
+    <a href="ser_tr_84.html" class="btn">Hudutsuz Sevda</a>
+    <a href="ser_tr_85.html" class="btn">Sakla Beni</a>
+    <a href="ser_tr_86.html" class="btn">Altın Kafes</a>
+    <a href="ser_tr_87.html" class="btn">Arak</a>
+    <a href="ser_tr_88.html" class="btn">Kopuk</a>
+    <a href="ser_tr_89.html" class="btn">Yan Oda</a>
+    <a href="ser_tr_90.html" class="btn">Bahar</a>
+    <a href="ser_tr_91.html" class="btn">Gaddar</a>
+    <a href="ser_tr_92.html" class="btn">Taş Kağıt Makas</a>
+    <a href="ser_tr_93.html" class="btn">Korkma Ben Yanındayım</a>
+    <a href="ser_tr_94.html" class="btn">İnci Taneleri</a>
+    <a href="ser_tr_95.html" class="btn">Kızıl Goncalar</a>
+    <a href="ser_tr_96.html" class="btn">Sandık Kokusu</a>
+    <a href="ser_tr_97.html" class="btn">Şahane Hayatım</a>
+    <a href="ser_tr_98.html" class="btn">Dönence</a>
+    <a href="ser_tr_99.html" class="btn">Maviye Sürgün</a>
+    <a href="ser_tr_100.html" class="btn">Aşkın Yolculuğu</a>
+    <a href="ser_tr_101.html" class="btn">Kaçak Gelinler</a>
+    <a href="ser_tr_102.html" class="btn">Güneşin Kızları</a>
+    <a href="ser_tr_103.html" class="btn">Tatlı Küçük Yalancılar</a>
+    <a href="ser_tr_104.html" class="btn">Beş Kardeş</a>
+    <a href="ser_tr_105.html" class="btn">Acı Aşk</a>
+    <a href="ser_tr_106.html" class="btn">Evli ve Öfkeli</a>
+    <a href="ser_tr_107.html" class="btn">Kehribar</a>
+    <a href="ser_tr_108.html" class="btn">Gecenin Kraliçesi</a>
+    <a href="ser_tr_109.html" class="btn">Sevda Kuşun Kanadında</a>
+    <a href="ser_tr_110.html" class="btn">No 309</a>
+    <a href="ser_tr_111.html" class="btn">Bana Baba Dedi</a>
+    <a href="ser_tr_112.html" class="btn">Göç Zamanı</a>
+    <a href="ser_tr_113.html" class="btn">Göçebe</a>
+    <a href="ser_tr_114.html" class="btn">Rengarenk</a>
+    <a href="ser_tr_115.html" class="btn">Hayatımın Aşkı</a>
+    <a href="ser_tr_116.html" class="btn">Babam ve Ailesi</a>
+    <a href="ser_tr_117.html" class="btn">Altınsoylar</a>
+    <a href="ser_tr_118.html" class="btn">Kördüğüm</a>
+    <a href="ser_tr_119.html" class="btn">İlişki Durumu: Evli</a>
+    <a href="ser_tr_120.html" class="btn">İlişki Durumu: Karışık</a>
+    <a href="ser_tr_121.html" class="btn">Kış Güneşi</a>
+    <a href="ser_tr_122.html" class="btn">Emanet</a>
+    <a href="ser_tr_123.html" class="btn">Yeter</a>
+    <a href="ser_tr_124.html" class="btn">Aşk Zamanı</a>
+    <a href="ser_tr_125.html" class="btn">Yıldızlar Şahidim</a>
+    <a href="ser_tr_126.html" class="btn">Kalbimdeki Deniz</a>
+    <a href="ser_tr_127.html" class="btn">Ver Elini Aşk</a>
+    <a href="ser_tr_128.html" class="btn">Dayan Yüreğim</a>
+    <a href="ser_tr_129.html" class="btn">Bu Sayılmaz</a>
+    <a href="ser_tr_130.html" class="btn">Şevkat Yerimdar</a>
+    <a href="ser_tr_131.html" class="btn">Cennet'in Gözyaşları</a>
+    <a href="ser_tr_132.html" class="btn">Siyah Beyaz Aşk</a>
+    <a href="ser_tr_133.html" class="btn">Yeni Gelin</a>
+    <a href="ser_tr_134.html" class="btn">Meryem</a>
+    <a href="ser_tr_135.html" class="btn">İsimsizler</a>
+    <a href="ser_tr_136.html" class="btn">Klavye Delikanlıları</a>
+    <a href="ser_tr_137.html" class="btn">Çoban Yıldızı</a>
+    <a href="ser_tr_138.html" class="btn">Kanatsız Kuşlar</a>
+    <a href="ser_tr_139.html" class="btn">Kayıtdışı</a>
+    <a href="ser_tr_140.html" class="btn">Adı Efsane</a>
+    <a href="ser_tr_141.html" class="btn">Çocuklar Duymasın</a>
+    <a href="ser_tr_142.html" class="btn">Nefes Nefese</a>
+    <a href="ser_tr_143.html" class="btn">Yüz Yüze</a>
+    <a href="ser_tr_144.html" class="btn">Canevim</a>
+    <a href="ser_tr_145.html" class="btn">Leke</a>
+    <a href="ser_tr_146.html" class="btn">Kimse Bilmez</a>
+    <a href="ser_tr_147.html" class="btn">Afili Aşk</a>
+    <a href="ser_tr_148.html" class="btn">Aşk Ağlatır</a>
+    <a href="ser_tr_149.html" class="btn">Kurşun</a>
+    <a href="ser_tr_150.html" class="btn">Yaralı Kuşlar</a>
+    <a href="ser_tr_151.html" class="btn">Benim Adım Melek</a>
+    <a href="ser_tr_152.html" class="btn">Doğduğun Ev Kaderindir</a>
+    <a href="ser_tr_153.html" class="btn">Zemheri</a>
+    <a href="ser_tr_154.html" class="btn">Hizmetçiler</a>
+    <a href="ser_tr_155.html" class="btn">Gençliğim Eyvah</a>
+    <a href="ser_tr_156.html" class="btn">Bay Yanlış</a>
+    <a href="ser_tr_157.html" class="btn">İyi Günde Kötü Günde</a>
+    <a href="ser_tr_158.html" class="btn">Sol Yanım</a>
+    <a href="ser_tr_159.html" class="btn">Maria ile Mustafa</a>
+    <a href="ser_tr_160.html" class="btn">Kırmızı Oda</a>
+    <a href="ser_tr_161.html" class="btn">Kefaret</a>
+    <a href="ser_tr_162.html" class="btn">Masumiyet</a>
+    <a href="ser_tr_163.html" class="btn">Kardeş Çocukları</a>
+    <a href="ser_tr_164.html" class="btn">Benim Hayatım</a>
+    <a href="ser_tr_165.html" class="btn">Bir Annenin Günahı</a>
+    <a href="ser_tr_166.html" class="btn">Seni Çok Bekledim</a>
+    <a href="ser_tr_167.html" class="btn">Arıza</a>
+    <a href="ser_tr_168.html" class="btn">Ramo</a>
+    <a href="ser_tr_169.html" class="btn">Maraşlı</a>
+    <a href="ser_tr_170.html" class="btn">Son Yaz</a>
+    <a href="ser_tr_171.html" class="btn">Menajerimi Ara</a>
+    <a href="ser_tr_172.html" class="btn">Alev Alev</a>
+    <a href="ser_tr_173.html" class="btn">Uzakların Masalı</a>
+    <a href="ser_tr_174.html" class="btn">Kalp Yarası</a>
+    <a href="ser_tr_175.html" class="btn">İçimizden Biri</a>
+    <a href="ser_tr_176.html" class="btn">Yargı</a>
+    <a href="ser_tr_177.html" class="btn">Aziz</a>
+    <a href="ser_tr_178.html" class="btn">Mahkum</a>
+    <a href="ser_tr_179.html" class="btn">Destan</a>
+    <a href="ser_tr_180.html" class="btn">Annenin Sırrıdır Çocuk</a>
+    <a href="ser_tr_181.html" class="btn">Gecenin Ucunda</a>
+    <a href="ser_tr_182.html" class="btn">Ego</a>
+    <a href="ser_tr_183.html" class="btn">Veda Mektubu</a>
+    <a href="ser_tr_184.html" class="btn">Dokuz Oğuz</a>
+    <a href="ser_tr_185.html" class="btn">Kısmet</a>
+    <a href="ser_tr_186.html" class="btn">Vermem Seni Ellere</a>
+    <a href="ser_tr_187.html" class="btn">Yaz Şarkısı</a>
+    <a href="ser_tr_188.html" class="btn">Mavi Atlar</a>
+    <a href="ser_tr_189.html" class="btn">Siyah Tahta</a>
+    <a href="ser_tr_190.html" class="btn">Yıldız Tozu</a>
+    <a href="ser_tr_191.html" class="btn">Gülcemal</a>
+    <a href="ser_tr_192.html" class="btn">Bir Peri Masalı</a>
+    <a href="ser_tr_193.html" class="btn">Çöp Adam</a>
+    <a href="ser_tr_194.html" class="btn">Tuzak</a>
+    <a href="ser_tr_195.html" class="btn">Ateş Kuşları</a>
+    <a href="ser_tr_196.html" class="btn">Gelsin Hayat Bildiği Gibi</a>
+    <a href="ser_tr_197.html" class="btn">Kasaba Doktoru</a>
+    <a href="ser_tr_198.html" class="btn">Hayat Bugün</a>
+    <a href="ser_tr_199.html" class="btn">Darmaduman</a>
+    <a href="ser_tr_200.html" class="btn">Yabani</a>
+    <a href="ser_tr_201.html" class="btn">Dilek Taşı</a>
+    <a href="ser_tr_202.html" class="btn">Kader Bağları</a>
+    <a href="ser_tr_203.html" class="btn">Güzel Günler</a>
+    <a href="ser_tr_204.html" class="btn">Bir Küçük Gün Işığı</a>
+    <a href="ser_tr_205.html" class="btn">Benim Güzel Ailem</a>
+    <a href="ser_tr_206.html" class="btn">Aldatmak</a>
+    <a href="ser_tr_207.html" class="btn">Üç Kız Kardeş</a>
+    <a href="ser_tr_208.html" class="btn">Baba</a>
+    <a href="ser_tr_209.html" class="btn">O Kız</a>
+    <a href="ser_tr_210.html" class="btn">Sipahi</a>
+    <a href="ser_tr_211.html" class="btn">Kaçış</a>
+    <a href="ser_tr_212.html" class="btn">Şahmaran</a>
+    <a href="ser_tr_213.html" class="btn">Terzi</a>
+    <a href="ser_tr_214.html" class="btn">Kuş Uçuşu</a>
+    <a href="ser_tr_215.html" class="btn">Kulüp</a>
+    <a href="ser_tr_216.html" class="btn">Bir Başkadır</a>
+    <a href="ser_tr_217.html" class="btn">Alef</a>
+    <a href="ser_tr_218.html" class="btn">Fi</a>
+    <a href="ser_tr_219.html" class="btn">Masum</a>
+    <a href="ser_tr_220.html" class="btn">Şahsiyet</a>
+</div>
+
+<script>
+    function filterFunction() {
+        let input = document.getElementById("searchInput");
+        let filter = input.value.toUpperCase();
+        let list = document.getElementById("seriesList");
+        let links = list.getElementsByTagName("a");
+        for (let i = 0; i < links.length; i++) {
+            let txtValue = links[i].textContent || links[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                links[i].style.display = "";
+            } else {
+                links[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+      </html>
+      
