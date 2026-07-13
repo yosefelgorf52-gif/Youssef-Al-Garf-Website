@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأفلام الأجنبية</title>
+    <style>
+        body { background-color: #b71c1c; font-family: sans-serif; margin: 0; padding: 0; }
+        header { background-color: #b71c1c; padding: 15px; text-align: center; color: white; border-bottom: 2px solid #a31a1a; position: sticky; top: 0; z-index: 1000; }
+        .search-container { padding: 10px; background: #b71c1c; position: sticky; top: 55px; z-index: 999; border-bottom: 2px solid #a31a1a; }
+        #searchInput { width: 100%; padding: 12px; border-radius: 8px; border: none; box-sizing: border-box; text-align: right; }
+        .container { padding: 10px; }
+        .btn { display: block; background: #fff; color: #b71c1c; padding: 15px; margin-bottom: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid #b71c1c; text-align: center; }
+    </style>
+</head>
+<body>
+
+<header>الأفلام الأجنبية</header>
+
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="ابحث عن فيلم..." onkeyup="filterFunction()">
+</div>
+
+<div class="container" id="moviesList">
+    <!-- قائمة الأفلام الكاملة - 265 فيلم -->
+    <a href="movie_en_1.html" class="btn">Superman</a>
+    <a href="movie_en_2.html" class="btn">Jurassic World Rebirth</a>
+    <a href="movie_en_3.html" class="btn">The Fantastic Four: First Steps</a>
+    <a href="movie_en_4.html" class="btn">F1</a>
+    <a href="movie_en_5.html" class="btn">M3GAN 2.0</a>
+    <a href="movie_en_6.html" class="btn">28 Years Later</a>
+    <a href="movie_en_7.html" class="btn">How to Train Your Dragon</a>
+    <a href="movie_en_8.html" class="btn">Elio</a>
+    <a href="movie_en_9.html" class="btn">Lilo & Stitch</a>
+    <a href="movie_en_10.html" class="btn">Ballerina</a>
+    <a href="movie_en_11.html" class="btn">Mission: Impossible – The Final Reckoning</a>
+    <a href="movie_en_12.html" class="btn">Final Destination: Bloodlines</a>
+    <a href="movie_en_13.html" class="btn">Thunderbolts*</a>
+    <a href="movie_en_14.html" class="btn">Sinners</a>
+    <a href="movie_en_15.html" class="btn">A Minecraft Movie</a>
+    <a href="movie_en_16.html" class="btn">The Amateur</a>
+    <a href="movie_en_17.html" class="btn">Warfare</a>
+    <a href="movie_en_18.html" class="btn">A Working Man</a>
+    <a href="movie_en_19.html" class="btn">Novocaine</a>
+    <a href="movie_en_20.html" class="btn">Mickey 17</a>
+    <a href="movie_en_21.html" class="btn">Captain America: Brave New World</a>
+    <a href="movie_en_22.html" class="btn">The Gorge</a>
+    <a href="movie_en_23.html" class="btn">Companion</a>
+    <a href="movie_en_24.html" class="btn">Dog Man</a>
+    <a href="movie_en_25.html" class="btn">Presence</a>
+    <a href="movie_en_26.html" class="btn">Flight Risk</a>
+    <a href="movie_en_27.html" class="btn">Wolf Man</a>
+    <a href="movie_en_28.html" class="btn">Den of Thieves 2: Pantera</a>
+    <a href="movie_en_29.html" class="btn">Sonic the Hedgehog 3</a>
+    <a href="movie_en_30.html" class="btn">Mufasa: The Lion King</a>
+    <a href="movie_en_31.html" class="btn">Kraven the Hunter</a>
+    <a href="movie_en_32.html" class="btn">The Lord of the Rings: The War of the Rohirrim</a>
+    <a href="movie_en_33.html" class="btn">Carry-On</a>
+    <a href="movie_en_34.html" class="btn">Red One</a>
+    <a href="movie_en_35.html" class="btn">Gladiator II</a>
+    <a href="movie_en_36.html" class="btn">Wicked</a>
+    <a href="movie_en_37.html" class="btn">Moana 2</a>
+    <a href="movie_en_38.html" class="btn">Heretic</a>
+    <a href="movie_en_39.html" class="btn">Venom: The Last Dance</a>
+    <a href="movie_en_40.html" class="btn">Conclave</a>
+    <a href="movie_en_41.html" class="btn">Smile 2</a>
+    <a href="movie_en_42.html" class="btn">We Live in Time</a>
+    <a href="movie_en_43.html" class="btn">The Wild Robot</a>
+    <a href="movie_en_44.html" class="btn">Transformers One</a>
+    <a href="movie_en_45.html" class="btn">Speak No Evil</a>
+    <a href="movie_en_46.html" class="btn">Beetlejuice Beetlejuice</a>
+    <a href="movie_en_47.html" class="btn">Alien: Romulus</a>
+    <a href="movie_en_48.html" class="btn">It Ends with Us</a>
+    <a href="movie_en_49.html" class="btn">Borderlands</a>
+    <a href="movie_en_50.html" class="btn">Trap</a>
+    <a href="movie_en_51.html" class="btn">Deadpool & Wolverine</a>
+    <a href="movie_en_52.html" class="btn">Twisters</a>
+    <a href="movie_en_53.html" class="btn">Fly Me to the Moon</a>
+    <a href="movie_en_54.html" class="btn">Longlegs</a>
+    <a href="movie_en_55.html" class="btn">Despicable Me 4</a>
+    <a href="movie_en_56.html" class="btn">Beverly Hills Cop: Axel F</a>
+    <a href="movie_en_57.html" class="btn">A Quiet Place: Day One</a>
+    <a href="movie_en_58.html" class="btn">Horizon: An American Saga – Chapter 1</a>
+    <a href="movie_en_59.html" class="btn">Inside Out 2</a>
+    <a href="movie_en_60.html" class="btn">Bad Boys: Ride or Die</a>
+    <a href="movie_en_61.html" class="btn">The Watchers</a>
+    <a href="movie_en_62.html" class="btn">The Garfield Movie</a>
+    <a href="movie_en_63.html" class="btn">Furiosa: A Mad Max Saga</a>
+    <a href="movie_en_64.html" class="btn">IF</a>
+    <a href="movie_en_65.html" class="btn">Kingdom of the Planet of the Apes</a>
+    <a href="movie_en_66.html" class="btn">The Fall Guy</a>
+    <a href="movie_en_67.html" class="btn">Challengers</a>
+    <a href="movie_en_68.html" class="btn">Abigail</a>
+    <a href="movie_en_69.html" class="btn">Civil War</a>
+    <a href="movie_en_70.html" class="btn">Ghostbusters: Frozen Empire</a>
+    <a href="movie_en_71.html" class="btn">Godzilla x Kong: The New Empire</a>
+    <a href="movie_en_72.html" class="btn">Arthur the King</a>
+    <a href="movie_en_73.html" class="btn">Kung Fu Panda 4</a>
+    <a href="movie_en_74.html" class="btn">Dune: Part Two</a>
+    <a href="movie_en_75.html" class="btn">Ordinary Angels</a>
+    <a href="movie_en_76.html" class="btn">Drive-Away Dolls</a>
+    <a href="movie_en_77.html" class="btn">Madame Web</a>
+    <a href="movie_en_78.html" class="btn">Bob Marley: One Love</a>
+    <a href="movie_en_79.html" class="btn">Lisa Frankenstein</a>
+    <a href="movie_en_80.html" class="btn">Argylle</a>
+    <a href="movie_en_81.html" class="btn">The Beekeeper</a>
+    <a href="movie_en_82.html" class="btn">Mean Girls</a>
+    <a href="movie_en_83.html" class="btn">Night Swim</a>
+    <a href="movie_en_84.html" class="btn">Ferrari</a>
+    <a href="movie_en_85.html" class="btn">The Color Purple</a>
+    <a href="movie_en_86.html" class="btn">Aquaman and the Lost Kingdom</a>
+    <a href="movie_en_87.html" class="btn">Migration</a>
+    <a href="movie_en_88.html" class="btn">Wonka</a>
+    <a href="movie_en_89.html" class="btn">The Boy and the Heron</a>
+    <a href="movie_en_90.html" class="btn">Godzilla Minus One</a>
+    <a href="movie_en_91.html" class="btn">Napoleon</a>
+    <a href="movie_en_92.html" class="btn">Wish</a>
+    <a href="movie_en_93.html" class="btn">The Hunger Games: The Ballad of Songbirds & Snakes</a>
+    <a href="movie_en_94.html" class="btn">The Marvels</a>
+    <a href="movie_en_95.html" class="btn">Five Nights at Freddy's</a>
+    <a href="movie_en_96.html" class="btn">Killers of the Flower Moon</a>
+    <a href="movie_en_97.html" class="btn">The Creator</a>
+    <a href="movie_en_98.html" class="btn">Saw X</a>
+    <a href="movie_en_99.html" class="btn">The Exorcist: Believer</a>
+    <a href="movie_en_100.html" class="btn">The Nun II</a>
+    <a href="movie_en_101.html" class="btn">The Equalizer 3</a>
+    <a href="movie_en_102.html" class="btn">Blue Beetle</a>
+    <a href="movie_en_103.html" class="btn">Gran Turismo</a>
+    <a href="movie_en_104.html" class="btn">Strays</a>
+    <a href="movie_en_105.html" class="btn">Haunted Mansion</a>
+    <a href="movie_en_106.html" class="btn">The Instigators</a>
+    <a href="movie_en_107.html" class="btn">Borderlands</a>
+    <a href="movie_en_108.html" class="btn">Harold and the Purple Crayon</a>
+    <a href="movie_en_109.html" class="btn">Cuckoo</a>
+    <a href="movie_en_110.html" class="btn">Blink Twice</a>
+    <a href="movie_en_111.html" class="btn">Alien: Romulus</a>
+    <a href="movie_en_112.html" class="btn">It Ends with Us</a>
+    <a href="movie_en_113.html" class="btn">Trap</a>
+    <a href="movie_en_114.html" class="btn">Deadpool & Wolverine</a>
+    <a href="movie_en_115.html" class="btn">Twisters</a>
+    <a href="movie_en_116.html" class="btn">Fly Me to the Moon</a>
+    <a href="movie_en_117.html" class="btn">Longlegs</a>
+    <a href="movie_en_118.html" class="btn">Despicable Me 4</a>
+    <a href="movie_en_119.html" class="btn">Beverly Hills Cop: Axel F</a>
+    <a href="movie_en_120.html" class="btn">A Quiet Place: Day One</a>
+    <a href="movie_en_121.html" class="btn">Horizon: An American Saga – Chapter 1</a>
+    <a href="movie_en_122.html" class="btn">Kinds of Kindness</a>
+    <a href="movie_en_123.html" class="btn">The Bikeriders</a>
+    <a href="movie_en_124.html" class="btn">Inside Out 2</a>
+    <a href="movie_en_125.html" class="btn">Bad Boys: Ride or Die</a>
+    <a href="movie_en_126.html" class="btn">The Watchers</a>
+    <a href="movie_en_127.html" class="btn">Hit Man</a>
+    <a href="movie_en_128.html" class="btn">Ezra</a>
+    <a href="movie_en_129.html" class="btn">Furiosa: A Mad Max Saga</a>
+    <a href="movie_en_130.html" class="btn">The Garfield Movie</a>
+    <a href="movie_en_131.html" class="btn">IF</a>
+    <a href="movie_en_132.html" class="btn">Kingdom of the Planet of the Apes</a>
+    <a href="movie_en_133.html" class="btn">Tarot</a>
+    <a href="movie_en_134.html" class="btn">The Fall Guy</a>
+    <a href="movie_en_135.html" class="btn">Challengers</a>
+    <a href="movie_en_136.html" class="btn">Abigail</a>
+    <a href="movie_en_137.html" class="btn">Civil War</a>
+    <a href="movie_en_138.html" class="btn">Monkey Man</a>
+    <a href="movie_en_139.html" class="btn">Godzilla x Kong: The New Empire</a>
+    <a href="movie_en_140.html" class="btn">Ghostbusters: Frozen Empire</a>
+    <a href="movie_en_141.html" class="btn">Arthur the King</a>
+    <a href="movie_en_142.html" class="btn">Imaginary</a>
+    <a href="movie_en_143.html" class="btn">Kung Fu Panda 4</a>
+    <a href="movie_en_144.html" class="btn">Dune: Part Two</a>
+    <a href="movie_en_145.html" class="btn">Spaceman</a>
+    <a href="movie_en_146.html" class="btn">Ordinary Angels</a>
+    <a href="movie_en_147.html" class="btn">Drive-Away Dolls</a>
+    <a href="movie_en_148.html" class="btn">Land of Bad</a>
+    <a href="movie_en_149.html" class="btn">Madame Web</a>
+    <a href="movie_en_150.html" class="btn">Bob Marley: One Love</a>
+    <a href="movie_en_151.html" class="btn">Lisa Frankenstein</a>
+    <a href="movie_en_152.html" class="btn">Argylle</a>
+    <a href="movie_en_153.html" class="btn">The Beekeeper</a>
+    <a href="movie_en_154.html" class="btn">Mean Girls</a>
+    <a href="movie_en_155.html" class="btn">The Book of Clarence</a>
+    <a href="movie_en_156.html" class="btn">Night Swim</a>
+    <a href="movie_en_157.html" class="btn">Ferrari</a>
+    <a href="movie_en_158.html" class="btn">The Color Purple</a>
+    <a href="movie_en_159.html" class="btn">Anyone But You</a>
+    <a href="movie_en_160.html" class="btn">Aquaman and the Lost Kingdom</a>
+    <a href="movie_en_161.html" class="btn">Migration</a>
+    <a href="movie_en_162.html" class="btn">The Iron Claw</a>
+    <a href="movie_en_163.html" class="btn">Wonka</a>
+    <a href="movie_en_164.html" class="btn">Poor Things</a>
+    <a href="movie_en_165.html" class="btn">Rebel Moon – Part One: A Child of Fire</a>
+    <a href="movie_en_166.html" class="btn">The Boy and the Heron</a>
+    <a href="movie_en_167.html" class="btn">Leave the World Behind</a>
+    <a href="movie_en_168.html" class="btn">Silent Night</a>
+    <a href="movie_en_169.html" class="btn">Napoleon</a>
+    <a href="movie_en_170.html" class="btn">Wish</a>
+    <a href="movie_en_171.html" class="btn">Thanksgiving</a>
+    <a href="movie_en_172.html" class="btn">The Hunger Games: The Ballad of Songbirds & Snakes</a>
+    <a href="movie_en_173.html" class="btn">The Marvels</a>
+    <a href="movie_en_174.html" class="btn">Priscilla</a>
+    <a href="movie_en_175.html" class="btn">Five Nights at Freddy's</a>
+    <a href="movie_en_176.html" class="btn">Killers of the Flower Moon</a>
+    <a href="movie_en_177.html" class="btn">The Exorcist: Believer</a>
+    <a href="movie_en_178.html" class="btn">Saw X</a>
+    <a href="movie_en_179.html" class="btn">The Creator</a>
+    <a href="movie_en_180.html" class="btn">Dumb Money</a>
+    <a href="movie_en_181.html" class="btn">A Haunting in Venice</a>
+    <a href="movie_en_182.html" class="btn">The Nun II</a>
+    <a href="movie_en_183.html" class="btn">Gran Turismo</a>
+    <a href="movie_en_184.html" class="btn">Blue Beetle</a>
+    <a href="movie_en_185.html" class="btn">Talk to Me</a>
+    <a href="movie_en_186.html" class="btn">Meg 2: The Trench</a>
+    <a href="movie_en_187.html" class="btn">Haunted Mansion</a>
+    <a href="movie_en_188.html" class="btn">Mission: Impossible – Dead Reckoning Part One</a>
+    <a href="movie_en_189.html" class="btn">Oppenheimer</a>
+    <a href="movie_en_190.html" class="btn">Barbie</a>
+    <a href="movie_en_191.html" class="btn">Insidious: The Red Door</a>
+    <a href="movie_en_192.html" class="btn">Indiana Jones and the Dial of Destiny</a>
+    <a href="movie_en_193.html" class="btn">No Hard Feelings</a>
+    <a href="movie_en_194.html" class="btn">Elemental</a>
+    <a href="movie_en_195.html" class="btn">Transformers: Rise of the Beasts</a>
+    <a href="movie_en_196.html" class="btn">Spider-Man: Across the Spider-Verse</a>
+    <a href="movie_en_197.html" class="btn">The Boogeyman</a>
+    <a href="movie_en_198.html" class="btn">The Little Mermaid</a>
+    <a href="movie_en_199.html" class="btn">Fast X</a>
+    <a href="movie_en_200.html" class="btn">Guardians of the Galaxy Vol. 3</a>
+    <a href="movie_en_201.html" class="btn">Sisu</a>
+    <a href="movie_en_202.html" class="btn">Evil Dead Rise</a>
+    <a href="movie_en_203.html" class="btn">Renfield</a>
+    <a href="movie_en_204.html" class="btn">Air</a>
+    <a href="movie_en_205.html" class="btn">The Super Mario Bros. Movie</a>
+    <a href="movie_en_206.html" class="btn">John Wick: Chapter 4</a>
+    <a href="movie_en_207.html" class="btn">Shazam! Fury of the Gods</a>
+    <a href="movie_en_208.html" class="btn">Scream VI</a>
+    <a href="movie_en_209.html" class="btn">Creed III</a>
+    <a href="movie_en_210.html" class="btn">Cocaine Bear</a>
+    <a href="movie_en_211.html" class="btn">Ant-Man and the Wasp: Quantumania</a>
+    <a href="movie_en_212.html" class="btn">Magic Mike's Last Dance</a>
+    <a href="movie_en_213.html" class="btn">Knock at the Cabin</a>
+    <a href="movie_en_214.html" class="btn">M3GAN</a>
+    <a href="movie_en_215.html" class="btn">Plane</a>
+    <a href="movie_en_216.html" class="btn">The Pale Blue Eye</a>
+    <a href="movie_en_217.html" class="btn">Avatar: The Way of Water</a>
+    <a href="movie_en_218.html" class="btn">Babylon</a>
+    <a href="movie_en_219.html" class="btn">Puss in Boots: The Last Wish</a>
+    <a href="movie_en_220.html" class="btn">Violent Night</a>
+    <a href="movie_en_221.html" class="btn">The Whale</a>
+    <a href="movie_en_222.html" class="btn">Glass Onion: A Knives Out Mystery</a>
+    <a href="movie_en_223.html" class="btn">Black Panther: Wakanda Forever</a>
+    <a href="movie_en_224.html" class="btn">The Menu</a>
+    <a href="movie_en_225.html" class="btn">Black Adam</a>
+    <a href="movie_en_226.html" class="btn">Halloween Ends</a>
+    <a href="movie_en_227.html" class="btn">Smile</a>
+    <a href="movie_en_228.html" class="btn">Don't Worry Darling</a>
+    <a href="movie_en_229.html" class="btn">The Woman King</a>
+    <a href="movie_en_230.html" class="btn">Barbarian</a>
+    <a href="movie_en_231.html" class="btn">Pinocchio</a>
+    <a href="movie_en_232.html" class="btn">Beast</a>
+    <a href="movie_en_233.html" class="btn">Bullet Train</a>
+    <a href="movie_en_234.html" class="btn">Prey</a>
+    <a href="movie_en_235.html" class="btn">Nope</a>
+    <a href="movie_en_236.html" class="btn">Where the Crawdads Sing</a>
+    <a href="movie_en_237.html" class="btn">Thor: Love and Thunder</a>
+    <a href="movie_en_238.html" class="btn">Minions: The Rise of Gru</a>
+    <a href="movie_en_239.html" class="btn">Elvis</a>
+    <a href="movie_en_240.html" class="btn">The Black Phone</a>
+    <a href="movie_en_241.html" class="btn">Lightyear</a>
+    <a href="movie_en_242.html" class="btn">Jurassic World Dominion</a>
+    <a href="movie_en_243.html" class="btn">Top Gun: Maverick</a>
+    <a href="movie_en_244.html" class="btn">Chip 'n Dale: Rescue Rangers</a>
+    <a href="movie_en_245.html" class="btn">Firestarter</a>
+    <a href="movie_en_246.html" class="btn">Doctor Strange in the Multiverse of Madness</a>
+    <a href="movie_en_247.html" class="btn">The Northman</a>
+    <a href="movie_en_248.html" class="btn">Fantastic Beasts: The Secrets of Dumbledore</a>
+    <a href="movie_en_249.html" class="btn">Sonic the Hedgehog 2</a>
+    <a href="movie_en_250.html" class="btn">Morbius</a>
+    <a href="movie_en_251.html" class="btn">The Lost City</a>
+    <a href="movie_en_252.html" class="btn">The Batman</a>
+    <a href="movie_en_253.html" class="btn">Uncharted</a>
+    <a href="movie_en_254.html" class="btn">Death on the Nile</a>
+    <a href="movie_en_255.html" class="btn">Moonfall</a>
+    <a href="movie_en_256.html" class="btn">Jackass Forever</a>
+    <a href="movie_en_257.html" class="btn">Scream</a>
+    <a href="movie_en_258.html" class="btn">The King's Man</a>
+    <a href="movie_en_259.html" class="btn">Spider-Man: No Way Home</a>
+    <a href="movie_en_260.html" class="btn">The Matrix Resurrections</a>
+    <a href="movie_en_261.html" class="btn">Nightmare Alley</a>
+    <a href="movie_en_262.html" class="btn">West Side Story</a>
+    <a href="movie_en_263.html" class="btn">Don't Look Up</a>
+    <a href="movie_en_264.html" class="btn">Encanto</a>
+    <a href="movie_en_265.html" class="btn">Ghostbusters: Afterlife</a>
+</div>
+
+<script>
+    function filterFunction() {
+        let input = document.getElementById("searchInput");
+        let filter = input.value.toUpperCase();
+        let list = document.getElementById("moviesList");
+        let links = list.getElementsByTagName("a");
+        for (let i = 0; i < links.length; i++) {
+            let txtValue = links[i].textContent || links[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                links[i].style.display = "";
+            } else {
+                links[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+                                                    </html>
+      
