@@ -6,19 +6,25 @@
     <title>المسلسلات الأجنبية</title>
     <style>
         body { background-color: #b71c1c; font-family: sans-serif; margin: 0; padding: 0; }
-        
-        /* الهيدر والبحث ثابتين */
         header { background-color: #b71c1c; padding: 15px; text-align: center; color: white; border-bottom: 2px solid #a31a1a; position: sticky; top: 0; z-index: 1000; }
         .search-container { padding: 10px; background: #b71c1c; position: sticky; top: 55px; z-index: 999; border-bottom: 2px solid #a31a1a; }
-        
         #searchInput { width: 100%; padding: 12px; border-radius: 8px; border: none; box-sizing: border-box; text-align: right; }
-        
         .container { padding: 10px; }
-        
-        /* شكل الزرار */
-        .btn { display: block; background: #fff; color: #b71c1c; padding: 15px; margin-bottom: 8px; 
-               border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid #b71c1c; text-align: center; }
+        .btn { display: block; background: #fff; color: #b71c1c; padding: 15px; margin-bottom: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid #b71c1c; text-align: center; }
     </style>
+    <script>
+        function filterFunction() {
+            var input = document.getElementById("searchInput").value.toLowerCase();
+            var list = document.getElementById("seriesList").getElementsByTagName("a");
+            for (var i = 0; i < list.length; i++) {
+                if (list[i].innerText.toLowerCase().indexOf(input) > -1) {
+                    list[i].style.display = "";
+                } else {
+                    list[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -29,7 +35,7 @@
 </div>
 
 <div class="container" id="seriesList">
-    <!-- قائمة المسلسلات -->
+    <!-- قائمة 350 مسلسل -->
     <a href="en_ser_1.html" class="btn">The Last of Us</a>
     <a href="en_ser_2.html" class="btn">House of the Dragon</a>
     <a href="en_ser_3.html" class="btn">Fallout</a>
@@ -345,4 +351,42 @@
     <a href="en_ser_313.html" class="btn">Nikita</a>
     <a href="en_ser_314.html" class="btn">Quantico</a>
     <a href="en_ser_315.html" class="btn">Designated Survivor</a>
-    <a href="en_ser_316.html" c
+    <a href="en_ser_316.html" class="btn">The Mentalist</a>
+    <a href="en_ser_317.html" class="btn">Lie to Me</a>
+    <a href="en_ser_318.html" class="btn">Castle</a>
+    <a href="en_ser_319.html" class="btn">Bones</a>
+    <a href="en_ser_320.html" class="btn">Fringe</a>
+    <a href="en_ser_321.html" class="btn">Lost</a>
+    <a href="en_ser_322.html" class="btn">Heroes</a>
+    <a href="en_ser_323.html" class="btn">Supernatural</a>
+    <a href="en_ser_324.html" class="btn">The Vampire Diaries</a>
+    <a href="en_ser_325.html" class="btn">The Originals</a>
+    <a href="en_ser_326.html" class="btn">Legacies</a>
+    <a href="en_ser_327.html" class="btn">Smallville</a>
+    <a href="en_ser_328.html" class="btn">Arrow</a>
+    <a href="en_ser_329.html" class="btn">The Flash</a>
+    <a href="en_ser_330.html" class="btn">Supergirl</a>
+    <a href="en_ser_331.html" class="btn">Legends of Tomorrow</a>
+    <a href="en_ser_332.html" class="btn">Gotham</a>
+    <a href="en_ser_333.html" class="btn">Daredevil</a>
+    <a href="en_ser_334.html" class="btn">Jessica Jones</a>
+    <a href="en_ser_335.html" class="btn">Luke Cage</a>
+    <a href="en_ser_336.html" class="btn">Iron Fist</a>
+    <a href="en_ser_337.html" class="btn">The Defenders</a>
+    <a href="en_ser_338.html" class="btn">The Punisher</a>
+    <a href="en_ser_339.html" class="btn">Agents of S.H.I.E.L.D.</a>
+    <a href="en_ser_340.html" class="btn">Cloak & Dagger</a>
+    <a href="en_ser_341.html" class="btn">Runaways</a>
+    <a href="en_ser_342.html" class="btn">Titans</a>
+    <a href="en_ser_343.html" class="btn">Doom Patrol</a>
+    <a href="en_ser_344.html" class="btn">Stargirl</a>
+    <a href="en_ser_345.html" class="btn">Pennyworth</a>
+    <a href="en_ser_346.html" class="btn">Watchmen</a>
+    <a href="en_ser_347.html" class="btn">Constantine</a>
+    <a href="en_ser_348.html" class="btn">Lucifer</a>
+    <a href="en_ser_349.html" class="btn">Preacher</a>
+    <a href="en_ser_350.html" class="btn">American Gods</a>
+</div>
+
+</body>
+</html>
