@@ -3,15 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قنوات الأخبار</title>
+    <title>قائمة الأخبار</title>
     <style>
-        body { background-color: #b71c1c !important; margin: 0 !important; padding: 10px !important; font-family: sans-serif; }
-        .news-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 10px !important; }
-        .news-item { display: block !important; border: 2px solid #8e0000 !important; border-radius: 10px !important; overflow: hidden !important; background: white !important; text-decoration: none; }
-        .news-item img { width: 100% !important; height: 90px !important; object-fit: cover !important; display: block !important; }
+        body { background-color: #b71c1c !important; margin: 0 !important; padding: 0 !important; font-family: sans-serif; }
+
+        /* الهيدر العلوي */
+        .header { 
+            background-color: #8e0000; 
+            color: white; 
+            padding: 15px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 3px solid #fff;
+        }
+        
+        .search-icon { font-size: 24px; cursor: pointer; }
+
+        /* الشبكة (التقسيمة) */
+        .news-grid { 
+            display: grid !important; 
+            grid-template-columns: repeat(3, 1fr) !important; 
+            gap: 12px !important; 
+            padding: 15px !important;
+        }
+
+        /* المربع - كبرناه شوية عشان الكلام يظهر */
+        .news-item { 
+            display: block !important; 
+            border: 3px solid #fff !important; 
+            border-radius: 12px !important; 
+            overflow: hidden !important; 
+            background: white !important; 
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        /* الصورة - كبرناها لتظهر بالكامل */
+        .news-item img { 
+            width: 100% !important; 
+            height: 120px !important; /* طول أكبر عشان يوضح الكلام */
+            object-fit: contain !important; /* يخلي الصورة تظهر بالكامل دون قص */
+            background-color: white;
+            display: block !important; 
+        }
     </style>
 </head>
 <body>
+
+    <div class="header">
+        <span>قائمة الأخبار</span>
+        <div class="search-icon">🔍</div>
+    </div>
 
     <div class="news-grid">
         <a href="1.html" class="news-item"><img src="1.png"></a>
