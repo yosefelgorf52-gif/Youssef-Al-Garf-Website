@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأفلام العربية</title>
+    <style>
+        body { background-color: #b71c1c; font-family: sans-serif; margin: 0; padding: 0; }
+        
+        /* الهيدر والبحث ثابتين في مكانهم */
+        header { background-color: #b71c1c; padding: 15px; text-align: center; color: white; border-bottom: 2px solid #a31a1a; position: sticky; top: 0; z-index: 1000; }
+        .search-container { padding: 10px; background: #b71c1c; position: sticky; top: 55px; z-index: 999; border-bottom: 2px solid #a31a1a; }
+        
+        #searchInput { width: 100%; padding: 12px; border-radius: 8px; border: none; box-sizing: border-box; text-align: right; }
+        
+        .container { padding: 10px; }
+        
+        /* شكل الزرار */
+        .btn { display: block; background: #fff; color: #b71c1c; padding: 15px; margin-bottom: 8px; 
+               border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid #b71c1c; text-align: center; }
+    </style>
+</head>
+<body>
+
+<header>الأفلام العربية</header>
+
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="ابحث عن فيلم..." onkeyup="filterFunction()">
+</div>
+
+<div class="container" id="moviesList">
+    <!-- قائمة الأفلام الكاملة - تم ضبط الروابط لتناسب مشروعك -->
+    <a href="movie1.html" class="btn">المشروع X</a>
+    <a href="movie2.html" class="btn">ريستارت</a>
+    <a href="movie3.html" class="btn">الشاطر</a>
+    <a href="movie4.html" class="btn">أحمد وأحمد</a>
+    <a href="movie5.html" class="btn">فيها إيه يعني</a>
+    <a href="movie6.html" class="btn">الدشاش</a>
+    <a href="movie7.html" class="btn">السلم والثعبان 2</a>
+    <a href="movie8.html" class="btn">الست</a>
+    <a href="movie9.html" class="btn">ولنا في الخيال حب</a>
+    <a href="movie10.html" class="btn">الجواهري</a>
+    <a href="movie11.html" class="btn">الهنا اللي أنا فيه</a>
+    <a href="movie12.html" class="btn">الحريفة 2: الريمونتادا</a>
+    <a href="movie13.html" class="btn">الهوى سلطان</a>
+    <a href="movie14.html" class="btn">الفستان الأبيض</a>
+    <a href="movie15.html" class="btn">من يصدق</a>
+    <a href="movie16.html" class="btn">المستريحة</a>
+    <a href="movie17.html" class="btn">عصابة الماكس</a>
+    <a href="movie18.html" class="btn">ولاد رزق 3: القاضية</a>
+    <a href="movie19.html" class="btn">اللعب مع العيال</a>
+    <a href="movie20.html" class="btn">أهل الكهف</a>
+    <a href="movie21.html" class="btn">شقو</a>
+    <a href="movie22.html" class="btn">الإسكندراني</a>
+    <a href="movie23.html" class="btn">الحريفة</a>
+    <a href="movie24.html" class="btn">أبو نسب</a>
+    <a href="movie25.html" class="btn">شماريخ</a>
+    <a href="movie26.html" class="btn">العميل صفر</a>
+    <a href="movie27.html" class="btn">حسن المصري</a>
+    <a href="movie28.html" class="btn">بيت الروبي</a>
+    <a href="movie29.html" class="btn">مستر إكس</a>
+    <a href="movie30.html" class="btn">تاج</a>
+    <a href="movie31.html" class="btn">البعبع</a>
+    <a href="movie32.html" class="btn">يوم 13</a>
+    <a href="movie33.html" class="btn">ڤوي! ڤوي! ڤوي!</a>
+    <a href="movie34.html" class="btn">أولاد حريم كريم</a>
+    <a href="movie35.html" class="btn">19 ب</a>
+    <a href="movie36.html" class="btn">ساعة إجابة</a>
+    <a href="movie37.html" class="btn">بعد الشر</a>
+    <a href="movie38.html" class="btn">مطرح مطروح</a>
+    <a href="movie39.html" class="btn">نبيل الجميل أخصائي تجميل</a>
+    <a href="movie40.html" class="btn">فضل ونعمة</a>
+    <a href="movie41.html" class="btn">بحبك</a>
+    <a href="movie42.html" class="btn">كيرة والجن</a>
+    <a href="movie43.html" class="btn">عمهم</a>
+    <a href="movie44.html" class="btn">واحد تاني</a>
+    <a href="movie45.html" class="btn">العنكبوت</a>
+    <a href="movie46.html" class="btn">زومبي</a>
+    <a href="movie47.html" class="btn">من أجل زيكو</a>
+    <a href="movie48.html" class="btn">قمر 14</a>
+    <a href="movie49.html" class="btn">ريتسا</a>
+    <a href="movie50.html" class="btn">موسى</a>
+    <a href="movie51.html" class="btn">البعض لا يذهب للمأذون مرتين</a>
+    <a href="movie52.html" class="btn">مش أنا</a>
+    <a href="movie53.html" class="btn">ديدو</a>
+    <a href="movie54.html" class="btn">العارف</a>
+    <a href="movie55.html" class="btn">الإنس والنمس</a>
+    <a href="movie56.html" class="btn">وقفة رجالة</a>
+    <a href="movie57.html" class="btn">ثانية واحدة</a>
+    <a href="movie58.html" class="btn">توأم روحي</a>
+    <a href="movie59.html" class="btn">الغسالة</a>
+    <a href="movie60.html" class="btn">لص بغداد</a>
+    <a href="movie61.html" class="btn">بنات ثانوي</a>
+    <a href="movie62.html" class="btn">صندوق الدنيا</a>
+    <a href="movie63.html" class="btn">الفلوس</a>
+    <a href="movie64.html" class="btn">الفيل الأزرق 2</a>
+    <a href="movie65.html" class="btn">ولاد رزق 2: عودة أسود الأرض</a>
+    <a href="movie66.html" class="btn">كازابلانكا</a>
+    <a href="movie67.html" class="btn">الممر</a>
+    <a href="movie68.html" class="btn">خيال مآتة</a>
+    <a href="movie69.html" class="btn">حملة فرعون</a>
+    <a href="movie70.html" class="btn">سبع البرمبة</a>
+    <a href="movie71.html" class="btn">محمد حسين</a>
+    <a href="movie72.html" class="btn">رأس السنة</a>
+    <a href="movie73.html" class="btn">البدلة</a>
+    <a href="movie74.html" class="btn">الديزل</a>
+    <a href="movie75.html" class="btn">تراب الماس</a>
+    <a href="movie76.html" class="btn">الكويسين</a>
+    <a href="movie77.html" class="btn">ليلة هنا وسرور</a>
+    <a href="movie78.html" class="btn">حرب كرموز</a>
+    <a href="movie79.html" class="btn">قلب أمه</a>
+    <a href="movie80.html" class="btn">عيار ناري</a>
+    <a href="movie81.html" class="btn">بيكيا</a>
+    <a href="movie82.html" class="btn">علي بابا</a>
+    <a href="movie83.html" class="btn">شيخ جاكسون</a>
+    <a href="movie84.html" class="btn">الكنز</a>
+    <a href="movie85.html" class="btn">الكنز 2</a>
+    <a href="movie86.html" class="btn">الخلية</a>
+    <a href="movie87.html" class="btn">تصبح على خير</a>
+    <a href="movie88.html" class="btn">هروب اضطراري</a>
+    <a href="movie89.html" class="btn">الأصليين</a>
+    <a href="movie90.html" class="btn">جواب اعتقال</a>
+    <a href="movie91.html" class="btn">عندما يقع الإنسان في مستنقع أفكاره</a>
+    <a href="movie92.html" class="btn">مولانا</a>
+    <a href="movie93.html" class="btn">آخر ديك في مصر</a>
+    <a href="movie94.html" class="btn">لف ودوران</a>
+    <a href="movie95.html" class="btn">هيبتا: المحاضرة الأخيرة</a>
+    <a href="movie96.html" class="btn">من 30 سنة</a>
+    <a href="movie97.html" class="btn">اشتباك</a>
+    <a href="movie98.html" class="btn">جحيم في الهند</a>
+    <a href="movie99.html" class="btn">حملة فريزر</a>
+    <a href="movie100.html" class="btn">أبو شنب</a>
+    <a href="movie101.html" class="btn">كدبة كل يوم</a>
+    <a href="movie102.html" class="btn">عسل أبيض</a>
+    <a href="movie103.html" class="btn">نوارة</a>
+    <a href="movie104.html" class="btn">شد أجزاء</a>
+    <a href="movie105.html" class="btn">ولاد رزق</a>
+    <a href="movie106.html" class="btn">كابتن مصر</a>
+    <a href="movie107.html" class="btn">أهواك</a>
+    <a href="movie108.html" class="btn">زنقة ستات</a>
+    <a href="movie109.html" class="btn">أسوار القمر</a>
+    <a href="movie110.html" class="btn">حديد</a>
+    <a href="movie111.html" class="btn">الفيل الأزرق</a>
+    <a href="movie112.html" class="btn">الجزيرة 2</a>
+    <a href="movie113.html" class="btn">صنع في مصر</a>
+    <a href="movie114.html" class="btn">الحرب العالمية الثالثة</a>
+    <a href="movie115.html" class="btn">سالم أبو أخته</a>
+    <a href="movie116.html" class="btn">جوازة ميري</a>
+    <a href="movie117.html" class="btn">الهرم الرابع</a>
+    <a href="movie118.html" class="btn">عنتر وبيسة</a>
+    <a href="movie119.html" class="btn">لا مؤاخذة</a>
+    <a href="movie120.html" class="btn">واحد صعيدي</a>
+    <a href="movie121.html" class="btn">قلب الأسد</a>
+    <a href="movie122.html" class="btn">القشاش</a>
+    <a href="movie123.html" class="btn">نظرية عمتي</a>
+    <a href="movie124.html" class="btn">كلبي دليلي</a>
+    <a href="movie125.html" class="btn">تتح</a>
+    <a href="movie126.html" class="btn">سمير أبو النيل</a>
+    <a href="movie127.html" class="btn">بعد الطوفان</a>
+    <a href="movie128.html" class="btn">فبراير الأسود</a>
+    <a href="movie129.html" class="btn">عبده موتة</a>
+    <a href="movie130.html" class="btn">ساعة ونص</a>
+    <a href="movie131.html" class="btn">حلم عزيز</a>
+    <a href="movie132.html" class="btn">عمر وسلمى 3</a>
+    <a href="movie133.html" class="btn">بنات العم</a>
+    <a href="movie134.html" class="btn">المصلحة</a>
+    <a href="movie135.html" class="btn">حصل خير</a>
+    <a href="movie136.html" class="btn">الآنسة مامي</a>
+    <a href="movie137.html" class="btn">رد فعل</a>
+    <a href="movie138.html" class="btn">مستر أند مسز عويس</a>
+    <a href="movie139.html" class="btn">شارع الهرم</a>
+    <a href="movie140.html" class="btn">سيما علي بابا</a>
+    <a href="movie141.html" class="btn">أمن دولت</a>
+    <a href="movie142.html" class="btn">تك تك بوم</a>
+    <a href="movie143.html" class="btn">إكس لارج</a>
+    <a href="movie144.html" class="btn">إذاعة حب</a>
+    <a href="movie145.html" class="btn">واحد صحيح</a>
+    <a href="movie146.html" class="btn">365 يوم سعادة</a>
+    <a href="movie147.html" class="btn">المركب</a>
+    <a href="movie148.html" class="btn">الفاجومي</a>
+    <a href="movie149.html" class="btn">كف القمر</a>
+    <a href="movie150.html" class="btn">أسماء</a>
+    <a href="movie151.html" class="btn">صرخة نملة</a>
+    <a href="movie152.html" class="btn">زهايمر</a>
+    <a href="movie153.html" class="btn">ابن القنصل</a>
+    <a href="movie154.html" class="btn">بلبل حيران</a>
+    <a href="movie155.html" class="btn">عسل إسود</a>
+    <a href="movie156.html" class="btn">الثلاثة يشتغلونها</a>
+    <a href="movie157.html" class="btn">نور عيني</a>
+    <a href="movie158.html" class="btn">الديلر</a>
+    <a href="movie159.html" class="btn">محترم إلا ربع</a>
+    <a href="movie160.html" class="btn">سفاري</a>
+    <a href="movie161.html" class="btn">بون سواريه</a>
+    <a href="movie162.html" class="btn">كباريه</a>
+    <a href="movie163.html" class="btn">الفرح</a>
+    <a href="movie164.html" class="btn">إحكي يا شهرزاد</a>
+    <a href="movie165.html" class="btn">دكان شحاتة</a>
+    <a href="movie166.html" class="btn">بدل فاقد</a>
+    <a href="movie167.html" class="btn">إبراهيم الأبيض</a>
+    <a href="movie168.html" class="btn">رمضان مبروك أبو العلمين حمودة</a>
+    <a href="movie169.html" class="btn">الوعد</a>
+    <a href="movie170.html" class="btn">حسن ومرقص</a>
+    <a href="movie171.html" class="btn">ليلة البيبي دول</a>
+    <a href="movie172.html" class="btn">آسف على الإزعاج</a>
+    <a href="movie173.html" class="btn">الريس عمر حرب</a>
+    <a href="movie174.html" class="btn">الجزيرة</a>
+    <a href="movie175.html" class="btn">حين ميسرة</a>
+    <a href="movie176.html" class="btn">كلاشينكوف</a>
+    <a href="movie177.html" class="btn">خارج على القانون</a>
+    <a href="movie178.html" class="btn">مرجان أحمد مرجان</a>
+    <a href="movie179.html" class="btn">في محطة مصر</a>
+    <a href="movie180.html" class="btn">واحد من الناس</a>
+    <a href="movie181.html" class="btn">عمارة يعقوبيان</a>
+    <a href="movie182.html" class="btn">ملاكي إسكندرية</a>
+    <a href="movie183.html" class="btn">عن العشق والهوى</a>
+    <a href="movie184.html" class="btn">جعلتني مجرمًا</a>
+    <a href="movie185.html" class="btn">خالتي فرنسا</a>
+    <a href="movie186.html" class="btn">تيتو</a>
+    <a href="movie187.html" class="btn">بحب السيما</a>
+    <a href="movie188.html" class="btn">مافيا</a>
+    <a href="movie189.html" class="btn">سهر الليالي</a>
+    <a href="movie190.html" class="btn">عريس من جهة أمنية</a>
+    <a href="movie191.html" class="btn">إزاي البنات تحبك</a>
+    <a href="movie192.html" class="btn">التجربة الدنماركية</a>
+    <a href="movie193.html" class="btn">اللمبي</a>
+    <a href="movie194.html" class="btn">صاحب صاحبه</a>
+    <a href="movie195.html" class="btn">همام في أمستردام</a>
+    <a href="movie196.html" class="btn">عبود على الحدود</a>
+    <a href="movie197.html" class="btn">صعيدي في الجامعة الأمريكية</a>
+    <a href="movie198.html" class="btn">إسماعيلية رايح جاي</a>
+    <a href="movie199.html" class="btn">الإرهاب والكباب</a>
+</div>
+
+<script>
+    function filterFunction() {
+        let input = document.getElementById("searchInput");
+        let filter = input.value.toUpperCase();
+        let list = document.getElementById("moviesList");
+        let links = list.getElementsByTagName("a");
+        for (let i = 0; i < links.length; i++) {
+            let txtValue = links[i].textContent || links[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                links[i].style.display = "";
+            } else {
+                links[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
