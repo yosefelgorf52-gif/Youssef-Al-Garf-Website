@@ -5,79 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>قائمة القنوات</title>
     <style>
-        /* إعدادات الصفحة الأساسية */
-        body { 
-            background-color: #b71c1c; 
-            margin: 0; 
-            padding: 10px; 
-            font-family: sans-serif;
-        }
-        
-        /* تقسيم الشبكة لـ 3 أعمدة متساوية */
-        .channel-grid { 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 12px; 
-            max-width: 600px; 
-            margin: 0 auto;
-        }
-        
-        /* تصميم إطار القناة */
-        .channel-item { 
-            background: #ffffff; 
-            padding: 6px; 
-            border-radius: 8px; 
-            border: 2px solid #8e0000; 
-            display: block; 
-            text-decoration: none;
-            transition: transform 0.2s;
-        }
-        
-        /* تأثير عند اللمس */
-        .channel-item:active { transform: scale(0.95); }
-        
-        /* الصور داخل الشبكة */
-        .channel-item img { 
-            width: 100%; 
-            height: 90px; 
-            object-fit: cover; 
-            border-radius: 4px; 
-            display: block;
-        }
+        body { background-color: #b71c1c; margin: 0; padding: 10px; font-family: sans-serif; }
+        .channel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 600px; margin: 0 auto; }
+        .channel-item { background: #ffffff; padding: 6px; border-radius: 8px; border: 2px solid #8e0000; display: block; text-decoration: none; }
+        .channel-item img { width: 100%; height: 90px; object-fit: cover; border-radius: 4px; display: block; }
     </style>
 </head>
 <body>
 
     <div class="channel-grid">
-        <a href="1.html" class="channel-item"><img src="1.png"></a>
-        <a href="2.html" class="channel-item"><img src="2.png"></a>
-        <a href="3.html" class="channel-item"><img src="3.png"></a>
-        <a href="4.html" class="channel-item"><img src="4.png"></a>
-        <a href="5.html" class="channel-item"><img src="5.png"></a>
-        <a href="6.html" class="channel-item"><img src="6.png"></a>
-        <a href="7.html" class="channel-item"><img src="7.png"></a>
-        <a href="8.html" class="channel-item"><img src="8.png"></a>
-        <a href="9.html" class="channel-item"><img src="9.png"></a>
-        <a href="10.html" class="channel-item"><img src="10.png"></a>
-        <a href="11.html" class="channel-item"><img src="11.png"></a>
-        <a href="12.html" class="channel-item"><img src="12.png"></a>
-        <a href="13.html" class="channel-item"><img src="13.png"></a>
-        <a href="14.html" class="channel-item"><img src="14.png"></a>
-        <a href="15.html" class="channel-item"><img src="15.png"></a>
-        <a href="16.html" class="channel-item"><img src="16.png"></a>
-        <a href="17.html" class="channel-item"><img src="17.png"></a>
-        <a href="18.html" class="channel-item"><img src="18.png"></a>
-        <a href="19.html" class="channel-item"><img src="19.png"></a>
-        <a href="20.html" class="channel-item"><img src="20.png"></a>
-        <a href="21.html" class="channel-item"><img src="21.png"></a>
-        <a href="22.html" class="channel-item"><img src="22.png"></a>
-        <a href="23.html" class="channel-item"><img src="23.png"></a>
-        <a href="24.html" class="channel-item"><img src="24.png"></a>
-        <a href="25.html" class="channel-item"><img src="25.png"></a>
-        <a href="26.html" class="channel-item"><img src="26.png"></a>
-        <a href="27.html" class="channel-item"><img src="27.png"></a>
-        <a href="28.html" class="channel-item"><img src="28.png"></a>
-        <a href="29.html" class="channel-item"><img src="29.png"></a>
+        <a href="/1.html" class="channel-item"><img src="1.png" alt="Channel 1"></a>
+        <a href="/2.html" class="channel-item"><img src="2.png" alt="Channel 2"></a>
+        <a href="/3.html" class="channel-item"><img src="3.png" alt="Channel 3"></a>
+        <a href="/4.html" class="channel-item"><img src="4.png" alt="Channel 4"></a>
+        <a href="/5.html" class="channel-item"><img src="5.png" alt="Channel 5"></a>
+        <a href="/6.html" class="channel-item"><img src="6.png" alt="Channel 6"></a>
+        <a href="/7.html" class="channel-item"><img src="7.png" alt="Channel 7"></a>
+        <a href="/8.html" class="channel-item"><img src="8.png" alt="Channel 8"></a>
+        <a href="/9.html" class="channel-item"><img src="9.png" alt="Channel 9"></a>
+        <a href="/10.html" class="channel-item"><img src="10.png" alt="Channel 10"></a>
+        <a href="/11.html" class="channel-item"><img src="11.png" alt="Channel 11"></a>
+        <a href="/12.html" class="channel-item"><img src="12.png" alt="Channel 12"></a>
+        <a href="/13.html" class="channel-item"><img src="13.png" alt="Channel 13"></a>
+        <a href="/14.html" class="channel-item"><img src="14.png" alt="Channel 14"></a>
+        <a href="/15.html" class="channel-item"><img src="15.png" alt="Channel 15"></a>
+        <a href="/16.html" class="channel-item"><img src="16.png" alt="Channel 16"></a>
+        <a href="/17.html" class="channel-item"><img src="17.png" alt="Channel 17"></a>
+        <a href="/18.html" class="channel-item"><img src="18.png" alt="Channel 18"></a>
+        <a href="/19.html" class="channel-item"><img src="19.png" alt="Channel 19"></a>
+        <a href="/20.html" class="channel-item"><img src="20.png" alt="Channel 20"></a>
+        <a href="/21.html" class="channel-item"><img src="21.png" alt="Channel 21"></a>
+        <a href="/22.html" class="channel-item"><img src="22.png" alt="Channel 22"></a>
+        <a href="/23.html" class="channel-item"><img src="23.png" alt="Channel 23"></a>
+        <a href="/24.html" class="channel-item"><img src="24.png" alt="Channel 24"></a>
+        <a href="/25.html" class="channel-item"><img src="25.png" alt="Channel 25"></a>
+        <a href="/26.html" class="channel-item"><img src="26.png" alt="Channel 26"></a>
+        <a href="/27.html" class="channel-item"><img src="27.png" alt="Channel 27"></a>
+        <a href="/28.html" class="channel-item"><img src="28.png" alt="Channel 28"></a>
+        <a href="/29.html" class="channel-item"><img src="29.png" alt="Channel 29"></a>
     </div>
 
 </body>
