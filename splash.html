@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to UG TV</title>
+    <style>
+        /* خلفية متدرجة الألوان (Gradient) عشان الشكل يكون جذاب */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #b71c1c, #4a148c, #1a237e);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: popIn 1s ease-out;
+        }
+
+        /* تنسيق UG TV */
+        .ug-logo {
+            font-size: 90px;
+            font-weight: 900;
+            letter-spacing: 10px;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .tv-text {
+            color: #ffeb3b;
+            font-size: 40px;
+            margin-top: -20px;
+        }
+
+        /* تنسيق يوسف الجرف تي في */
+        .name-text {
+            margin-top: 30px;
+            font-size: 24px;
+            color: #00e676;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* حركة الدخول الجذابة */
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="ug-logo">UG</div>
+        <div class="tv-text">TV</div>
+        <div class="name-text">YOUSSEF AL-JARF TV</div>
+    </div>
+
+    <script>
+        // الانتقال التلقائي بعد 3 ثواني
+        setTimeout(function() {
+            window.location.href = "series-kr.html";
+        }, 3000);
+    </script>
+
+</body>
+</html>
