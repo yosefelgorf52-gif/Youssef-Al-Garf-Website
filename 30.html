@@ -2,26 +2,45 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>مشغل القنوات - يوسف الجرف</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البث المباشر - احترافي</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
-        body { background-color: #000; text-align: center; margin: 0; }
-        #playerFrame { width: 100%; max-width: 800px; height: 450px; border: none; background: #222; }
-        .btn { padding: 15px 30px; background: #b71c1c; color: white; border: none; border-radius: 10px; font-size: 18px; cursor: pointer; display: block; margin: 20px auto; }
+        body { margin: 0; background: #000; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        #video { width: 100vw; height: 100vh; background: #000; }
+        .play-overlay { position: absolute; z-index: 10; padding: 20px 40px; background: #b71c1c; color: white; border: none; border-radius: 10px; font-size: 20px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <!-- المشغل -->
-    <iframe id="playerFrame" src="" allowfullscreen allow="autoplay"></iframe>
-
-    <!-- زر التشغيل -->
-    <button class="btn" onclick="loadChannel()">تشغيل أون تايم سبورت</button>
+    <button class="play-overlay" onclick="startStream()">تشغيل القناة الآن</button>
+    <video id="video" playsinline></video>
 
     <script>
-        function loadChannel() {
-            // هذا الرابط هو رابط المشغل المباشر المستخرج من الموقع
-            var channelUrl = "https://online.aflam4you.org/embed.php?vid=on-time-sports-egypt-funding-tv_445";
-            document.getElementById('playerFrame').src = channelUrl;
+        function startStream() {
+            var video = document.getElementById('video');
+            var url = "https://ml-pull-hwc.myco.io/MixTV/hls/index.m3u8";
+            
+            // 1. تشغيل الفيديو
+            if (Hls.isSupported()) {
+                var hls = new Hls();
+                hls.loadSource(url);
+                hls.attachMedia(video);
+                video.play();
+            } else {
+                video.src = url;
+                video.play();
+            }
+
+            // 2. تفعيل ملء الشاشة (هذا يجعل الموبايل يقلب أفقي فوراً)
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            }
+            
+            // إخفاء زر التشغيل بعد الضغط
+            document.querySelector('.play-overlay').style.display = 'none';
         }
     </script>
 </body>
