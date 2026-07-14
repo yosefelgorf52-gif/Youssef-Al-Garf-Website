@@ -4,12 +4,50 @@
     <meta charset="UTF-8">
     <title>الجزء الثاني</title>
     <style>
-        /* نفس تنسيق الجزء الأول */
-        body { background-color: #b71c1c; font-family: sans-serif; text-align: center; padding: 20px; margin: 0; }
-        #searchBar { width: 90%; max-width: 400px; padding: 15px; margin-bottom: 20px; border-radius: 10px; border: none; text-align: center; font-size: 16px; outline: none; }
-        .btn { display: block; width: 90%; max-width: 400px; margin: 10px auto; background: white; color: #b71c1c; padding: 18px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 18px; }
-        h1 { color: white; margin-bottom: 20px; }
+    body { 
+        background-color: #b71c1c; 
+        font-family: sans-serif; 
+        text-align: center; 
+        padding: 20px; 
+        margin: 0; 
+    }
+
+    /* هذا هو التعديل لثبات شريط البحث */
+    #searchBar { 
+        position: -webkit-sticky; /* للمتصفحات القديمة */
+        position: sticky; 
+        top: 0; /* التثبيت في أعلى الشاشة */
+        z-index: 1000; /* لضمان أنه فوق كل شيء */
+        width: 90%; 
+        max-width: 400px; 
+        padding: 15px; 
+        margin: 0 auto 20px auto; /* توسيط الشريط */
+        border-radius: 10px; 
+        border: none; 
+        text-align: center; 
+        font-size: 16px; 
+        outline: none; 
+        background-color: white; /* خلفية بيضاء حتى لا يظهر ما تحته */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* ظل بسيط ليظهر بشكل أفضل */
+    }
+
+    .btn { 
+        display: block; 
+        width: 90%; 
+        max-width: 400px; 
+        margin: 10px auto; 
+        background: white; 
+        color: #b71c1c; 
+        padding: 18px; 
+        border-radius: 10px; 
+        text-decoration: none; 
+        font-weight: bold; 
+        font-size: 18px; 
+    }
+
+    h1 { color: white; margin-bottom: 20px; }
     </style>
+    
 </head>
 <body>
 
