@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الجزء الأول</title>
+    <style>
+        /* تنسيق الخلفية الحمراء */
+        body { background-color: #b71c1c; font-family: sans-serif; text-align: center; padding: 20px; margin: 0; }
+        
+        /* تنسيق شريط البحث */
+        #searchBar { width: 90%; max-width: 400px; padding: 15px; margin-bottom: 20px; border-radius: 10px; border: none; text-align: center; font-size: 16px; outline: none; }
+        
+        /* تنسيق الأزرار (أبيض والنص أحمر) */
+        .btn { display: block; width: 90%; max-width: 400px; margin: 10px auto; background: white; color: #b71c1c; padding: 18px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 18px; }
+        
+        h1 { color: white; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>الجزء الأول</h1>
+    
+    <input type="text" id="searchBar" placeholder="ابحث عن حلقة..." onkeyup="filter()">
+    
+    <div id="container">
+        <a href="6.html" class="btn">حلقة 1</a>
+        <a href="7.html" class="btn">حلقة 2</a>
+        <a href="8.html" class="btn">حلقة 3</a>
+        <a href="9.html" class="btn">حلقة 4</a>
+        <a href="10.html" class="btn">حلقة 5</a>
+        <a href="11.html" class="btn">حلقة 6</a>
+        <a href="12.html" class="btn">حلقة 7</a>
+        <a href="13.html" class="btn">حلقة 8</a>
+        <a href="14.html" class="btn">حلقة 9</a>
+        <a href="15.html" class="btn">حلقة 10</a>
+        <a href="16.html" class="btn">حلقة 11</a>
+        <a href="17.html" class="btn">حلقة 12</a>
+        <a href="18.html" class="btn">حلقة 13</a>
+        <a href="19.html" class="btn">حلقة 14</a>
+        <a href="20.html" class="btn">حلقة 15</a>
+        <a href="21.html" class="btn">حلقة 16</a>
+        <a href="22.html" class="btn">حلقة 17</a>
+        <a href="23.html" class="btn">حلقة 18</a>
+        <a href="24.html" class="btn">حلقة 19</a>
+        <a href="25.html" class="btn">حلقة 20</a>
+        <a href="26.html" class="btn">حلقة 21</a>
+        <a href="27.html" class="btn">حلقة 22</a>
+        <a href="28.html" class="btn">حلقة 23</a>
+        <a href="29.html" class="btn">حلقة 24</a>
+        <a href="30.html" class="btn">حلقة 25</a>
+        <a href="31.html" class="btn">حلقة 26</a>
+        <a href="32.html" class="btn">حلقة 27</a>
+        <a href="33.html" class="btn">حلقة 28</a>
+        <a href="34.html" class="btn">حلقة 29</a>
+        <a href="35.html" class="btn">حلقة 30</a>
+    </div>
+
+    <script>
+        function filter() {
+            let val = document.getElementById('searchBar').value.toLowerCase();
+            let btns = document.getElementsByClassName('btn');
+            for (let b of btns) {
+                if (b.innerText.toLowerCase().includes(val)) {
+                    b.style.display = "block";
+                } else {
+                    b.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
