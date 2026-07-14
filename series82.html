@@ -2,45 +2,23 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشغل الفيديو</title>
+    <title>مسلسل اللعبة</title>
     <style>
-        body { 
-            background-color: #b71c1c; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            height: 100vh; 
-            color: white; 
-            font-family: sans-serif; 
-            text-align: center;
-        }
-        .message { margin-bottom: 20px; font-size: 18px; }
-        .btn { 
-            background: white; 
-            color: #b71c1c; 
-            padding: 15px 30px; 
-            border-radius: 10px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            border: 2px solid white; 
-        }
+        body { background: #000; color: white; text-align: center; font-family: sans-serif; padding: 50px 20px; }
+        h1 { color: #b71c1c; margin-bottom: 40px; }
+        .btn { display: block; width: 90%; max-width: 400px; margin: 15px auto; background: #b71c1c; color: white; padding: 20px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 18px; border: 1px solid #ff5252; }
+        .btn:hover { background: #ff5252; transform: scale(1.02); transition: 0.2s; }
     </style>
 </head>
 <body>
 
-    <div class="message">جاري فتح الفيديو في المشغل الخارجي...</div>
-    
-    <a href="intent:https://archive.org/download/yousef_202607/yousef_202607.mp4#Intent;scheme=http;type=video/mp4;end" class="btn">
-        اضغط هنا إذا لم يفتح المشغل تلقائياً 📺
-    </a>
+    <h1>مسلسل اللعبة</h1>
 
-    <script>
-        // هذا الكود هو المسؤول عن إجبار المتصفح على فتح المشغل الخارجي فوراً
-        var videoUrl = "https://archive.org/download/yousef_202607/yousef_202607.mp4";
-        window.location.href = "intent:" + videoUrl + "#Intent;scheme=http;type=video/mp4;end";
-    </script>
+    <a href="part1.html" class="btn">الجزء الأول</a>
+    <a href="part2.html" class="btn">الجزء الثاني</a>
+    <a href="part3.html" class="btn">الجزء الثالث</a>
+    <a href="part4.html" class="btn">الجزء الرابع</a>
+    <a href="part5.html" class="btn">الجزء الخامس</a>
 
 </body>
 </html>
