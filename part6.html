@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تشغيل الفيلم</title>
+    <style>
+        body { margin: 0; background: #000; display: flex; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
+        video { width: 100vw; height: 100vh; object-fit: contain; }
+        .play-btn { position: absolute; padding: 20px 40px; background: #b71c1c; color: white; border: none; border-radius: 10px; font-size: 20px; font-weight: bold; cursor: pointer; z-index: 10; }
+    </style>
+</head>
+<body>
+
+    <button class="play-btn" onclick="startMovie()">اضغط للتشغيل</button>
+
+    <video id="moviePlayer" playsinline controls>
+        <source src="https://archive.org/download/yousef_202607/yousef_202607.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        function startMovie() {
+            var video = document.getElementById('moviePlayer');
+            video.play();
+            
+            // تفعيل ملء الشاشة لإجبار الموبايل على التدوير الأفقي
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            }
+            
+            // إخفاء الزر بعد التشغيل
+            document.querySelector('.play-btn').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
