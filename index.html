@@ -2,87 +2,79 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YOUSSEF AL-JARF TV</title>
     <style>
-        /* 1. تصميم اللوجو الفخم */
-        #splash {
-            position: fixed; inset: 0; background: #050505;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            z-index: 9999;
-        }
-        .logo-main { font-size: 80px; font-weight: 800; color: #fff; text-transform: uppercase; }
-        .logo-sub { font-size: 20px; color: #d4af37; letter-spacing: 10px; margin-top: -10px; }
+        :root { --bg: #0a0a0a; --card: #161616; --gold: #d4af37; --text: #fff; }
+        .light-mode { --bg: #f4f4f4; --card: #ffffff; --gold: #b8860b; --text: #000; }
+        body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; margin: 0; transition: 0.3s; }
 
-        /* 2. تصميم الواجهة الاحترافية */
-        body { background: #0a0a0a; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; }
-        .header { padding: 30px 20px; background: linear-gradient(180deg, #1a1a1a, #0a0a0a); text-align: center; border-bottom: 2px solid #d4af37; font-size: 20px; font-weight: bold; color: #d4af37; }
+        /* اللوجو */
+        #splash { position: fixed; inset: 0; background: #000; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; }
+        .logo-main { font-size: 70px; font-weight: 900; background: linear-gradient(to right, #d4af37, #f7ef8a); -webkit-background-clip: text; color: transparent; }
+
+        /* الهيدر */
+        header { padding: 15px; display: flex; justify-content: space-between; align-items: center; background: var(--card); border-bottom: 2px solid var(--gold); }
+        .menu-btn { font-size: 25px; cursor: pointer; color: var(--gold); }
+        #searchBox { background: #333; border-radius: 20px; padding: 8px 15px; border: none; color: white; width: 50%; }
         
-        /* تصميم البطاقات (الأزرار) */
+        /* البطاقات */
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 20px; }
-        .card { 
-            background: #161616; border-radius: 15px; padding: 20px; text-align: center;
-            border: 1px solid #333; transition: 0.3s; text-decoration: none; color: #fff;
-        }
-        .card:hover { border-color: #d4af37; transform: translateY(-5px); }
+        .card { background: var(--card); border-radius: 15px; padding: 20px; text-align: center; border: 1px solid #333; text-decoration: none; color: var(--text); transition: 0.3s; font-size: 13px; font-weight: bold; }
+        .card:hover { border-color: var(--gold); transform: translateY(-5px); }
         .icon { font-size: 25px; margin-bottom: 8px; }
-        .title { font-size: 13px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<!-- اللوجو -->
-<div id="splash">
-    <div style="text-align: center;">
-        <div class="logo-main">UG</div>
-        <div class="logo-sub">PREMIUM TV</div>
-    </div>
-</div>
+<div id="splash"><div class="logo-main">UG TV</div></div>
 
-<!-- الهيدر -->
-<div class="header">YOUSSEF AL-JARF TV</div>
+<header>
+    <div class="menu-btn" onclick="window.location.href='settings.html'">☰</div>
+    <input type="text" id="searchBox" placeholder="بحث..." onkeyup="searchFunction()">
+    <button onclick="document.body.classList.toggle('light-mode')">☀️/🌙</button>
+</header>
 
-<!-- القائمة الكاملة -->
-<div class="grid">
-    <a href="server-live.html" class="card"><div class="icon">📺</div><div class="title">سيرفر البث الرئيسي</div></a>
-    <a href="world-cup.html" class="card"><div class="icon">⚽</div><div class="title">كأس العالم 2026</div></a>
-    <a href="series-ar.html" class="card"><div class="icon">🎬</div><div class="title">المسلسلات العربية</div></a>
-    <a href="series-ramadan.html" class="card"><div class="icon">🌙</div><div class="title">مسلسلات رمضان 2026</div></a>
-    <a href="movies-ar.html" class="card"><div class="icon">🎥</div><div class="title">الأفلام الأجنبية</div></a>
-    <a href="movies-en.html" class="card"><div class="icon">🍿</div><div class="title">الأفلام العربية</div></a>
-    <a href="series-tr.html" class="card"><div class="icon">🇹🇷</div><div class="title">المسلسلات التركية</div></a>
-    <a href="series-en.html" class="card"><div class="icon">🌍</div><div class="title">المسلسلات الأجنبية</div></a>
-    <a href="wwe.html" class="card"><div class="icon">🤼</div><div class="title">المصارعة الحرة</div></a>
-    <a href="plays.html" class="card"><div class="icon">🎭</div><div class="title">مسرحيات</div></a>
-    <a href="series-kr.html" class="card"><div class="icon">🇰🇷</div><div class="title">المسلسلات الكورية</div></a>
-    <a href="spacetoon.html" class="card"><div class="icon">📺</div><div class="title">سبيستون</div></a>
-    <a href="series-in.html" class="card"><div class="icon">🇮🇳</div><div class="title">المسلسلات الهندية</div></a>
-    <a href="server-new1.html" class="card"><div class="icon">💎</div><div class="title">سيرفر جديد 1</div></a>
-    <a href="server-new2.html" class="card"><div class="icon">⭐</div><div class="title">سيرفر جديد 2</div></a>
-    <a href="server-1.html" class="card"><div class="icon">1️⃣</div><div class="title">سيرفر 1</div></a>
-    <a href="server-2.html" class="card"><div class="icon">2️⃣</div><div class="title">سيرفر 2</div></a>
-    <a href="server-3.html" class="card"><div class="icon">3️⃣</div><div class="title">سيرفر 3</div></a>
-    <a href="server-4.html" class="card"><div class="icon">4️⃣</div><div class="title">سيرفر 4</div></a>
-    <a href="server-5.html" class="card"><div class="icon">5️⃣</div><div class="title">سيرفر 5</div></a>
-    <a href="server-6.html" class="card"><div class="icon">6️⃣</div><div class="title">سيرفر 6</div></a>
-    <a href="server-7.html" class="card"><div class="icon">7️⃣</div><div class="title">سيرفر 7</div></a>
-    <a href="anime.html" class="card"><div class="icon">⛩️</div><div class="title">أفلام أنمي</div></a>
-    <a href="radio.html" class="card"><div class="icon">📻</div><div class="title">محطات الراديو</div></a>
+<div class="grid" id="channelGrid">
+    <a href="server-live.html" class="card"><div class="icon">📺</div>سيرفر البث الرئيسي</a>
+    <a href="world-cup.html" class="card"><div class="icon">⚽</div>كأس العالم 2026</a>
+    <a href="series-ar.html" class="card"><div class="icon">🎬</div>المسلسلات العربية</a>
+    <a href="series-ramadan.html" class="card"><div class="icon">🌙</div>مسلسلات رمضان 2026</a>
+    <a href="movies-ar.html" class="card"><div class="icon">🎥</div>الأفلام الأجنبية</a>
+    <a href="movies-en.html" class="card"><div class="icon">🍿</div>الأفلام العربية</a>
+    <a href="series-tr.html" class="card"><div class="icon">🇹🇷</div>المسلسلات التركية</a>
+    <a href="series-en.html" class="card"><div class="icon">🌍</div>المسلسلات الأجنبية</a>
+    <a href="wwe.html" class="card"><div class="icon">🤼</div>المصارعة الحرة</a>
+    <a href="plays.html" class="card"><div class="icon">🎭</div>مسرحيات</a>
+    <a href="series-kr.html" class="card"><div class="icon">🇰🇷</div>المسلسلات الكورية</a>
+    <a href="spacetoon.html" class="card"><div class="icon">📺</div>سبيستون</a>
+    <a href="series-in.html" class="card"><div class="icon">🇮🇳</div>المسلسلات الهندية</a>
+    <a href="server-new1.html" class="card"><div class="icon">💎</div>سيرفر جديد 1</a>
+    <a href="server-new2.html" class="card"><div class="icon">⭐</div>سيرفر جديد 2</a>
+    <a href="server-1.html" class="card"><div class="icon">1️⃣</div>سيرفر 1</a>
+    <a href="server-2.html" class="card"><div class="icon">2️⃣</div>سيرفر 2</a>
+    <a href="server-3.html" class="card"><div class="icon">3️⃣</div>سيرفر 3</a>
+    <a href="server-4.html" class="card"><div class="icon">4️⃣</div>سيرفر 4</a>
+    <a href="server-5.html" class="card"><div class="icon">5️⃣</div>سيرفر 5</a>
+    <a href="server-6.html" class="card"><div class="icon">6️⃣</div>سيرفر 6</a>
+    <a href="server-7.html" class="card"><div class="icon">7️⃣</div>سيرفر 7</a>
+    <a href="anime.html" class="card"><div class="icon">⛩️</div>أفلام أنمي</a>
+    <a href="radio.html" class="card"><div class="icon">📻</div>محطات الراديو</a>
 </div>
 
 <script>
-    // منطق إظهار اللوجو مرة واحدة فقط
     window.onload = () => {
-        if (localStorage.getItem('seenSplash')) {
-            document.getElementById('splash').style.display = 'none';
-        } else {
-            setTimeout(() => { 
-                document.getElementById('splash').style.display = 'none'; 
-                localStorage.setItem('seenSplash', 'true'); 
-            }, 2500);
-        }
+        if (localStorage.getItem('seenSplash')) document.getElementById('splash').style.display = 'none';
+        else setTimeout(() => { document.getElementById('splash').style.display = 'none'; localStorage.setItem('seenSplash', 'true'); }, 3000);
     };
-</script>
 
+    function searchFunction() {
+        let input = document.getElementById('searchBox').value.toUpperCase();
+        let cards = document.getElementsByClassName('card');
+        for (let i = 0; i < cards.length; i++) {
+            if (cards[i].innerText.toUpperCase().indexOf(input) > -1) cards[i].style.display = "";
+            else cards[i].style.display = "none";
+        }
+    }
+</script>
 </body>
 </html>
