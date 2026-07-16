@@ -2,31 +2,36 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>YOUSSEF AL-JARF TV</title>
+    <title>YOUSSEF EL-JORF TV</title>
     <style>
         body { margin: 0; font-family: sans-serif; background-color: #f2f2f2; transition: 0.3s; }
         
-        /* اللوجو الثابت */
-        #splash { position: fixed; inset: 0; background: #b71c1c; display: flex; justify-content: center; align-items: center; z-index: 9999; color: white; font-size: 50px; font-weight: bold; }
-        
-        /* الهيدر الأحمر */
-        header { background-color: #b71c1c; color: white; padding: 15px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+        /* اللوجو وشاشة التحميل (يظهر 2 ثانية) */
+        #splash { position: fixed; inset: 0; background: white; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; }
+        .logo-circle { width: 150px; height: 150px; background: #b71c1c; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 18px; text-align: center; padding: 10px; }
+        .loader { margin-top: 30px; border: 5px solid #f3f3f3; border-top: 5px solid #b71c1c; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        header { background: #b71c1c; color: white; padding: 15px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
         .menu-icon { font-size: 25px; cursor: pointer; }
-        
-        /* القائمة الجانبية (نظام الأسطورة) */
+
+        /* القائمة الجانبية */
         #sidebar { position: fixed; right: -300px; top: 0; width: 280px; height: 100%; background: white; z-index: 1000; transition: 0.3s; box-shadow: -2px 0 10px rgba(0,0,0,0.5); color: #333; }
-        .side-header { background: #b71c1c; padding: 30px; text-align: center; color: white; font-weight: bold; font-size: 20px; }
-        .side-item { padding: 20px; border-bottom: 1px solid #eee; font-weight: bold; cursor: pointer; }
-        
-        /* الأزرار (نظام الأسطورة) */
+        .side-header { background: #b71c1c; padding: 40px; text-align: center; color: white; font-weight: bold; }
+        .side-item { padding: 15px; border-bottom: 1px solid #eee; font-weight: bold; cursor: pointer; }
+
+        /* الأزرار المربوطة بملفات منفصلة */
         .btn-list { padding: 10px; }
-        .btn { display: flex; align-items: center; justify-content: flex-end; background: white; margin-bottom: 8px; padding: 15px; border: 2px solid #b71c1c; border-radius: 8px; text-decoration: none; color: #b71c1c; font-weight: bold; }
-        .btn-icon { width: 35px; height: 35px; background: #b71c1c; border-radius: 50%; margin-left: 15px; }
+        .btn { display: flex; align-items: center; justify-content: flex-end; background: white; margin-bottom: 10px; padding: 12px; border: 2px solid #b71c1c; border-radius: 10px; text-decoration: none; color: #b71c1c; font-weight: bold; }
+        .btn-circle { width: 45px; height: 45px; background: #b71c1c; border-radius: 50%; margin-left: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; }
     </style>
 </head>
 <body>
 
-<div id="splash">UG TV</div>
+<div id="splash">
+    <div class="logo-circle">يوسف الجرف TV</div>
+    <div class="loader"></div>
+</div>
 
 <header>
     <div class="menu-icon" onclick="toggleSidebar()">☰</div>
@@ -38,39 +43,25 @@
     <div class="side-header">يوسف الجرف TV</div>
     <div class="side-item">الأقسام</div>
     <div class="side-item">جدول المباريات</div>
-    <div class="side-item">آخر الأخبار</div>
-    <hr>
-    <div class="side-item">الاتصال بنا</div>
-    <div class="side-item">الموقع الالكتروني</div>
-    <hr>
     <div class="side-item" onclick="toggleTheme()">الوضع الليلي</div>
 </div>
 
 <div class="btn-list">
-    <a href="server-live.html" class="btn">سيرفر البث الرئيسي <div class="btn-icon"></div></a>
-    <a href="world-cup.html" class="btn">كأس العالم 2026 <div class="btn-icon"></div></a>
-    <a href="series-ar.html" class="btn">المسلسلات العربية <div class="btn-icon"></div></a>
-    <a href="series-ramadan.html" class="btn">مسلسلات رمضان 2026 <div class="btn-icon"></div></a>
-    <a href="movies-ar.html" class="btn">الأفلام الأجنبية <div class="btn-icon"></div></a>
-    <a href="movies-en.html" class="btn">الأفلام العربية <div class="btn-icon"></div></a>
-    <a href="series-tr.html" class="btn">المسلسلات التركية <div class="btn-icon"></div></a>
-    <a href="series-en.html" class="btn">المسلسلات الأجنبية <div class="btn-icon"></div></a>
-    <a href="wwe.html" class="btn">المصارعة الحرة <div class="btn-icon"></div></a>
-    <a href="plays.html" class="btn">مسرحيات <div class="btn-icon"></div></a>
-    <a href="series-kr.html" class="btn">المسلسلات الكورية <div class="btn-icon"></div></a>
-    <a href="spacetoon.html" class="btn">سبيستون <div class="btn-icon"></div></a>
-    <a href="series-in.html" class="btn">المسلسلات الهندية <div class="btn-icon"></div></a>
-    <a href="server-new1.html" class="btn">سيرفر جديد 1 <div class="btn-icon"></div></a>
-    <a href="server-new2.html" class="btn">سيرفر جديد 2 <div class="btn-icon"></div></a>
-    <a href="server-1.html" class="btn">سيرفر 1 <div class="btn-icon"></div></a>
-    <a href="server-2.html" class="btn">سيرفر 2 <div class="btn-icon"></div></a>
-    <a href="server-3.html" class="btn">سيرفر 3 <div class="btn-icon"></div></a>
-    <a href="server-4.html" class="btn">سيرفر 4 <div class="btn-icon"></div></a>
-    <a href="server-5.html" class="btn">سيرفر 5 <div class="btn-icon"></div></a>
-    <a href="server-6.html" class="btn">سيرفر 6 <div class="btn-icon"></div></a>
-    <a href="server-7.html" class="btn">سيرفر 7 <div class="btn-icon"></div></a>
-    <a href="anime.html" class="btn">أفلام أنمي <div class="btn-icon"></div></a>
-    <a href="radio.html" class="btn">محطات الراديو <div class="btn-icon"></div></a>
+    <a href="server-live.html" class="btn">سيرفر البث الرئيسي <div class="btn-circle">📺</div></a>
+    <a href="world-cup.html" class="btn">كأس العالم 2026 <div class="btn-circle">⚽</div></a>
+    <a href="series-ar.html" class="btn">المسلسلات العربية <div class="btn-circle">🎬</div></a>
+    <a href="series-ramadan.html" class="btn">مسلسلات رمضان 2026 <div class="btn-circle">🌙</div></a>
+    <a href="movies-ar.html" class="btn">الأفلام العربية <div class="btn-circle">🎥</div></a>
+    <a href="movies-en.html" class="btn">الأفلام الأجنبية <div class="btn-circle">🍿</div></a>
+    <a href="series-tr.html" class="btn">المسلسلات التركية <div class="btn-circle">🇹🇷</div></a>
+    <a href="series-en.html" class="btn">المسلسلات الأجنبية <div class="btn-circle">🌍</div></a>
+    <a href="wwe.html" class="btn">المصارعة الحرة <div class="btn-circle">🤼</div></a>
+    <a href="plays.html" class="btn">مسرحيات <div class="btn-circle">🎭</div></a>
+    <a href="series-kr.html" class="btn">المسلسلات الكورية <div class="btn-circle">🇰🇷</div></a>
+    <a href="spacetoon.html" class="btn">سبيستون <div class="btn-circle">📺</div></a>
+    <a href="series-in.html" class="btn">المسلسلات الهندية <div class="btn-circle">🇮🇳</div></a>
+    <a href="server-new1.html" class="btn">سيرفر جديد 1 <div class="btn-circle">💎</div></a>
+    <a href="server-new2.html" class="btn">سيرفر جديد 2 <div class="btn-circle">⭐</div></a>
 </div>
 
 <script>
