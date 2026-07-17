@@ -1,46 +1,41 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" style="height: 100%; width: 100%; margin: 0; padding: 0;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>يوسف الجرف TV - الدعم الفني</title>
+    <title>الدعم الفني - يوسف الجرف TV</title>
     <style>
-        body { margin: 0; padding: 0; background-color: #121212; height: 100vh; overflow: hidden; }
-        
-        /* جعل الشات يملأ الشاشة بالكامل في كل الأجهزة */
-        #smartsupp-widget-container {
-            width: 100% !important;
-            height: 100% !important;
-            position: absolute !important;
-            top: 0 !important;
-            right: 0 !important;
+        body, html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* لون داكن يتناسب مع التطبيق */
+            overflow: hidden; /* لمنع الحركة */
+        }
+        /* إجبار إطار الشات على ملء الشاشة تماماً */
+        .chat-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
         }
     </style>
 </head>
 <body>
 
-<script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = '886a99bd64c481440a2170020a04cebf7506ad97';
+<!-- نستخدم رابط الـ Smartsupp المباشر لعرض الشات كصفحة كاملة -->
+<iframe 
+    src="https://app.smartsupp.com/widget/886a99bd64c481440a2170020a04cebf7506ad97" 
+    class="chat-frame"
+    allow="microphone; camera; clipboard-write; display-capture">
+</iframe>
 
-// إعدادات الشات ليظهر بشكل "ملء الشاشة"
-_smartsupp.widgetSettings = {
-    position: 'full', // وضع كامل للشاشة
-    hideWidget: false
-};
-
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-
-// فتح الشات فوراً وبشكل دائم
-smartsupp('on', 'open', function() {});
-setTimeout(function() {
-    smartsupp('open');
-}, 1000);
+<script>
+    // للتأكد من أن الشات دائماً يغطي المساحة بالكامل
+    window.addEventListener('resize', function() {
+        document.body.style.height = window.innerHeight + 'px';
+    });
 </script>
 
 </body>
