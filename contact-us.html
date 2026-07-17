@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>اتصل بنا</title>
+    <style>
+        body { background-color: #b71c1c; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        body.dark-theme { background-color: #121212 !important; }
+    </style>
+</head>
+<body>
+
+<!-- كود Smartsupp المدمج -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '886a99bd64c481440a2170020a04cebf7506ad97';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+
+// فتح الشات تلقائياً عند تحميل الصفحة
+smartsupp('on', 'open', function() {});
+setTimeout(function() {
+    smartsupp('open');
+}, 500);
+</script>
+
+<script>
+    if (localStorage.getItem('theme') === 'dark') { document.body.classList.add('dark-theme'); }
+</script>
+</body>
+</html>
