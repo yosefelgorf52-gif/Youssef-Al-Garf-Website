@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الدعم الفني ومشاركة التطبيق</title>
+    <style>
+        /* نفس ستايلك الأساسي لضمان التطابق */
+        body { background-color: #b71c1c; font-family: sans-serif; transition: background 0.3s; padding: 20px; text-align: center; color: white; }
+        .card { background: white; color: #b71c1c; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .btn-large { background: #b71c1c; color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
+        body.dark-theme { background-color: #121212 !important; }
+        body.dark-theme .card { background: #1e1e1e !important; color: white !important; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>تواصل معنا 💬</h2>
+    <p>نحن هنا لمساعدتك! إذا واجهت أي خطأ، أو تريد إرسال اقتراح، أو حتى تسجيل صوتي، اضغط على أيقونة الشات في الأسفل.</p>
+    <a href="javascript:smartsupp('open');" class="btn-large">افتح المحادثة الآن</a>
+    <br><br>
+    <button class="btn-large" onclick="navigator.share({title:'يوسف الجرف TV', url:window.location.href})">مشاركة التطبيق مع الأصدقاء 🔗</button>
+</div>
+
+<!-- كود Smartsupp (سيسمح للمستخدمين بإرسال ملفات، صور، وملاحظات صوتية) -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '886a99bd64c481440a2170020a04cebf7506ad97';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+
+<!-- كود الوضع الليلي ليبقى متناسقاً -->
+<script>
+    if (localStorage.getItem('theme') === 'dark') { document.body.classList.add('dark-theme'); }
+</script>
+
+</body>
+</html>
