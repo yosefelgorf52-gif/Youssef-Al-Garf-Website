@@ -5,43 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>يوسف الجرف TV</title>
     <style>
-        /* خاصية اللوجو الجديد */
+        /* تصميم شاشة اللوجو الاحترافية */
         #splash-screen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: radial-gradient(circle, #b71c1c, #4a0000, #000);
-            display: flex; justify-content: center; align-items: center;
-            z-index: 9999; animation: fadeOut 1s ease-in-out 5s forwards;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            z-index: 9999; 
+            transition: opacity 0.5s ease-in-out;
         }
         .splash-content { text-align: center; color: white; }
-        .ug-text { font-size: 80px; font-weight: 900; letter-spacing: 10px; }
-        .tv-text { font-size: 30px; color: #ffcc00; margin-top: -10px; }
-        .name-text { font-size: 20px; color: #00e676; margin-top: 20px; text-transform: uppercase; }
-        @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
+        
+        /* تصميم الدائرة الحمراء المائلة مثل الأسطورة */
+        .splash-logo-circle {
+            width: 170px; height: 170px;
+            background: #b71c1c;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            margin: 0 auto 30px;
+            border: 4px solid #fff;
+        }
+        .splash-logo-text {
+            color: #fff;
+            font-size: 26px;
+            font-weight: 900;
+            text-align: center;
+            transform: rotate(-12deg); /* شطبة مائلة مميزة */
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+        /* دائرة التحميل الدائرية */
+        .splash-loader {
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top: 4px solid #b71c1c;
+            border-radius: 50%;
+            width: 45px; height: 45px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
-        /* تصميمك الأصلي كما هو */
-        body { background-color: #b71c1c; font-family: sans-serif; margin: 0; padding: 0; }
-        header { background-color: #b71c1c; padding: 15px; text-align: center; color: white; border-bottom: 2px solid #a31a1a; position: sticky; top: 0; }
+        /* التصميم الأساسي والتعديلات */
+        body { background-color: #b71c1c; font-family: sans-serif; margin: 0; padding: 0; transition: background-color 0.3s ease; }
+        
+        /* الهيدر المتطور مع القائمة والوضع الليلي */
+        header { 
+            background-color: #b71c1c; 
+            padding: 15px; 
+            display: flex; align-items: center; justify-content: space-between;
+            color: white; 
+            border-bottom: 2px solid #a31a1a; 
+            position: sticky; top: 0;
+            z-index: 100;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .menu-btn, .theme-btn { font-size: 24px; cursor: pointer; user-select: none; padding: 0 10px; }
+        .header-title { font-size: 20px; font-weight: bold; }
+
         .container { padding: 10px; }
         .btn { display: flex; align-items: center; justify-content: space-between; background: #fff; 
                color: #b71c1c; padding: 15px; margin-bottom: 8px; border-radius: 8px; 
-               text-decoration: none; font-weight: bold; border: 2px solid #b71c1c; }
+               text-decoration: none; font-weight: bold; border: 2px solid #b71c1c; transition: all 0.3s ease; }
         .btn-icon { width: 30px; height: 30px; background: #eee; border-radius: 50%; display: flex; 
                     align-items: center; justify-content: center; font-size: 14px; }
+
+        /* القائمة الجانبية وتطابقها مع صورة الأسطورة */
+        #sidebar {
+            position: fixed; top: 0; right: -300px; width: 280px; height: 100%;
+            background: white; z-index: 999;
+            transition: right 0.3s ease;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            overflow-y: auto;
+            display: flex; flex-direction: column;
+        }
+        #sidebar.active { right: 0; }
+        #sidebar-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); z-index: 998;
+            display: none; opacity: 0; transition: opacity 0.3s ease;
+        }
+        #sidebar-overlay.active { display: block; opacity: 1; }
+
+        /* الجزء العلوي للقائمة */
+        .sidebar-header { padding: 30px 15px; text-align: center; border-bottom: 1px solid #f0f0f0; background: #fff; }
+        .sidebar-logo-circle {
+            width: 100px; height: 100px; background: #b71c1c; border-radius: 50%;
+            margin: 0 auto 10px; display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: bold; font-size: 16px; transform: rotate(-10deg);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .sidebar-title { color: #b71c1c; font-weight: bold; font-size: 18px; margin-top: 10px; }
+
+        /* عناصر القائمة الجانبية وفواصل الأقسام */
+        .sidebar-divider { background-color: #f5f5f5; padding: 10px 20px; font-size: 14px; font-weight: bold; color: #777; border-bottom: 1px solid #eee; }
+        .sidebar-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 20px; text-decoration: none; color: #333; font-weight: bold;
+            border-bottom: 1px solid #eee; transition: background 0.2s; cursor: pointer;
+        }
+        .sidebar-item:hover { background-color: #f9f9f9; }
+        .sidebar-icon { font-size: 20px; display: flex; align-items: center; }
+        .sidebar-text { font-size: 16px; }
+
+        /* تخصيص الوضع الليلي الفخم (Premium Dark Theme) */
+        body.dark-theme { background-color: #121212; }
+        body.dark-theme header { background-color: #1e1e1e; border-bottom-color: #333; }
+        body.dark-theme .btn { background: #1e1e1e; color: #ff8a80; border-color: #333; }
+        body.dark-theme .btn-icon { background: #333; color: #fff; }
+        body.dark-theme #sidebar { background-color: #1e1e1e; color: #fff; }
+        body.dark-theme .sidebar-header { background-color: #1e1e1e; border-bottom-color: #333; }
+        body.dark-theme .sidebar-title { color: #ff8a80; }
+        body.dark-theme .sidebar-item { color: #fff; border-bottom-color: #333; }
+        body.dark-theme .sidebar-item:hover { background-color: #2a2a2a; }
+        body.dark-theme .sidebar-divider { background-color: #2a2a2a; color: #aaa; border-bottom-color: #333; }
     </style>
 </head>
 <body>
 
-<!-- اللوجو الاحترافي -->
+<!-- كود شاشة اللوجو لمنع حدوث وميض أبيض عند تفعيل تذكر الجلسة -->
 <div id="splash-screen">
     <div class="splash-content">
-        <div class="ug-text">UG</div>
-        <div class="tv-text">TV</div>
-        <div class="name-text">YOUSSEF AL-JARF TV</div>
+        <div class="splash-logo-circle">
+            <div class="splash-logo-text">يوسف الجرف<br>TV</div>
+        </div>
+        <div class="splash-loader"></div>
+    </div>
+</div>
+<script>
+    // تشغيل فوري لإخفاء شاشة التحميل إذا زار المستخدم الصفحة مؤخراً خلال الجلسة الحالية
+    if (sessionStorage.getItem('splash_shown')) {
+        document.getElementById('splash-screen').style.display = 'none';
+    }
+</script>
+
+<!-- الهيدر بالأيقونات الموزعة بشكل احترافي -->
+<header>
+    <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+    <div class="header-title">يوسف الجرف TV</div>
+    <div class="theme-btn" onclick="toggleTheme()">🌙</div>
+</header>
+
+<!-- غطاء التعتيم عند فتح القائمة الجانبية -->
+<div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<!-- القائمة الجانبية المطابقة لبرنامج الأسطورة بألوانها ومسميات ملفاتها الخاصة -->
+<div id="sidebar">
+    <div class="sidebar-header">
+        <div class="sidebar-logo-circle">يوسف الجرف</div>
+        <div class="sidebar-title">يوسف الجرف TV</div>
+    </div>
+    
+    <!-- الأقسام الرئيسية -->
+    <a href="app-sections.html" class="sidebar-item">
+        <span class="sidebar-text">الأقسام</span>
+        <span class="sidebar-icon">🟥</span>
+    </a>
+    <a href="matches-schedule.html" class="sidebar-item">
+        <span class="sidebar-text">جدول المباريات</span>
+        <span class="sidebar-icon">📅</span>
+    </a>
+    <a href="latest-news.html" class="sidebar-item">
+        <span class="sidebar-text">آخر الأخبار</span>
+        <span class="sidebar-icon">📰</span>
+    </a>
+    
+    <!-- قسم الاتصال -->
+    <div class="sidebar-divider">الاتصال</div>
+    <a href="contact-us.html" class="sidebar-item">
+        <span class="sidebar-text">الاتصال بنا</span>
+        <span class="sidebar-icon">✉️</span>
+    </a>
+    <a href="official-website.html" class="sidebar-item">
+        <span class="sidebar-text">الموقع الالكتروني</span>
+        <span class="sidebar-icon">🌐</span>
+    </a>
+    
+    <!-- قسم الاعدادات -->
+    <div class="sidebar-divider">الاعدادات</div>
+    <a href="share-app.html" class="sidebar-item">
+        <span class="sidebar-text">مشاركة التطبيق</span>
+        <span class="sidebar-icon">🔗</span>
+    </a>
+    <div onclick="toggleTheme()" class="sidebar-item">
+        <span class="sidebar-text">الوضع الليلي</span>
+        <span class="sidebar-icon">🌙</span>
     </div>
 </div>
 
-<header>يوسف الجرف TV</header>
-
+<!-- الأزرار كاملة بدون أي تعديل في الروابط أو الأسماء -->
 <div class="container">
     <a href="server-live.html" class="btn">سيرفر البث الرئيسي <div class="btn-icon">📺</div></a>
     <a href="world-cup.html" class="btn">كأس العالم 2026 <div class="btn-icon">⚽</div></a>
@@ -69,6 +223,43 @@
     <a href="radio.html" class="btn">محطات الراديو <div class="btn-icon">📻</div></a>
 </div>
 
+<script>
+    // فتح وإغلاق القائمة الجانبية
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+    }
+
+    // تفعيل وتغيير الوضع الليلي
+    function toggleTheme() {
+        document.body.classList.toggle('dark-theme');
+        const isDark = document.body.classList.contains('dark-theme');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    // الأكواد البرمجية عند تحميل الصفحة
+    document.addEventListener("DOMContentLoaded", function() {
+        // فحص وتطبيق مظهر الوضع الليلي المحفوظ مسبقاً
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+        }
+
+        // فحص وعرض شاشة البداية لمدة 3 ثوانٍ لمرة واحدة في الجلسة
+        const splash = document.getElementById('splash-screen');
+        if (!sessionStorage.getItem('splash_shown')) {
+            setTimeout(() => {
+                splash.style.opacity = '0';
+                setTimeout(() => {
+                    splash.style.display = 'none';
+                    sessionStorage.setItem('splash_shown', 'true');
+                }, 500); // وقت تلاشي شاشة اللوجو
+            }, 3000); // 3 ثوانٍ عرض الشاشة
+        }
+    });
+</script>
+
 </body>
 </html>
- أنا عايز اللوجو ده يبقى نفس التصميم ممكن أحسن من على 18 بس ما يبقاش جزء من الصفحة بحيث ما يبقاش جزء من الصفحة الرئيسية منفصل بيبقى أنا أشوفه أول ما أخش من البرنامج على طول بيظهر لي بس مش كل ما أعمل ريستارت بيظهر لي فاهمني؟ عايز أعدله بحيث يبقى كده
