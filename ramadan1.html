@@ -1,55 +1,53 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>YG TV Player</title>
+    <title>YG TV - Player Pro</title>
+    <!-- مكتبة Plyr الاحترافية -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <style>
-        body { margin: 0; background: #000; overflow: hidden; font-family: sans-serif; }
-        #video-container { width: 100vw; height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; }
+        body { margin: 0; background: #000; overflow: hidden; height: 100vh; }
+        .plyr--video { height: 100vh; width: 100vw; }
         
-        /* هنا يظهر رابط الفيديو الذي يعمل مع جوجل درايف */
-        iframe { width: 100%; height: 100%; border: none; }
-
-        /* طبقة الأزرار (تظهر عند الضغط) */
-        #controls {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.3); display: flex; flex-direction: column;
-            justify-content: space-between; padding: 20px; box-sizing: border-box;
-            opacity: 0; transition: opacity 0.3s;
-        }
-        #controls.visible { opacity: 1; }
-
-        /* الأزرار العلوية (الجودات) */
-        .top-bar { display: flex; gap: 10px; }
-        .btn-circle { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.2); color: white; border: none; }
-        
-        /* الأزرار السفلية (التحكم) */
-        .bottom-bar { display: flex; justify-content: center; gap: 20px; color: white; }
+        /* تصميم الأزرار العلوية للجودات */
+        .custom-ui { position: absolute; top: 15px; left: 15px; z-index: 10; display: flex; gap: 10px; }
+        .q-btn { background: rgba(0,0,0,0.6); color: white; border: 1px solid #ff0000; padding: 5px 15px; border-radius: 20px; font-size: 12px; }
     </style>
 </head>
-<body onclick="toggleControls()">
+<body>
 
-    <div id="video-container">
-        <!-- هذا الرابط هو الوحيد الذي سيشغل فيديو درايف بشكل مباشر في إطار -->
-        <iframe src="https://drive.google.com/file/d/1cIqKbXCFqAo6s_XfzmUeAuo54bygE_Xm/preview" allowfullscreen></iframe>
-        
-        <div id="controls">
-            <div class="top-bar">
-                <button class="btn-circle">HD</button>
-                <button class="btn-circle">SD</button>
-                <button class="btn-circle" style="background: red;">Low</button>
-            </div>
-            <div class="bottom-bar">
-                <span>⏪</span> <span>⏸️</span> <span>⏩</span>
-            </div>
-        </div>
+    <!-- أزرار الجودة -->
+    <div class="custom-ui">
+        <button class="q-btn">HD</button>
+        <button class="q-btn">SD</button>
+        <button class="q-btn" style="background: red;">Low</button>
     </div>
 
+    <!-- مشغل الفيديو -->
+    <video id="player" playsinline controls data-poster="https://i.imgur.com/your-poster.jpg">
+        <source src="https://drive.google.com/uc?export=download&id=1cIqKbXCFqAo6s_XfzmUeAuo54bygE_Xm" type="video/mp4" />
+    </video>
+
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
     <script>
-        function toggleControls() {
-            document.getElementById('controls').classList.toggle('visible');
-        }
+        const player = new Plyr('#player', {
+            controls: [
+                'play-large', 'play', 'progress', 'current-time', 
+                'mute', 'volume', 'settings', 'fullscreen', 'pip'
+            ],
+            settings: ['quality', 'speed'],
+            autoplay: false,
+            keyboard: { focused: true, global: true },
+            fullscreen: { enabled: true, fallback: true, iosNative: true }
+        });
+
+        // تشغيل الوضع الأفقي تلقائياً عند الضغط على التشغيل
+        player.on('play', () => {
+            if (player.fullscreen.active === false) {
+                player.fullscreen.enter();
+            }
+        });
     </script>
 </body>
 </html>
