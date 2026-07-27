@@ -1,21 +1,41 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- استدعاء المكتبة الاحترافية -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <style>
-        body { margin: 0; background: #000; overflow: hidden; height: 100vh; }
-        /* إطار العرض اللي بيشغل الفيديو من درايف مباشرة */
-        iframe { width: 100vw; height: 100vh; border: none; }
+        body { margin: 0; background: #000; height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .container { width: 100vw; height: 100vh; }
+        
+        /* ده اللي بيخلي المشغل يملأ الشاشة */
+        .plyr--video { height: 100% !important; }
     </style>
 </head>
 <body>
 
-    <iframe 
-        src="https://drive.google.com/file/d/1cIqKbXCFqAo6s_XfzmUeAuo54bygE_Xm/preview" 
-        allow="autoplay" 
-        allowfullscreen>
-    </iframe>
+    <div class="container">
+        <!-- المشغل اللي بيتحكم في الإخفاء التلقائي -->
+        <video id="player" playsinline controls data-poster="">
+            <source src="https://drive.google.com/uc?export=download&id=1cIqKbXCFqAo6s_XfzmUeAuo54bygE_Xm" type="video/mp4" />
+        </video>
+    </div>
 
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script>
+        const player = new Plyr('#player', {
+            // دي الإعدادات اللي بتعمل "السحر"
+            hideControls: true, // إخفاء الأزرار تلقائياً
+            clickToPlay: true, // الضغط على الشاشة للتشغيل
+            keyboard: { focused: true, global: true },
+            fullscreen: { enabled: true, iosNative: true }
+        });
+
+        // حركة التدوير التلقائي (Landscape)
+        player.on('play', () => {
+            if (screen.orientation) screen.orientation.lock('landscape');
+        });
+    </script>
 </body>
 </html>
