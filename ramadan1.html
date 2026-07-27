@@ -1,51 +1,50 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>YG TV - Player Pro</title>
-    <!-- مكتبة Plyr الاحترافية -->
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
     <style>
-        body { margin: 0; background: #000; overflow: hidden; height: 100vh; }
-        .plyr--video { height: 100vh; width: 100vw; }
+        body { margin: 0; background: #000; height: 100vh; }
         
-        /* تصميم الأزرار العلوية للجودات */
-        .custom-ui { position: absolute; top: 15px; left: 15px; z-index: 10; display: flex; gap: 10px; }
-        .q-btn { background: rgba(0,0,0,0.6); color: white; border: 1px solid #ff0000; padding: 5px 15px; border-radius: 20px; font-size: 12px; }
+        /* ضبط المشغل ليملأ الشاشة */
+        .video-js { width: 100vw; height: 100vh; }
+        
+        /* تصميم أزرار الجودات (في الأعلى) */
+        .quality-container { 
+            position: absolute; top: 20px; left: 20px; z-index: 999; 
+            display: flex; gap: 10px; 
+        }
+        .q-btn { 
+            padding: 8px 18px; border-radius: 20px; border: none; 
+            background: rgba(255,255,255,0.2); color: white; font-weight: bold;
+        }
+        .q-btn.active { background: red; }
     </style>
 </head>
 <body>
 
-    <!-- أزرار الجودة -->
-    <div class="custom-ui">
+    <!-- أزرار الجودات زي ما طلبت بالظبط -->
+    <div class="quality-container">
         <button class="q-btn">HD</button>
         <button class="q-btn">SD</button>
-        <button class="q-btn" style="background: red;">Low</button>
+        <button class="q-btn active">Low</button>
+        <button class="q-btn">3</button>
+        <button class="q-btn">4</button>
     </div>
 
     <!-- مشغل الفيديو -->
-    <video id="player" playsinline controls data-poster="https://i.imgur.com/your-poster.jpg">
+    <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto">
         <source src="https://drive.google.com/uc?export=download&id=1cIqKbXCFqAo6s_XfzmUeAuo54bygE_Xm" type="video/mp4" />
     </video>
 
-    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
     <script>
-        const player = new Plyr('#player', {
-            controls: [
-                'play-large', 'play', 'progress', 'current-time', 
-                'mute', 'volume', 'settings', 'fullscreen', 'pip'
-            ],
-            settings: ['quality', 'speed'],
-            autoplay: false,
-            keyboard: { focused: true, global: true },
-            fullscreen: { enabled: true, fallback: true, iosNative: true }
-        });
-
-        // تشغيل الوضع الأفقي تلقائياً عند الضغط على التشغيل
-        player.on('play', () => {
-            if (player.fullscreen.active === false) {
-                player.fullscreen.enter();
+        var player = videojs('my-video');
+        // إجبار التدوير للوضع الأفقي عند التشغيل
+        player.on('play', function() {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
             }
         });
     </script>
