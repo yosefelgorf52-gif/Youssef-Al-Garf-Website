@@ -3,50 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
     <style>
-        body { margin: 0; background: #000; height: 100vh; }
-        
-        /* ضبط المشغل ليملأ الشاشة */
-        .video-js { width: 100vw; height: 100vh; }
-        
-        /* تصميم أزرار الجودات (في الأعلى) */
-        .quality-container { 
-            position: absolute; top: 20px; left: 20px; z-index: 999; 
-            display: flex; gap: 10px; 
-        }
-        .q-btn { 
-            padding: 8px 18px; border-radius: 20px; border: none; 
-            background: rgba(255,255,255,0.2); color: white; font-weight: bold;
-        }
-        .q-btn.active { background: red; }
+        body { margin: 0; background: #000; overflow: hidden; height: 100vh; }
+        /* إطار العرض اللي بيشغل الفيديو من درايف مباشرة */
+        iframe { width: 100vw; height: 100vh; border: none; }
     </style>
 </head>
 <body>
 
-    <!-- أزرار الجودات زي ما طلبت بالظبط -->
-    <div class="quality-container">
-        <button class="q-btn">HD</button>
-        <button class="q-btn">SD</button>
-        <button class="q-btn active">Low</button>
-        <button class="q-btn">3</button>
-        <button class="q-btn">4</button>
-    </div>
+    <iframe 
+        src="https://drive.google.com/file/d/1cIqKbXCFqAo6s_XfzmUeAuo54bygE_Xm/preview" 
+        allow="autoplay" 
+        allowfullscreen>
+    </iframe>
 
-    <!-- مشغل الفيديو -->
-    <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto">
-        <source src="https://drive.google.com/uc?export=download&id=1cIqKbXCFqAo6s_XfzmUeAuo54bygE_Xm" type="video/mp4" />
-    </video>
-
-    <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
-    <script>
-        var player = videojs('my-video');
-        // إجبار التدوير للوضع الأفقي عند التشغيل
-        player.on('play', function() {
-            if (document.documentElement.requestFullscreen) {
-                document.documentElement.requestFullscreen();
-            }
-        });
-    </script>
 </body>
 </html>
