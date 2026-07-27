@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسلسلات رمضان - YG TV</title>
+    <!-- استدعاء مشغل Plyr الاحترافي -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <style>
+        body { 
+            margin: 0; 
+            background: #000; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            font-family: sans-serif;
+        }
+        /* تصميم الحاوية ليكون عمودياً واحترافياً */
+        .container { 
+            width: 100%; 
+            max-width: 450px; 
+            position: relative;
+        }
+        .plyr--video { 
+            border-radius: 10px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        /* العنوان فوق الفيديو */
+        .title-overlay {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            z-index: 10;
+            text-shadow: 2px 2px 4px #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title-overlay">مسلسل رمضان 1</div>
+        <video id="player" playsinline controls>
+            <!-- رابط الفيلم مدمج هنا -->
+            <source src="https://drive.google.com/uc?export=download&id=1cIqKbXCFqAo6s_XfzmUeAuo54bygE_Xm" type="video/mp4" />
+        </video>
+    </div>
+
+    <!-- تفعيل المشغل -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script>
+        const player = new Plyr('#player', {
+            controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'fullscreen'],
+            settings: ['quality', 'speed'],
+            autoplay: false
+        });
+    </script>
+</body>
+</html>
 
